@@ -1,0 +1,606 @@
+/* Dark Mode Variables */
+:root {
+    --dm-bg-primary: #18181b;
+    --dm-bg-secondary: #202024;
+    --dm-bg-tertiary: #2d2d2d;
+    --dm-text-primary: #e0e0e0;
+    --dm-text-secondary: #b0b0b0;
+    --dm-accent: #0099ff;
+    --dm-border: #404040;
+    --dm-shadow: rgba(0, 0, 0, 0.5);
+}
+
+/* Body and Global Resets */
+body.dark-mode {
+    background-color: var(--dm-bg-primary) !important;
+    color: var(--dm-text-primary) !important;
+    --card-bg: var(--dm-bg-secondary);
+    --text-main: var(--dm-text-primary);
+    --text-muted: var(--dm-text-secondary);
+    --input-bg: var(--dm-bg-tertiary);
+    --primary: var(--dm-accent);
+    --primary-hover: #0064e7;
+}
+
+/* Navbar */
+body.dark-mode nav,
+body.dark-mode .navbar-container {
+    background-color: rgba(30, 30, 30, 0.95) !important;
+}
+
+body.dark-mode .navbar-logo span h6:last-child {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .mobile-dropdown li a {
+    background-color: #00000000 !important;
+}
+
+body.dark-mode .navbar a {
+    color: var(--dm-text-primary) !important;
+    background-color: #2d2d2d;
+    border-radius: 30px;
+    border: none;
+}
+
+#main-nav-link {
+    background-color: transparent !important;
+    padding: 3px !important;
+}
+body.dark-mode .profile-dropdown-container::before{
+    background-color: white;
+    mix-blend-mode: darken  ;
+}
+body.dark-mode .navbar li {
+    color: var(--dm-text-primary) !important;
+
+}
+.profile-dropdown-container .profile-dropdown {
+    border: 1px solid;
+}
+body.dark-mode .navbar a:hover {
+    color: #0064e7 !important;
+}
+
+body.dark-mode .hamburger span {
+    background: var(--dm-text-primary) !important;
+}
+
+/* Search Bar */
+body.dark-mode .search-input {
+    background: var(--dm-bg-secondary) !important;
+    color: var(--dm-text-primary) !important;
+    box-shadow: inset 0 0 0 1px var(--dm-border) !important;
+}
+
+body.dark-mode .search-input::placeholder {
+    color: var(--dm-text-secondary) !important;
+}
+
+body.dark-mode .search-button i {
+    fill: var(--dm-bg-primary) !important;
+    color: var(--dm-bg-primary) !important;
+}
+
+/* Mobile Menu */
+body.dark-mode .mobile-menu,
+body.dark-mode .mobile-dropdown {
+    background: var(--dm-bg-secondary) !important;
+    color: var(--dm-text-primary) !important;
+}
+
+body.dark-mode .mobile-menu a,
+body.dark-mode .mobile-dropdown a {
+    color: var(--dm-text-primary) !important;
+    background-color: #2d2d2d !important;
+    border: none !important;
+}
+
+body.dark-mode .close-btn {
+    color: var(--dm-text-primary) !important;
+}
+
+body.dark-mode .split-button {
+    background: var(--dm-bg-tertiary) !important;
+    border-color: var(--dm-border);
+}
+
+body.dark-mode .split-button-left,
+body.dark-mode .split-button-right,
+body.dark-mode .split-button-content,
+body.dark-mode .split-button-icon {
+    color: var(--dm-text-primary) !important;
+}
+
+body.dark-mode .split-button-right {
+    border-left: 1px solid var(--dm-border) !important;
+}
+
+/* General Headings & Text Overrides */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: var(--dm-text-primary);
+}
+
+body.dark-mode p,
+body.dark-mode li {
+    color: var(--dm-text-secondary);
+}
+
+body.dark-mode .section-title,
+body.dark-mode .section-subtitle,
+body.dark-mode .products-overview h2,
+body.dark-mode .products-overview .lead,
+body.dark-mode .why-Blue Ember h3,
+body.dark-mode .why-item h4,
+body.dark-mode .brand-name,
+body.dark-mode .testimonial-content,
+body.dark-mode .author-info h4,
+body.dark-mode .offer-content h3,
+body.dark-mode .sustainability-item h3,
+body.dark-mode .service-card h3,
+body.dark-mode .blog-content h3,
+body.dark-mode .header-text-1 h1,
+body.dark-mode .header-text-2 h2,
+body.dark-mode .header-text-3 h3,
+body.dark-mode #heading-2 {
+    color: var(--dm-text-primary) !important;
+}
+
+/* Section Backgrounds Overrides */
+body.dark-mode .products-overview,
+body.dark-mode .why-Blue Ember,
+body.dark-mode .top-brands,
+body.dark-mode .testimonials,
+body.dark-mode .special-offers,
+body.dark-mode .sustainability,
+body.dark-mode .services,
+body.dark-mode .blog-section,
+body.dark-mode .contact-section,
+body.dark-mode .header-container-2,
+body.dark-mode .location {
+    background: var(--dm-bg-primary) !important;
+}
+
+/* Card Backgrounds Overrides */
+body.dark-mode .chip,
+body.dark-mode .product-card,
+body.dark-mode .why-item,
+body.dark-mode .brand-card,
+body.dark-mode .testimonial-card,
+body.dark-mode .offer-card,
+body.dark-mode .offer-content,
+body.dark-mode .sustainability-item,
+body.dark-mode .service-card,
+body.dark-mode .blog-card,
+body.dark-mode .form-card,
+body.dark-mode .info-card,
+body.dark-mode .card,
+body.dark-mode article,
+body.dark-mode .product,
+/* Contact page 'product' class used for location cards */
+body.dark-mode .contact-form {
+    background: var(--dm-bg-secondary) !important;
+    border: 1px solid var(--dm-border) !important;
+    box-shadow: 0 4px 6px var(--dm-shadow) !important;
+}
+
+/* Specific Card Text Fixes */
+body.dark-mode .product-title,
+body.dark-mode .product-body h4,
+body.dark-mode .product-desc,
+body.dark-mode .short-desc,
+body.dark-mode .price,
+body.dark-mode .chip,
+body.dark-mode .testimonial-content,
+body.dark-mode .author-info p,
+body.dark-mode .offer-price,
+body.dark-mode .sustainability-item p,
+body.dark-mode .service-card p,
+body.dark-mode .blog-content p,
+body.dark-mode .blog-meta,
+body.dark-mode .brand-name,
+body.dark-mode .contact-header p,
+body.dark-mode .form-subtitle,
+body.dark-mode .product p,
+/* Contact page location card text */
+body.dark-mode .product h3 {
+    color: var(--dm-text-secondary) !important;
+}
+
+body.dark-mode .product-title,
+body.dark-mode .product-body h4,
+body.dark-mode .price,
+body.dark-mode .chip:hover,
+body.dark-mode .offer-price,
+body.dark-mode .product h3 {
+    color: var(--dm-text-primary) !important;
+}
+
+body.dark-mode .price {
+    color: var(--dm-accent) !important;
+}
+
+/* Chips */
+body.dark-mode .chip {
+    background: var(--dm-bg-tertiary) !important;
+    color: var(--dm-text-primary) !important;
+}
+
+body.dark-mode .chip:hover {
+    background: var(--dm-accent) !important;
+    color: #fff !important;
+}
+
+/* Buttons */
+body.dark-mode .btn-outline {
+    border-color: var(--dm-accent) !important;
+    color: var(--dm-accent) !important;
+}
+
+body.dark-mode .btn-outline:hover {
+    background: rgba(0, 153, 255, 0.1) !important;
+}
+
+
+/* Modals */
+body.dark-mode .product-modal-template {
+    background: rgba(0, 0, 0, 0.8) !important;
+}
+
+body.dark-mode .modal-header,
+body.dark-mode .modal-body,
+body.dark-mode .modal-actions {
+    background: var(--dm-bg-secondary) !important;
+    color: var(--dm-text-primary) !important;
+    border-color: var(--dm-border) !important;
+}
+
+body.dark-mode .modal-description p,
+body.dark-mode .modal-features ul li {
+    color: var(--dm-text-secondary) !important;
+}
+
+/* Footer */
+body.dark-mode .site-footer,
+body.dark-mode footer {
+    background: var(--dm-bg-secondary) !important;
+    border-top: 1px solid var(--dm-border) !important;
+    color: var(--dm-text-secondary) !important;
+}
+
+body.dark-mode .footer-section h4,
+body.dark-mode .footer-logo,
+body.dark-mode .footer-legal a,
+body.dark-mode .footer-section ul li a,
+body.dark-mode address a,
+body.dark-mode .a-1
+
+/* Contact page links */
+    {
+    color: var(--dm-text-primary) !important;
+}
+
+body.dark-mode .social-icons a {
+    background: var(--dm-bg-tertiary) !important;
+    color: var(--dm-text-primary) !important;
+}
+
+/* Contact Page Form Fields */
+body.dark-mode .form-control,
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background: var(--dm-bg-tertiary);
+    border-color: var(--dm-border);
+    color: var(--dm-text-primary);
+}
+
+body.dark-mode .contact-header h1,
+body.dark-mode .form-title,
+body.dark-mode .form-title i {
+    color: var(--dm-accent) !important;
+}
+
+body.dark-mode .form-group label {
+    color: var(--dm-text-primary) !important;
+}
+
+/* Universal Cart Popup */
+body.dark-mode .cart-popup {
+    background: var(--dm-bg-secondary) !important;
+}
+
+body.dark-mode .cart-header,
+body.dark-mode .cart-footer {
+    background: var(--dm-bg-tertiary) !important;
+    border-color: var(--dm-border) !important;
+}
+
+body.dark-mode .cart-item {
+    border-bottom: 1px solid var(--dm-border) !important;
+}
+
+body.dark-mode .cart-item-name,
+body.dark-mode .cart-total,
+body.dark-mode h3 {
+    color: var(--dm-text-primary) !important;
+}
+
+body.dark-mode .quantity-btn,
+body.dark-mode .quantity-input {
+    background: var(--dm-bg-tertiary) !important;
+    color: var(--dm-text-primary) !important;
+    border-color: var(--dm-border) !important;
+}
+
+body.dark-mode .continue-btn {
+    background-color: #8d9399 !important;
+    color: var(--dm-text-primary) !important;
+    border-color: var(--dm-border) !important;
+}
+
+/* Default Light Mode overrides for the specific samsung page */
+body.dark-mode .text-dark {
+    color: var(--dm-text-primary) !important;
+}
+
+body.dark-mode .bg-light {
+    background-color: var(--dm-bg-secondary) !important;
+}
+
+body.dark-mode .profile-dropdown a {
+    padding: 11px 10px;
+    text-align: left;
+}
+
+/* Floating Toggle Button (Default / Fallback) */
+#dark-mode-toggle {
+    /* Default fixed styles (if appended to body) */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--dm-bg-tertiary);
+    border: 2px solid var(--dm-accent);
+    color: var(--dm-accent);
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/* Navbar Toggle Styles (When class 'navbar-toggle' is added) */
+#dark-mode-toggle.navbar-toggle {
+    position: static;
+    margin: 3px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid var(--dm-border);
+    /* Subtle border */
+    color: #333;
+    /* Default dark text for light mode */
+    box-shadow: none;
+    font-size: 23px;
+    z-index: auto;
+}
+@media (min-width: 992px){
+.mobile-wishlist-container{
+display: none !important;
+}
+}
+/* Profile Dropdown Container Dark Mode */
+body.dark-mode .profile-dropdown-container {
+    background-color: var(--dm-bg-secondary);
+    box-shadow: 0 8px 25px var(--dm-shadow);
+    top: 8vh;
+}
+.profile-dropdown-container{
+    top: 8vh !important;
+}
+body.dark-mode .profile-dropdown-container.visible {
+    background-color: var(--dm-bg-secondary);
+    border-color: var(--dm-border);
+    opacity: 1;
+}
+
+body.dark-mode .profile-dropdown-container.active {
+    background-color: var(--dm-bg-secondary);
+    border-color: var(--dm-border);
+}
+
+body.dark-mode #dark-mode-toggle.navbar-toggle {
+    color: var(--dm-text-primary);
+    border-color: var(--dm-border);
+}
+
+
+/* Override hover for navbar toggle */
+#dark-mode-toggle.navbar-toggle:hover {
+    background: rgb(0 0 0);
+    box-shadow: none;
+    color: #ffffff;
+}
+
+body.dark-mode #dark-mode-toggle.navbar-toggle:hover {
+    background: rgb(255 255 255);
+    color: var(--dm-accent);
+    border-color: #dff9ff;
+    box-shadow: 0px 0px 10px whitesmoke;
+}
+
+body.dark-mode .response-card {
+    background-color: #2d2d2d;
+}
+
+body.dark-mode .form-control:focus+.floating-label,
+.form-control:not(:placeholder-shown)+.floating-label {
+    top: -10px;
+    left: 15px;
+    font-size: 14px;
+    background: #2d2d2d !important;
+    padding: 0 8px;
+    color: #00b9ff;
+    border-radius: 4px;
+}
+
+body.dark-mode floating-label {
+    background-color: #2d2d2d;
+}
+
+body.dark-mode .form-control:focus+.floating-label,
+.form-control:not(:placeholder-shown)+.floating-label {
+    background-color: #2d2d2d;
+}
+
+body.dark-mode .cart-link {
+    color: #e0e0e0;
+}
+
+/* Mobile & Generic Theme Toggle Styles */
+.theme-toggle-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid #ddd;
+    /* Light mode border */
+    color: #333;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .theme-toggle-btn {
+    border-color: var(--dm-border);
+    color: var(--dm-text-primary);
+}
+
+.theme-toggle-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .theme-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--dm-accent);
+}
+
+body.dark-mode .signupbody {
+    background: #121212;
+}
+
+/* Login & Signup Page Dark Mode Styles */
+body.dark-mode .login-card {
+    background: rgba(30, 30, 30, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--dm-border);
+    box-shadow: 0 20px 60px var(--dm-shadow);
+}
+
+body.dark-mode .brand-logo h2 {
+    color: var(--dm-text-primary) !important;
+}
+
+body.dark-mode .welcome-text h3 {
+    color: var(--dm-text-primary) !important;
+}
+
+body.dark-mode .welcome-text p {
+    color: var(--dm-text-secondary) !important;
+}
+
+body.dark-mode .form-group label {
+    color: var(--dm-text-primary) !important;
+}
+
+body.dark-mode .input-wrapper input {
+    background-color: var(--dm-bg-tertiary) !important;
+    color: var(--dm-text-primary) !important;
+    box-shadow: 0 0.4rem var(--dm-border) !important;
+    border: 1px solid var(--dm-border);
+}
+
+body.dark-mode .input-wrapper input:focus {
+    outline-color: var(--dm-accent) !important;
+    box-shadow: 0 0.6rem var(--dm-accent) !important;
+}
+
+body.dark-mode .input-wrapper input::placeholder {
+    color: var(--dm-text-secondary) !important;
+}
+
+body.dark-mode .input-wrapper i {
+    color: var(--dm-accent) !important;
+}
+
+body.dark-mode .form-options {
+    color: var(--dm-text-secondary);
+}
+
+body.dark-mode .remember-me span {
+    color: var(--dm-text-secondary) !important;
+}
+
+body.dark-mode .forgot-pass {
+    color: var(--dm-accent) !important;
+}
+
+body.dark-mode .footer-text {
+    color: var(--dm-text-secondary) !important;
+}
+
+body.dark-mode .footer-text a {
+    color: var(--dm-accent) !important;
+}
+
+body.dark-mode .password-toggle {
+    color: var(--dm-text-secondary) !important;
+}
+
+body.dark-mode .password-toggle:hover {
+    color: var(--dm-accent) !important;
+    background: rgba(0, 153, 255, 0.1) !important;
+}
+
+body.dark-mode .checkbox-wrapper label:before {
+    background-color: var(--dm-bg-primary) !important;
+    box-shadow: inset 0 var(--shadow) var(--dm-border);
+}
+
+body.dark-mode .checkbox-wrapper input[type="checkbox"]:checked+label {
+    background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%) !important;
+}
+
+body.dark-mode .checkbox-wrapper input[type="checkbox"]:checked+label:before {
+    background-color: transparent !important;
+}
+
+/* Grid Background in Dark Mode */
+body.dark-mode .grid-background {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+
+body.dark-mode .profile-icon-btn:hover {
+    border-color: #dff9ff;
+    box-shadow: 0px 0px 10px whitesmoke;
+}
+
+

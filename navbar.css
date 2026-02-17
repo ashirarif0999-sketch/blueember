@@ -1,0 +1,884 @@
+/* Media query for max-width: 700px - Space for manual editing */
+@media (max-width: 700px) {
+    .hero-images .hero-img {
+        height: 336PX;
+        POSITION: RELATIVE;
+        TOP: -13PX;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-images .hero-img {
+        height: 336PX;
+        POSITION: RELATIVE;
+        TOP: -30PX;
+    }
+
+    body {
+        padding: 0px;
+    }
+
+    .search-container::before,
+    .search-container::after {
+        inset: -2px !important;
+    }
+
+    .search-input {
+        margin: 0px -35px 0px 0px !important;
+    }
+
+    .search-button {
+        right: -8px !important;
+    }
+
+    .search-button i {
+        padding: 8px 19px 8px 19px !important;
+    }
+}
+
+/* --- Animated Search Bar Styles --- */
+/* Define the Angle Property for smooth rotation */
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* The Animated RGB Border & Glow */
+.search-container::before,
+.search-container::after {
+    content: '';
+    position: absolute;
+    /* Negative inset controls border thickness */
+    inset: -3px;
+    border-radius: 50px;
+    z-index: -1;
+    /* YOUR SPECIFIC COLORS */
+    background: conic-gradient(from var(--angle), #0099ff, #0099ff, #01e8bc, #01e8bc, #0099ff);
+    /* Start Hidden */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Special Blur for the Shadow (::after) */
+.search-container::after {
+    filter: blur(25px);
+    z-index: -2;
+}
+
+/* Animation Triggers (Hover AND Click/Focus) */
+/* When Hovering OR When Input is Focused (Clicked) */
+.search-container:hover::before,
+.search-container:hover::after,
+.search-container:focus-within::before,
+.search-container:focus-within::after {
+    opacity: 1;
+    animation: spin-clockwise 10s linear infinite;
+}
+
+/* The Input Field */
+.search-input {
+    height: 100%;
+    border: none;
+    outline: none;
+    position: relative;
+    z-index: 501;
+    background: #ffffff;
+    border-radius: 50px;
+    margin: 0px -30px 0px 0px;
+    padding: 0 15px 0 15px;
+    font-size: 18px;
+    color: #000000;
+    box-shadow: inset 0 0 0 1px #000000;
+    transition: box-shadow 0.3s ease;
+
+
+}
+
+.search-input::placeholder {
+    color: #008080;
+    /* Teal Placeholder */
+    opacity: 0.7;
+}
+
+/* Hide the static Teal border when the animated border is active */
+.search-container:hover .search-input,
+.search-container:focus-within .search-input {
+    box-shadow: inset 0 0 0 0 transparent;
+}
+
+/* Search Icon */
+.search-button {
+    position: relative;
+    right: -6px;
+    width: 103px;
+    height: 65px;
+    pointer-events: auto;
+    background: #0099ff;
+    border: none;
+    padding: 16px 19px 15px 40px;
+}
+
+.search-button i {
+    fill: #008080;
+    margin: 16px;
+    padding: 11px 22px 11px 22px;
+    align-self: center;
+    border-radius: 25px;
+    display: table;
+    background: #ffffff8a;
+    transition: color 0.3s ease;
+}
+
+/* Make icon black when typing */
+.search-container:focus-within .search-button i {
+    color: #000000;
+}
+
+/* The Animation Keyframes */
+@keyframes spin-clockwise {
+    0% {
+        --angle: 0deg;
+    }
+
+    100% {
+        --angle: 360deg;
+    }
+}
+
+/* Override existing search-container styles */
+.search-container {
+    position: relative;
+    width: 400px;
+    height: 47px !important;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    padding: 0;
+    /* Remove existing padding */
+}
+
+.search-container form {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+@media (max-width: 480px) {
+    .navbar-logo {
+        width: 57px !important;
+        height: 5px !important;
+        scale: 0.6 !important;
+    }
+
+    .search-container {
+        height: 44px !important;
+        width: 220px;
+    }
+
+    .search-input {
+        padding: 0 15px 0 10px !important;
+    }
+}
+
+/* Mobile Dropdown */
+.mobile-dropdown-item {
+    position: relative;
+}
+
+.mobile-dropdown {
+    display: none;
+    list-style: none;
+    padding-left: 0;
+    margin: 8px 0 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.9s ease-in-out;
+}
+
+.mobile-dropdown-item.active .mobile-dropdown {
+    display: block;
+    transition: max-height 0.9s ease-in-out;
+    max-height: 500px;
+}
+
+/* Enhanced Split Button & Dropdown Theme */
+.split-button {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.split-button:hover {
+    box-shadow: 0 8px 15px rgba(0, 153, 255, 0.15) !important;
+    border-color: rgba(0, 153, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.split-button-right {
+    border-left: 1px solid rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+    color: #1e293b;
+}
+
+.split-button-right::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #0099ff, #00c11b);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.split-button-right:hover::before {
+    opacity: 0.1;
+}
+
+.split-button-right i {
+    z-index: 1;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.split-button-right:hover i {
+    color: #0099ff;
+}
+
+/* Update for Single Toggle Button */
+.split-button.single-toggle-action {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.split-button.single-toggle-action:active {
+    transform: scale(0.98);
+}
+
+.split-button-content {
+    display: flex;
+    align-items: center;
+    padding: 12px 12px 12px 20px;
+    flex-grow: 1;
+    font-weight: bold;
+    color: #1e293b;
+    gap: 10px;
+}
+
+.split-button-content i {
+    color: #334155;
+    font-size: 16px;
+}
+
+.split-button-icon {
+    padding: 12px 20px 12px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+/* Remove the split border */
+.split-button.single-toggle-action .split-button-right,
+.split-button.single-toggle-action .split-button-icon {
+    border-left: none;
+    background: transparent;
+}
+
+/* Hover effect for the whole button */
+.split-button.single-toggle-action:hover {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Rotate icon when expanded */
+.split-button.single-toggle-action[aria-expanded="true"] .split-button-icon i {
+    transform: rotate(180deg);
+}
+
+/* Ensure existing split-button styles don't conflict */
+.split-button.single-toggle-action .split-button-content {
+    cursor: pointer;
+}
+
+/* Desktop Dropdown Specifics */
+@media (min-width: 993px) {
+    .navbar .mobile-dropdown {
+        position: absolute;
+        top: 56px;
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+        width: 200px;
+        background: rgb(255 255 255);
+        backdrop-filter: blur(20px);
+        border-radius: 19px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+        padding: 10px;
+        opacity: 0;
+        visibility: hidden;
+        overflow: visible;
+        display: block !important;
+        max-height: none !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1100;
+    }
+
+    .navbar .mobile-dropdown-item.active .mobile-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    .navbar .mobile-dropdown::before {
+        content: '';
+        position: absolute;
+        top: -16px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 32px;
+        height: 32px;
+        background-color: #ffffff;
+        /* Curved 4-point star (Sparkle) shape using SVG mask */
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0C12 8 20 12 24 12C20 12 12 20 12 24C12 20 4 12 0 12C4 12 12 8 12 0Z'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0C12 8 20 12 24 12C20 12 12 20 12 24C12 20 4 12 0 12C4 12 12 8 12 0Z'/%3E%3C/svg%3E");
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        /* Use drop-shadow filter since mask clips box-shadow */
+        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+        clip-path: none;
+        box-shadow: none;
+    }
+
+    .navbar .mobile-dropdown li {
+        margin: 0;
+    }
+
+    .navbar .mobile-dropdown a {
+        background: transparent;
+        color: #334155;
+        font-weight: 500;
+        padding: 10px 15px;
+        border-radius: 10px;
+        text-align: left;
+        border: none;
+        display: block;
+    }
+
+    .navbar .mobile-dropdown a:hover {
+        background: rgba(0, 153, 255, 0.08);
+        color: #0099ff;
+        padding-left: 20px;
+    }
+}
+
+/* --- Simple Dark Dropdown Menu --- */
+.nav-profile-container {
+    position: relative;
+    margin-left: 15px;
+}
+
+.nav-profile-trigger {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.nav-profile-trigger .nav-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #0099ff;
+    transition: all 0.3s ease;
+}
+
+.nav-profile-trigger:hover .nav-avatar {
+    transform: scale(1.05);
+    border-color: #00c6ff;
+}
+
+.nav-profile-menu {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    width: 200px;
+    background: #2a2a2a;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    padding: 8px 0;
+    display: none;
+    z-index: 1000;
+}
+
+.nav-profile-menu.active {
+    display: block;
+    animation: dropdownFade 0.2s ease;
+}
+
+.nav-profile-menu a {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.nav-profile-menu a:hover {
+    background: #3a3a3a;
+}
+
+.nav-profile-menu a i {
+    width: 20px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.menu-divider {
+    height: 1px;
+    background: #444;
+    margin: 8px 0;
+}
+
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dark Mode - Keep same style */
+body.dark-mode .nav-profile-menu {
+    background: #2a2a2a;
+}
+
+body.dark-mode .nav-profile-menu a {
+    color: #fff;
+}
+
+body.dark-mode .nav-profile-menu a:hover {
+    background: #3a3a3a;
+}
+
+body.dark-mode .menu-divider {
+    background: #444;
+}
+
+/* ========================================
+   MODERN PROFILE DROPDOWN STYLES (Refined)
+   ======================================== */
+
+/* Profile Dropdown Container */
+.profile-dropdown-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Profile Icon Button */
+.profile-icon-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid #e2e8f0;
+    transition: all 0.2s ease;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+.profile-icon-btn:hover{
+    border-color: #dff9ff;
+    box-shadow: 0px 0px 10px whitesmoke;
+}
+
+/* Profile Icon Image */
+.profile-icon-img {
+    width: 43px;
+    height: 43px;
+    object-fit: cover;
+    border-radius: 120%;
+}
+
+.profile-icon-img[src]:not([src=""]) {
+    display: block;
+}
+
+/* Profile Icon Placeholder */
+.profile-icon-placeholder {
+    color: #64748b;
+    font-size: 20px;
+    display: block;
+}
+
+.profile-icon-img[src]:not([src=""])~.profile-icon-placeholder {
+    display: none;
+}
+
+/* Profile Dropdown Card */
+.profile-dropdown {
+    position: absolute;
+    top: calc(100% + 14px);
+    right: 0;
+    width: 260px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.04);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-8px) scale(0.98);
+    transform-origin: top right;
+    transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 2000;
+    padding: 8px;
+    overflow: visible;
+}
+
+/* Force z-index:-100000 when dropdown is hidden (default state) */
+#profileDropdownContainer:not(.visible) .profile-dropdown,
+#profileDropdownContainer[style*="display: none"] .profile-dropdown {
+    z-index: -100000 !important;
+    display: none;
+}
+
+.profile-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+/* Dropdown Lists */
+.profile-dropdown-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.profile-dropdown-list li {
+    margin: 0;
+    width: 100%;
+}
+
+/* Dropdown Divider */
+.profile-dropdown-divider {
+    height: 1px;
+    background: #f1f5f9;
+    margin: 3px 0;
+}
+
+/* Dropdown Items */
+.profile-dropdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    color: #334155;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.1s ease;
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+}
+
+.profile-dropdown-item span {
+    flex: 1;
+    text-align: left;
+}
+
+/* Hover Effect */
+.profile-dropdown-item:hover {
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+/* Icons */
+.profile-dropdown-item i {
+    width: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #64748b;
+    flex-shrink: 0;
+}
+
+.profile-dropdown-item:hover i {
+    color: #334155;
+}
+
+/* PRO Badge */
+.pro-badge {
+    background: #f3e8ff;
+    color: #9333ea;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.pro-badge::before {
+    content: '⚡';
+    font-size: 10px;
+}
+
+
+.profile-dropdown-item{
+border-radius: 0px !important;
+text-align: left;
+}
+/* Dark Mode Support */
+body.dark-mode .profile-dropdown {
+    background: #1e1e1e;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+        
+    border: 1px solid #939393;
+}
+
+body.dark-mode .profile-dropdown-item {
+    color: #e2e8f0;
+    background-color: transparent !important;
+}
+
+body.dark-mode .profile-dropdown-item:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+body.dark-mode .profile-dropdown-divider {
+    background: #2d2d2d;
+}
+
+body.dark-mode .profile-dropdown-item i {
+    color: #94a3b8;
+}
+
+body.dark-mode .profile-dropdown-item:hover i {
+    color: #e2e8f0;
+}
+
+body.dark-mode .profile-icon-btn {
+    border-color: var(--dm-border);
+}
+
+body.dark-mode .profile-icon-placeholder {
+    color: #94a3b8;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .profile-dropdown {
+        width: 240px;
+        right: -5px;
+    }
+
+    .profile-icon-btn {
+        width: 42px;
+        height: 42px;
+    }
+
+
+    /* Mobile Profile Container */
+    .mobile-profile-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 10px 15px;
+        color: #fff;
+        /* Assuming dark sidebar */
+        margin-bottom: 10px;
+    }
+
+    .mobile-profile-trigger {
+        position: relative;
+        width: 40px;
+        height: 40px;
+    }
+
+    .mobile-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .mobile-profile-container span {
+        font-family: 'Rubik', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .mobile-profile-sub li a {
+        color: #ccc !important;
+        font-size: 14px;
+        padding: 8px 0;
+        display: block;
+    }
+}
+
+
+   /* --- MOBILE PILL NAVBAR INTEGRATION --- */
+    @media (max-width: 768px) {
+
+      /* --- SEARCH BAR OVERLAY --- */
+      #mobilePillSearchBar {
+        position: fixed;
+        bottom: 90px;
+        /* Adjusted to be above navbar */
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
+        width: 85%;
+        background: rgb(39, 39, 39);
+        border-radius: 50px;
+        padding: 6px 6px 6px 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        z-index: 2101;
+      }
+
+      #mobilePillSearchBar.active {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+        pointer-events: all;
+      }
+
+      #mobilePillSearchBar input {
+        border: none;
+        outline: none;
+        width: 100%;
+        font-size: 14px;
+        border-radius: 30px;
+        padding: 15px 0px 15px 10px;
+        background: transparent;
+      }
+
+      /* --- THE NAVBAR --- */
+      #mobilePillNavbar {
+       position: fixed;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #ffffff;
+        padding: 5px;
+        border-radius: 50px;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        align-items: center;
+        gap: 0px;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        z-index: 999;
+        /* Higher priority */
+      }
+
+      #mobilePillNavbar .nav-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 45px;
+        padding: 0 15px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        color: #888;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      #mobilePillNavbar .nav-item ion-icon {
+        font-size: 22px;
+        min-width: 22px;
+        transition: color 0.3s;
+        color: #232323;
+      }
+
+      #mobilePillNavbar .nav-text {
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap;
+        max-width: 0;
+        opacity: 0;
+        margin-left: 0;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        transition: all 0.4s ease;
+      }
+
+      #mobilePillNavbar .nav-item.active {
+        background-color: #232323;
+        color: #ffffff;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        padding: 22px 0px 22px 12px;
+      }
+
+      #mobilePillNavbar .nav-item.active ion-icon {
+        color: #ffffff;
+      }
+
+      #mobilePillNavbar .nav-item.active .nav-text {
+        max-width: 100px;
+        opacity: 1;
+        margin-left: 10px;
+      }
+    }
+    abbr{
+        text-decoration: none;
+    }
+
+    .nav-item a{
+ border-radius: 30px;
+    padding: 14px;
+    background: #333333;
+    }
+    .nav-item a:hover{
+        background-color: #95caff;
+    color: #035ac6;
+    font-weight: 900;
+    }
+
+    /* Remove list markers from navbar li elements */
+    .navbar li {
+        list-style: none;
+    }
+
+
+

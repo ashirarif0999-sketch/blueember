@@ -1,0 +1,259 @@
+/* premium-profile.css */
+
+/* --- Variables --- */
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    --primary-gradient: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+    --accent-color: #0099ff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --card-radius: 24px;
+}
+
+body.dark-mode {
+    --glass-bg: rgba(30, 41, 59, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+}
+
+/* --- Global Revamp --- */
+.account-settings-main {
+    background: radial-gradient(circle at 10% 20%, rgb(242, 246, 252) 0%, rgb(227, 237, 252) 90%);
+}
+
+body.dark-mode .account-settings-main {
+    background: radial-gradient(circle at 10% 20%, #1a1a1a 0%, #0f172a 90%);
+}
+
+.account-container {
+    max-width: 1200px;
+    /* Slightly wider */
+}
+
+/* --- Glass Cards --- */
+.account-card,
+.dashboard-stat-card {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid var(--glass-border) !important;
+    box-shadow: var(--glass-shadow) !important;
+    border-radius: var(--card-radius) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+
+/* --- Profile Header --- */
+.profile-pic-container {
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 153, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.profile-pic-container:hover {
+    transform: scale(1.05);
+    border-color: var(--accent-color);
+}
+
+.page-title {
+    font-size: 3rem !important;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* standard property */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem !important;
+    letter-spacing: -1px;
+}
+
+#welcomeMsg {
+    font-size: 1.1rem !important;
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+}
+
+/* --- Tabs --- */
+.tabs-navigation {
+    background: rgba(255, 255, 255, 0.5) !important;
+    border-radius: 50px !important;
+    /* Pill shape container */
+    padding: 8px !important;
+    border: 1px solid var(--glass-border);
+    margin-bottom: 40px !important;
+}
+
+body.dark-mode .tabs-navigation {
+    background: rgba(0, 0, 0, 0.2) !important;
+}
+
+.tab-btn {
+    border-radius: 40px !important;
+    /* Pill shape buttons */
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: var(--text-secondary) !important;
+    transition: all 0.3s ease !important;
+}
+
+.tab-btn:hover {
+    color: var(--accent-color) !important;
+    background: rgba(0, 153, 255, 0.05) !important;
+}
+
+.tab-btn.active {
+    background: var(--primary-gradient) !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(0, 153, 255, 0.4) !important;
+}
+
+.tab-btn i {
+    font-size: 1.2rem !important;
+    margin-right: 8px;
+}
+
+/* --- Dashboard Stats --- */
+.profile-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.dashboard-stat-card {
+    display: flex !important;
+    align-items: center;
+    gap: 24px !important;
+    padding: 32px !important;
+}
+
+.stat-icon {
+    width: 70px !important;
+    height: 70px !important;
+    border-radius: 20px !important;
+    font-size: 32px !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.dashboard-stat-card:hover .stat-icon {
+    transform: scale(1.015) 
+}
+
+.stat-info h3 {
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    color: var(--text-primary) !important;
+    line-height: 1;
+    margin-bottom: 5px !important;
+}
+
+.stat-info p {
+    font-size: 1rem !important;
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Tables --- */
+.orders-table th {
+    font-weight: 700 !important;
+    color: var(--text-secondary) !important;
+    text-transform: uppercase;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+body.dark-mode .orders-table th {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.orders-table td {
+    padding: 20px 15px !important;
+    color: var(--text-primary) !important;
+    font-weight: 500;
+}
+
+.status-badge {
+    padding: 8px 16px !important;
+    border-radius: 30px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.5px;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .account-settings-main {
+        padding-top: 100px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .page-title {
+        font-size: 2rem !important;
+    }
+
+    .tabs-navigation {
+        flex-wrap: wrap;
+        border-radius: 20px !important;
+    }
+
+    .tab-btn {
+        flex: 1 1 100%;
+        border-radius: 12px !important;
+        justify-content: flex-start !important;
+    }
+
+    .profile-dashboard {
+        grid-template-columns: 1fr;
+        /* Stack cards on mobile */
+    }
+
+    .dashboard-stat-card {
+        padding: 24px !important;
+    }
+
+    .stat-icon {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 24px !important;
+    }
+
+    .stat-info h3 {
+        font-size: 2rem !important;
+    }
+}
+
+/* --- Wishlist Empty State --- */
+.wishlist-empty i {
+    font-size: 64px !important;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* standard property */
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+/* --- Quick Actions Grid --- */
+.profile-dashboard a.dashboard-stat-card {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.profile-dashboard a.dashboard-stat-card:hover {
+    transform: translateY(0px) scale(1.012) !important;
+    background: rgba(0, 153, 255, 0.05) !important;
+    border-color: var(--accent-color) !important;
+}
+
+body.dark-mode .profile-dashboard a.dashboard-stat-card:hover {
+    /* Dark mode explicit */
+    background: rgba(0, 153, 255, 0.1) !important;
+}

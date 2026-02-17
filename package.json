@@ -1,0 +1,22 @@
+{
+    "name": "blue-ember",
+    "version": "1.0.0",
+    "description": "Blue Ember AI - Vercel Deployment Root",
+    "main": "index.js",
+    "scripts": {
+        "start": "lite-server",
+        "dev": "lite-server"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "sharp": "^0.34.5"
+    },
+    "devDependencies": {
+        "lite-server": "^2.6.1"
+    },
+    "engines": {
+        "node": "18.x"
+    }
+}

@@ -1,0 +1,1936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blue Ember Store - Contact Us</title>
+    <link rel="stylesheet" href="Contact.css">
+    <link rel="stylesheet" href="darkmode.css">
+    <link rel="stylesheet" href="css/cookie-consent.css">
+    <link rel="stylesheet" href="RESPONSIVENESS.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="mobile-sidebar.css">
+    <script src="js/cart.js" defer></script>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/darkmode.js" defer></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/cookie-manager.js" defer></script>
+    <script src="js/mobile-sidebar.js" defer></script>
+    <script src="js/scroll-reveal.js" defer></script>
+    <link href='https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="footer.css">
+
+    <style>
+        body {
+            background: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #212529;
+            position: relative;
+            }
+
+        img {
+            width: 100%;
+        }
+#wishlist-toggle{
+      position: static !important;
+    }
+        /* Enhanced particle background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            filter: blur(4px);
+            background: #00b9ff;
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.4;
+            }
+
+            50% {
+                transform: translate(100vw, 100vh) scale(1.5);
+                opacity: 0.2;
+            }
+
+            100% {
+                transform: translate(200vw, 200vh) scale(2);
+                opacity: 0;
+            }
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 70px 0px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .contact-header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #00b9ff;
+            position: relative;
+            display: inline-block;
+            text-shadow: 0 2px 10px rgba(0, 185, 255, 0.15);
+        }
+
+        .contact-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #00b9ff, transparent);
+            border-radius: 2px;
+        }
+
+        .contact-header p {
+            font-size: 1.2rem;
+            color: #495057;
+            max-width: 700px;
+            margin: 20px auto 0;
+            line-height: 1.7;
+        }
+
+        .contact-form-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            position: relative;
+        }
+
+        @media (max-width: 900px) {
+            .contact-form-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05),
+                inset 0 0 20px rgba(0, 185, 255, 0.05);
+            border: 1px solid #e9ecef;
+            height: fit-content;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-card:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08),
+                inset 0 0 20px rgba(0, 185, 255, 0.1);
+        }
+
+        .form-section {
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #00b9ff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .form-title i {
+            color: #00b9ff;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .floating-label {
+            position: absolute;
+            top: 15px;
+            left: 18px;
+            color: #6c757d;
+            transition: all 0.4s ease;
+            pointer-events: none;
+            font-size: 16px;
+            z-index: 2;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 16px 18px;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 14px;
+            color: #212529;
+            font-size: 16px;
+            transition: all 0.4s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #00b9ff;
+            box-shadow: 0 0 0 3px rgba(0, 185, 255, 0.2);
+            background: #ffffff;
+        }
+
+        .form-control.is-valid {
+            border-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+
+        .form-control.is-invalid {
+            border-color: #ef4444;
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+        }
+
+        .form-control:focus+.floating-label,
+        .form-control:not(:placeholder-shown)+.floating-label {
+            top: -10px;
+            left: 15px;
+            font-size: 14px;
+            background: #ffffff;
+            padding: 0 8px;
+            color: #00b9ff;
+            border-radius: 4px;
+        }
+
+        textarea.form-control {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #00b9ff, #0080cc);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 14px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.6s ease-in-out;
+            position: relative;
+            overflow: hidden;
+            margin-top: 10px;
+            box-shadow: 0 5px 15px rgba(0, 185, 255, 0.3);
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            transition: all 0.6s ease-in-out;
+            box-shadow: 0 8px 25px rgba(0, 185, 255, 0.4);
+            background: linear-gradient(45deg, #00fffa, #0099ff);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn i {
+            margin-right: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .submit-btn:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Enhanced animation for form elements */
+        .form-group {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .form-group:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .form-group:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .form-group:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .form-group:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Enhanced contact info section */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .info-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border-color: #00b9ff;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 20px;
+            color: white;
+            background: #00b9ff;
+        }
+
+        .info-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: #212529;
+        }
+
+        .info-details p,
+        .info-details a {
+            color: #495057;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            line-height: 1.6;
+        }
+
+        .info-details a:hover {
+            color: #00b9ff;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e9ecef;
+            color: #00b9ff;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            border: 1px solid #dee2e6;
+        }
+
+        .social-icon:hover {
+            background: #00b9ff;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 185, 255, 0.3);
+        }
+
+        /* Enhanced response card */
+        .response-card {
+            margin-top: 40px;
+            text-align: center;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 16px;
+            border: 1px solid #e9ecef;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 185, 255, 0.2);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 185, 255, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 185, 255, 0);
+            }
+        }
+
+        .response-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #00b9ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .highlight {
+            color: #00b9ff;
+            font-weight: 600;
+        }
+
+        /* Floating elements for added animation */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        .floating-1 {
+            width: 200px;
+            height: 200px;
+            background: #00b9ff;
+            top: -100px;
+            right: -50px;
+            animation: float-circle 25s infinite linear;
+        }
+
+
+        .floating-3 {
+            width: 100px;
+            height: 100px;
+            background: #00b9ff;
+            top: 40%;
+            right: 5%;
+            animation: float-circle 20s infinite linear;
+        }
+
+        @keyframes float-circle {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(15px, 15px) scale(1.05);
+            }
+
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+        }
+
+        /* Custom checkbox and radio buttons */
+        .form-check {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .form-check-input {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #00b9ff;
+            border-radius: 4px;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-check-input:checked {
+            background: #00b9ff;
+            position: relative;
+        }
+
+        .form-check-input:checked::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Custom select dropdown */
+        .select-container {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .select-container::after {
+            content: '▼';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: #00b9ff;
+            font-size: 12px;
+        }
+
+        .select-container select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 100%;
+        }
+
+        /* Enhanced progress bar */
+        .progress-container {
+            margin-top: 30px;
+            background: #e9ecef;
+            border-radius: 10px;
+            height: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 75%;
+            background: #00b9ff;
+            border-radius: 10px;
+            animation: progress 5s ease-out forwards;
+        }
+
+        @keyframes progress {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 75%;
+            }
+        }
+
+        /* New animated elements */
+        .animated-underline {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00b9ff;
+            transition: width 0.5s ease;
+        }
+
+        .form-control:focus+.floating-label+.animated-underline {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .contact-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-form-container {
+                gap: 25px;
+            }
+
+            .form-card {
+                padding: 30px 12px;
+                width: 95%;
+                place-self: anchor-center;
+            }
+
+            .form-title {
+                font-size: 1.5rem;
+            }
+
+            .product {
+                max-width: none;
+            }
+        }
+
+
+
+
+        address {
+            top: -50px;
+        }
+
+        /* Premium Floating Navbar Styles */
+        .premium-nav {
+            position: fixed;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 65px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0px 0px 0px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .premium-nav:hover {
+            background: rgba(255, 255, 255, 0.6);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            transform: scale(1.02);
+        }
+
+        .nav-logo img {
+            width: 35px;
+            height: auto;
+            filter: drop-shadow(0 0 5px rgba(0, 153, 255, 0.3));
+        }
+
+        .nav-logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .nav-logo-text .blue {
+            color: #0099ff;
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-logo-text .ember {
+            color: #333;
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-center {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-link {
+            color: #444;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 10px 18px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid transparent;
+        }
+
+        .nav-link:hover {
+            background: #fff;
+            color: #0099ff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 153, 255, 0.1);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-action-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #444;
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        .nav-action-btn:hover {
+            background: #0099ff;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 153, 255, 0.3);
+        }
+
+        /* Dark Mode Overrides for Navbar */
+        body.dark-mode .premium-nav {
+            background: rgba(20, 20, 20, 0.6);
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .premium-nav:hover {
+            background: rgba(20, 20, 20, 0.8);
+        }
+
+        body.dark-mode .nav-logo-text .ember {
+            color: #fff;
+        }
+
+        body.dark-mode .nav-link {
+            color: #ccc;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        body.dark-mode .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #0099ff;
+        }
+
+        body.dark-mode .nav-action-btn {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+
+        @media (max-width:480px) {
+            .premium-nav {
+                padding: 0 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="premium-nav">
+        <div class="nav-left">
+            <a href="index.html" class="nav-logo" aria-label="Blue Ember Home">
+                <img src="assets/BlueEmber-ezgif.com-gif-maker.gif" alt="Logo">
+                <div class="nav-logo-text">
+                    <span class="blue">BLUE</span>
+                    <span class="ember">EMBER</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="nav-right">
+            <!-- Theme Toggle -->
+            <button class="nav-action-btn" id="nav-theme-toggle" title="Toggle Theme">
+                <i class="bx bx-moon-star"></i>
+            </button>
+
+            <!-- Back Button -->
+            <a href="index.html" class="nav-action-btn" title="Go Back">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+
+            <!-- Hamburger for Mobile Sidebar -->
+            <button class="nav-action-btn" id="premium-hamburger" style="display: none;">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <script>
+        // Integration with existing systems
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeBtn = document.getElementById('nav-theme-toggle');
+            const hamburger = document.getElementById('premium-hamburger');
+            const realHamburger = document.getElementById('hamburger'); // Existing hidden one
+
+            // Sync with existing theme toggle logic if it exists
+            if (themeBtn) {
+                themeBtn.addEventListener('click', () => {
+                    document.body.classList.toggle('dark-mode');
+                    const icon = themeBtn.querySelector('i');
+                    if (document.body.classList.contains('dark-mode')) {
+                        icon.classList.replace('bx-moon-star', 'bx-sun-dim');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        icon.classList.replace('bx-sun-dim', 'bx-moon-star');
+                        localStorage.setItem('theme', 'light');
+                    }
+                });
+
+                // Set initial icon
+                if (document.body.classList.contains('dark-mode')) {
+                    const icon = themeBtn.querySelector('i');
+                    icon.classList.replace('bx-moon-star', 'bx-sun-dim');
+                }
+            }
+
+            // Mobile Menu Toggle logic
+            function updateHamburgerVisibility() {
+                if (window.innerWidth <= 992) {
+                    hamburger.style.display = 'flex';
+                } else {
+                    hamburger.style.display = 'none';
+                }
+            }
+
+            if (hamburger) {
+                hamburger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    if (mobileMenu) {
+                        mobileMenu.classList.add('active');
+                    }
+                });
+                window.addEventListener('resize', updateHamburgerVisibility);
+                updateHamburgerVisibility();
+            }
+
+            const closeBtn = document.getElementById('closeBtn');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    if (mobileMenu) {
+                        mobileMenu.classList.remove('active');
+                    }
+                });
+            }
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                const mobileMenu = document.getElementById('mobileMenu');
+                const premiumHamburger = document.getElementById('premium-hamburger');
+                if (mobileMenu && mobileMenu.classList.contains('active')) {
+                    if (!mobileMenu.contains(e.target) && !premiumHamburger.contains(e.target)) {
+                        mobileMenu.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- Mobile Sidebar Menu (Redesigned) -->
+    <div class="mobile-menu" id="mobileMenu">
+
+        <!-- 1. Header: Brand or User Profile -->
+        <div class="sidebar-header" id="sidebarHeader">
+            <!-- Default State: Brand Logo -->
+            <div class="header-brand default-brand" id="sidebarBrand">
+                <div class="navbar-logo">
+                    <img src="assets/BlueEmber-ezgif.com-gif-maker.gif" alt="Blue Ember animated logo"
+                        style="width: 45px;height: auto;">
+                    <span>
+                        <h6 style="color: #0099ff;font-size: x-large;margin: 0px 0px -6px 0px;">BLUE</h6>
+                        <h6 style="color: #000000;font-size: x-large;margin: 0px 0px -6px 0px;">EMBER</h6>
+                    </span>
+                </div>
+            </div>
+
+            <!-- User State (Logged In) -->
+            <div class="header-profile" id="sidebarProfileContainer" style="display: none;">
+                <img src="assets/profilepreview.jpg" alt="Profile" id="navbar-avatar-img">
+                <div class="user-info">
+                    <span class="user-name" id="sidebarUserName">User Name</span>
+                    <span class="user-email" id="sidebarUserEmail">email@example.com</span>
+                </div>
+                <i class='bx  bx-chevron-down' style='color:#ffffff'></i>
+            </div>
+
+            <!-- Close Button -->
+            <button class="close-btn" id="closeBtn" aria-label="Close menu"
+                style="right: -35px;padding: inherit;display: flex;">
+                <i class='bx  bx-caret-big-left'></i>
+            </button>
+        </div>
+
+        <!-- 2. Content: Navigation Links -->
+        <div class="sidebar-content">
+
+            <a href="index.html" class="sidebar-nav-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <!-- Collapsible: Categories -->
+            <div class="sidebar-collapsible" id="col-categories">
+                <button class="collapsible-trigger">
+                    <div style="display:flex; align-items:center;">
+                        <i class="fa-solid fa-blender trigger-icon"></i>
+                        <span>Categories</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down chevron"></i>
+                </button>
+                <div class="collapsible-content">
+                    <a href="product2.html" class="sub-link">Toys</a>
+                    <a href="product2.html" class="sub-link">Supplyments</a>
+                    <a href="product2.html" class="sub-link">Beauty</a>
+                    <a href="product2.html" class="sub-link">HomeGoods</a>
+                </div>
+            </div>
+
+            <!-- Collapsible: Brands -->
+            <div class="sidebar-collapsible" id="col-brands">
+                <button class="collapsible-trigger">
+                    <div style="display:flex; align-items:center;">
+                        <i class="fa-solid fa-building trigger-icon"></i>
+                        <span>Brands</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down chevron"></i>
+                </button>
+                <div class="collapsible-content">
+                    <a href="samsung-productpage.html" class="sub-link">Samsung</a>
+                    <a href="LG-productpage.html" class="sub-link">LG</a>
+                    <a href="Whirlpool-productpage.html" class="sub-link">Whirlpool</a>
+                    <a href="BOSCH-productpage.html" class="sub-link">Bosch</a>
+                    <a href="Electrolux-productpage.html" class="sub-link">Revlon</a>
+                    <a href="Panasonic-productpage.html" class="sub-link">Toys R Us</a>
+                </div>
+            </div>
+
+            <a href="product2.html" class="sidebar-nav-item">
+                <i class="fa-solid fa-tags"></i>
+                <span>Products</span>
+            </a>
+
+            <a href="Contact.html" class="sidebar-nav-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Contact Us</span>
+            </a>
+
+            <!-- Dynamic Cart Link -->
+            <li>
+                <a href="#" id="mobile-cart-link" class="mobile-cart-link">
+                    <i class="fa-solid fa-cart-shopping me-2"></i>Shopping Cart
+                </a>
+            </li>
+
+            <!-- Login Link (Hidden if logged in) -->
+            <div id="sidebar-login-container">
+                <a href="login.html" class="sidebar-nav-item" id="sidebar-login-link">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <span>Login</span>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- 3. Footer: Settings / Logout -->
+        <div class="sidebar-footer" id="sidebarFooter">
+            <button id="mobile-theme-toggle" class="footer-btn">
+                <i class="bx bx-moon-star"></i>
+                <span>Toggle Theme</span>
+            </button>
+
+            <!-- Logout will be injected here -->
+        </div>
+
+    </div>
+
+    <!-- ===== CONTACT FORM ===== -->
+    <div class="particles" id="particles"></div>
+    <div class="container">
+        <div class="contact-header">
+            <h1>Let's Connect</h1>
+            <p>Have a question or need assistance? Fill out the form below and we'll reach out to you within 24 hours.
+            </p>
+        </div>
+
+        <div class="contact-form-container">
+            <div class="form-card">
+                <div class="form-section">
+                    <form id="contactForm">
+                        <h2 class="form-title"><i class="fas fa-paper-plane"></i> Send a Message</h2>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="name" placeholder=" " required>
+                            <label for="name" class="floating-label">Your Full Name</label>
+                            <div class="animated-underline"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" placeholder=" " required>
+                            <label for="email" class="floating-label">Email Address</label>
+                            <div class="animated-underline"></div>
+                        </div>
+
+                        <div class="form-group select-container">
+                            <select class="form-control" id="subject" required>
+                                <option value="" disabled selected hidden></option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Customer Support</option>
+                                <option value="billing">Billing Question</option>
+                                <option value="technical">Technical Issue</option>
+                                <option value="sales">Sales Inquiry</option>
+                            </select>
+                            <label for="subject" class="floating-label">Purpose of Contact</label>
+                            <div class="animated-underline"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="form-control" id="message" placeholder=" " required></textarea>
+                            <label for="message" class="floating-label">Your Message</label>
+                            <div class="animated-underline"></div>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="subscribe" checked>
+                            <label class="form-check-label" for="subscribe">Send me updates about new products and
+                                services</label>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="sendMessageBtn">
+                            <i class="fas fa-paper-plane"></i>Send Message
+                        </button>
+                    </form>
+
+                    <div class="response-card">
+                        <h3 class="response-title"><i class="fas fa-clock"></i> Response Time</h3>
+                        <p>We typically respond within <span class="highlight">24 hours</span> during business days.
+                            Emergency inquiries receive priority attention.</p>
+
+                        <div class="progress-container">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <p style="font-size: 14px; color: #6c757d; margin-top: 10px;">Currently processing 3 other
+                            inquiries</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-card">
+                <div class="form-section">
+                    <h2 class="form-title"><i class="fas fa-map-marker-alt"></i> Contact Information</h2>
+
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-details">
+                                <h3>Our Location</h3>
+                                <p><a href="https://maps.app.goo.gl/UQPLaS7wZw73vXbH9">2260 118th Avenue North, Saint
+                                        Petersburg, FL 33716, United States</a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="info-details">
+                                <h3>Phone Numbers</h3>
+                                <p>Main: <a href="tel:+14242316797">+1 (424) 231-6797</a></p>
+                                <p>Support: <a href="tel:+13237759142">+1 (323) 775-9142</a></p>
+                                <p>International: <a href="tel:+19252319764">+1 (925) 231-9764</a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-details">
+                                <h3>Business Hours</h3>
+                                <p>Monday - Friday: 8:00 AM - 8:00 PM EST</p>
+                                <p>Saturday: 9:00 AM - 6:00 PM EST</p>
+                                <p>Sunday: Closed</p>
+                            </div>
+                        </div>
+                        <div class="location">
+                            <h1 id="heading-2" style="display: none;">Our Location</h1>
+
+                            <div class="product" id="lastproduct">
+                                <img src="assets/Pic of Chicago.png" alt="Chicago" />
+                                <a>
+                                    <h3>USA</h3>
+                                </a>Hasbrouck Heights NJ 07604 USA <br>
+                                <i class="fa-solid fa-phone-volume" style="color:rgb(0, 89, 255)"></i> +1 (773) 628-4159
+                                <br>
+                                <i class="fa-solid fa-envelope" style="color:rgb(0, 89, 255)"></i> support@blue-ember.us
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Toast Container for notifications -->
+    <div id="toast-container" class="toast-container position-fixed bottom-0 end-0 p-2"></div>
+
+    <div class="header-container-2" style="padding: 27px;width: auto;background: transparent !important;">
+        <div class="header-text-1">
+            <h1>From Your Kitchen To Your Living Room <br> We're Here To Make Things Easier</h1>
+        </div>
+        <div class="header-text-2">
+            <h2>Explore reliable electronic appliances <br>designed to simplify your everyday life.</h2>
+        </div>
+        <div class="header-text-3">
+            <h3>Let's explore how we can help you. <i class="fa-solid fa-arrow-right-long"></i></h3>
+        </div>
+    </div>
+
+    <!-- ===== LOCATIONS ===== -->
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Brand Section -->
+            <div class="footer-section">
+                <div class="footer-logo"><a href="index.html">
+                        <div class="navbar-logo"><img src="assets/BlueEmber-ezgif.com-gif-maker.gif"
+                                style="width: 30px;">
+                            <SPAN>
+                                <h6 style="color: #0099ff; font-size: large; margin: 0px 0px -6px 0px;">BLUE</h6>
+                                <H6 style="color: #000000; font-size: large; margin: 0px 0px -6px 0px;">EMBER</H6>
+                            </SPAN>
+                        </div>
+                    </a></div>
+                <p class="footer-tagline">Premium Store from trusted global brands. Serving customers since 2005.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="terms and services.html">Terms & Services</a></li>
+                    <li><a href="privacy policy.html">Privacy Policy</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="Refund and Exchange.html">Refund & Exchange</a></li>
+                    <li><a href="About us .html">About Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Categories -->
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="product2.html">Toys</a></li>
+                    <li><a href="product2.html">Supplyments</a></li>
+                    <li><a href="product2.html">Beauty</a></li>
+                    <li><a href="product2.html">HomeGoods</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>
+                        <a>
+                            <address>
+                                <p><a href="https://maps.app.goo.gl/BGBAUvaKPHLhTqvh6">Hasbrouck Heights NJ 07604
+                                        USA</a>
+                                </p>
+                                <i class="fa-solid fa-phone-volume" style="color:rgb(0, 89, 255)"></i> +1 (800)
+                                123-4567<br>
+                                <i class="fa-solid fa-envelope" style="color:rgb(0, 89, 255)"></i> <a
+                                    href="mailto:support@blue-ember.us">support@blue-ember.us</a>
+                            </address>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Blue Ember Store. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="privacy policy.html">Privacy Policy</a> •
+                <a href="terms and services.html">Terms of Service</a> •
+            </div>
+            <!-- Footer Brand Watermark -->
+        <div class="footer-trending">
+            <span class="footer-trending-text">BLUE </span>
+            <span class="footer-trending-text">EMBER</span>
+        </div>
+        </div>
+
+        
+    </footer>
+    <script>
+        /**
+         * Advanced Toast Notification System
+         * Features: Queue management, auto-dismiss, manual close, accessibility, animations
+         */
+        class ToastManager {
+            constructor(containerId = 'toast-container') {
+                this.container = document.getElementById(containerId);
+                this.queue = [];
+                this.activeToasts = new Set();
+                this.maxConcurrent = 3;
+                this.defaultDuration = 5000;
+                this.init();
+            }
+
+            init() {
+                this.injectStyles();
+                this.setupContainer();
+            }
+
+            injectStyles() {
+                if (document.getElementById('toast-styles')) return;
+
+                const styles = document.createElement('style');
+                styles.id = 'toast-styles';
+                styles.textContent = `
+                .toast-container {
+                    position: fixed;
+                    bottom: 20px;
+                    right: 20px;
+                    z-index: 1050;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    max-width: 400px;
+                    pointer-events: none;
+                }
+
+                .toast-notification {
+                    background: #fff;
+                    border-radius: 8px;
+                    box-shadow: 0 10px 25px rgba(0,0,0,0.1), 0 4px 10px rgba(0,0,0,0.05);
+                    padding: 16px 20px;
+                    min-width: 320px;
+                    max-width: 400px;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 12px;
+                    pointer-events: auto;
+                    transform: translateX(100%);
+                    opacity: 0;
+                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                    border-left: 4px solid;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .toast-notification.show {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+
+                .toast-notification.hide {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+
+                .toast-notification.success {
+                    border-left-color: #10b981;
+                    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+                }
+
+                .toast-notification.error {
+                    border-left-color: #ef4444;
+                    background: linear-gradient(135deg, #fef2f2, #fee2e2);
+                }
+
+                .toast-notification.info {
+                    border-left-color: #3b82f6;
+                    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+                }
+
+                .toast-notification.warning {
+                    border-left-color: #f59e0b;
+                    background: linear-gradient(135deg, #fffbeb, #fef3c7);
+                }
+
+                .toast-icon {
+                    flex-shrink: 0;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 12px;
+                    color: white;
+                    margin-top: 2px;
+                }
+
+                .toast-notification.success .toast-icon {
+                    background: #10b981;
+                }
+
+                .toast-notification.error .toast-icon {
+                    background: #ef4444;
+                }
+
+                .toast-notification.info .toast-icon {
+                    background: #3b82f6;
+                }
+
+                .toast-notification.warning .toast-icon {
+                    background: #f59e0b;
+                }
+
+                .toast-content {
+                    flex: 1;
+                    min-width: 0;
+                }
+
+                .toast-title {
+                    font-weight: 600;
+                    font-size: 14px;
+                    color: #1f2937;
+                    margin-bottom: 4px;
+                    line-height: 1.4;
+                }
+
+                .toast-message {
+                    font-size: 13px;
+                    color: #6b7280;
+                    line-height: 1.5;
+                }
+
+                .toast-close {
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    color: #9ca3af;
+                    font-size: 18px;
+                    padding: 0;
+                    width: 20px;
+                    height: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 4px;
+                    transition: all 0.2s ease;
+                    flex-shrink: 0;
+                    margin-left: 8px;
+                }
+
+                .toast-close:hover {
+                    background: rgba(0,0,0,0.05);
+                    color: #6b7280;
+                }
+
+                .toast-progress {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    height: 3px;
+                    background: currentColor;
+                    border-radius: 0 0 8px 8px;
+                    opacity: 0.7;
+                }
+
+                .toast-notification.success .toast-progress {
+                    background: #10b981;
+                }
+
+                .toast-notification.error .toast-progress {
+                    background: #ef4444;
+                }
+
+                .toast-notification.info .toast-progress {
+                    background: #3b82f6;
+                }
+
+                .toast-notification.warning .toast-progress {
+                    background: #f59e0b;
+                }
+
+                @keyframes toastSlideIn {
+                    from {
+                        transform: translateX(100%);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes toastSlideOut {
+                    from {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                    to {
+                        transform: translateX(100%);
+                        opacity: 0;
+                    }
+                }
+
+                @keyframes progressBar {
+                    from { width: 100%; }
+                    to { width: 0%; }
+                }
+
+                @media (max-width: 480px) {
+                    .toast-container {
+                        left: 10px;
+                        right: 10px;
+                        bottom: 10px;
+                        max-width: none;
+                    }
+
+                    .toast-notification {
+                        min-width: auto;
+                        max-width: none;
+                    }
+                }
+            `;
+                document.head.appendChild(styles);
+            }
+
+            setupContainer() {
+                if (!this.container) {
+                    this.container = document.createElement('div');
+                    this.container.id = 'toast-container';
+                    this.container.className = 'toast-container';
+                    document.body.appendChild(this.container);
+                }
+            }
+
+            show(options) {
+                const config = {
+                    message: '',
+                    title: '',
+                    type: 'info',
+                    duration: this.defaultDuration,
+                    persistent: false,
+                    ...options
+                };
+
+                // Create toast element
+                const toast = this.createToastElement(config);
+
+                // Add to container
+                this.container.appendChild(toast);
+
+                // Animate in
+                requestAnimationFrame(() => {
+                    toast.classList.add('show');
+                });
+
+                // Setup auto-dismiss
+                if (!config.persistent) {
+                    this.setupAutoDismiss(toast, config.duration);
+                }
+
+                // Track active toast
+                this.activeToasts.add(toast);
+
+                // Limit concurrent toasts
+                this.manageQueue();
+
+                return toast;
+            }
+
+            createToastElement(config) {
+                const toast = document.createElement('div');
+                toast.className = `toast-notification ${config.type}`;
+
+                const iconMap = {
+                    success: '✓',
+                    error: '✕',
+                    info: 'ℹ',
+                    warning: '⚠'
+                };
+
+                toast.innerHTML = `
+                <div class="toast-icon">${iconMap[config.type] || 'ℹ'}</div>
+                <div class="toast-content">
+                    ${config.title ? `<div class="toast-title">${this.escapeHtml(config.title)}</div>` : ''}
+                    <div class="toast-message">${this.escapeHtml(config.message)}</div>
+                </div>
+                <button class="toast-close" aria-label="Close notification">&times;</button>
+                ${!config.persistent ? '<div class="toast-progress"></div>' : ''}
+            `;
+
+                // Setup close button
+                const closeBtn = toast.querySelector('.toast-close');
+                closeBtn.addEventListener('click', () => this.dismiss(toast));
+
+                // Setup progress bar animation
+                if (!config.persistent) {
+                    const progressBar = toast.querySelector('.toast-progress');
+                    if (progressBar) {
+                        progressBar.style.animation = `progressBar ${config.duration}ms linear forwards`;
+                    }
+                }
+
+                return toast;
+            }
+
+            setupAutoDismiss(toast, duration) {
+                const timeoutId = setTimeout(() => {
+                    this.dismiss(toast);
+                }, duration);
+
+                // Store timeout ID for cleanup
+                toast._timeoutId = timeoutId;
+
+                // Pause on hover
+                toast.addEventListener('mouseenter', () => {
+                    clearTimeout(timeoutId);
+                    const progressBar = toast.querySelector('.toast-progress');
+                    if (progressBar) {
+                        progressBar.style.animationPlayState = 'paused';
+                    }
+                });
+
+                toast.addEventListener('mouseleave', () => {
+                    toast._timeoutId = setTimeout(() => {
+                        this.dismiss(toast);
+                    }, duration * 0.3); // Resume with remaining time
+
+                    const progressBar = toast.querySelector('.toast-progress');
+                    if (progressBar) {
+                        progressBar.style.animationPlayState = 'running';
+                    }
+                });
+            }
+
+            dismiss(toast) {
+                if (!toast || !this.activeToasts.has(toast)) return;
+
+                // Clear timeout
+                if (toast._timeoutId) {
+                    clearTimeout(toast._timeoutId);
+                }
+
+                // Animate out
+                toast.classList.remove('show');
+                toast.classList.add('hide');
+
+                // Remove after animation
+                setTimeout(() => {
+                    if (toast.parentNode) {
+                        toast.remove();
+                    }
+                    this.activeToasts.delete(toast);
+                    this.processQueue();
+                }, 300);
+            }
+
+            manageQueue() {
+                // If too many active toasts, dismiss oldest
+                const activeArray = Array.from(this.activeToasts);
+                if (activeArray.length > this.maxConcurrent) {
+                    this.dismiss(activeArray[0]);
+                }
+            }
+
+            processQueue() {
+                // Process queued toasts if space available
+                if (this.queue.length > 0 && this.activeToasts.size < this.maxConcurrent) {
+                    const nextToast = this.queue.shift();
+                    this.show(nextToast);
+                }
+            }
+
+            escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+
+            // Convenience methods
+            success(message, title = '', options = {}) {
+                return this.show({ ...options, message, title, type: 'success' });
+            }
+
+            error(message, title = '', options = {}) {
+                return this.show({ ...options, message, title, type: 'error' });
+            }
+
+            info(message, title = '', options = {}) {
+                return this.show({ ...options, message, title, type: 'info' });
+            }
+
+            warning(message, title = '', options = {}) {
+                return this.show({ ...options, message, title, type: 'warning' });
+            }
+        }
+
+        // Global toast manager instance
+        const toastManager = new ToastManager();
+
+        // Legacy function for backward compatibility
+        function showNotification(message, type = 'info') {
+            return toastManager.show({ message, type });
+        }
+
+        // Create particles with enhanced animation
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 125;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                // Random size between 2-8px
+                const size = Math.random() * 6 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                // Random position
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.left = `${Math.random() * 100}%`;
+
+                // Random animation duration
+                const duration = Math.random() * 30 + 10;
+                particle.style.animationDuration = `${duration}s`;
+
+                // Random animation delay
+                const delay = Math.random() * 15;
+                particle.style.animationDelay = `${delay}s`;
+
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Create animated elements with enhanced effects
+        function createAnimatedElements() {
+            // Add subtle pulse effect to floating elements
+            const floatingElements = document.querySelectorAll('.floating-element');
+            floatingElements.forEach(element => {
+                element.style.animationDuration = `${Math.random() * 10 + 15}s`;
+            });
+
+            // Add animation for form sections
+            const formSections = document.querySelectorAll('.form-section');
+            formSections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+                setTimeout(() => {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, 300 + (index * 200));
+            });
+        }
+
+        // Contact form validation and submission with advanced toast notifications
+        function initContactForm() {
+            const form = document.getElementById('contactForm');
+            if (!form) return;
+
+            // Form validation rules
+            const validators = {
+                name: (value) => value.trim().length >= 2,
+                email: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()),
+                subject: (value) => value !== '',
+                message: (value) => value.trim().length >= 10
+            };
+
+            // Field labels for error messages
+            const fieldLabels = {
+                name: 'Full Name',
+                email: 'Email Address',
+                subject: 'Purpose of Contact',
+                message: 'Message'
+            };
+
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                try {
+                    // Get form values directly from inputs
+                    const formData = {
+                        name: document.getElementById('name').value.trim(),
+                        email: document.getElementById('email').value.trim(),
+                        subject: document.getElementById('subject').value,
+                        message: document.getElementById('message').value.trim()
+                    };
+
+                    // Validate all required fields
+                    const validationErrors = [];
+
+                    // Check each field
+                    if (!formData.name || formData.name.length < 2) {
+                        validationErrors.push('Full Name (minimum 2 characters)');
+                    }
+
+                    if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+                        validationErrors.push('valid Email Address');
+                    }
+
+                    if (!formData.subject || formData.subject === '') {
+                        validationErrors.push('Purpose of Contact');
+                    }
+
+                    if (!formData.message || formData.message.length < 10) {
+                        validationErrors.push('Message (minimum 10 characters)');
+                    }
+
+                    // Show validation errors if any
+                    if (validationErrors.length > 0) {
+                        const errorMessage = validationErrors.length === 1
+                            ? `Please provide a ${validationErrors[0]}.`
+                            : `Please fill in the following: ${validationErrors.join(', ')}.`;
+
+                        toastManager.error(errorMessage, 'Form Incomplete', {
+                            duration: 6000
+                        });
+                        return;
+                    }
+
+                    // Show loading state
+                    const submitBtn = form.querySelector('#sendMessageBtn');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+                    // Simulate API call (replace with actual submission)
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+
+                    // Show success message
+                    toastManager.success(
+                        'We will contact you within 24 business hours.',
+                        'Message Sent Successfully!',
+                        {
+                            duration: 7000
+                        }
+                    );
+
+                    // Reset form
+                    form.reset();
+
+                    // Clear validation states
+                    form.querySelectorAll('.form-control').forEach(input => {
+                        input.classList.remove('is-valid', 'is-invalid');
+                    });
+
+                    // Restore button
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalText;
+
+                } catch (error) {
+                    console.error('Form submission error:', error);
+                    toastManager.error(
+                        'Please try again later or contact us directly.',
+                        'Submission Failed'
+                    );
+
+                    // Restore button on error
+                    const submitBtn = form.querySelector('#sendMessageBtn');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i>Send Message';
+                }
+            });
+
+            // Real-time validation feedback
+            const inputs = form.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('blur', function () {
+                    const field = this.id;
+                    const value = this.value.trim();
+
+                    // Remove previous validation classes
+                    this.classList.remove('is-valid', 'is-invalid');
+
+                    if (validators[field]) {
+                        if (validators[field](value)) {
+                            this.classList.add('is-valid');
+                        } else if (value) {
+                            this.classList.add('is-invalid');
+                        }
+                    }
+                });
+            });
+        }
+
+        // Enhanced hover effects for all interactive elements
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            createAnimatedElements();
+            initContactForm();
+
+            // Add micro-interactions for form fields
+            const formControls = document.querySelectorAll('.form-control');
+            formControls.forEach(control => {
+                control.addEventListener('focus', function () {
+                    this.parentElement.classList.add('focused');
+                });
+
+                control.addEventListener('blur', function () {
+                    if (!this.value) {
+                        this.parentElement.classList.remove('focused');
+                    }
+                });
+            });
+
+            const interactiveElements = document.querySelectorAll('.submit-btn, .info-card, .social-icon, .form-check-input');
+
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+
+                element.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+
+
+
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const splitButtons = document.querySelectorAll('.split-button');
+
+            splitButtons.forEach(button => {
+                // Check if this is a single-toggle action button
+                if (button.classList.contains('single-toggle-action')) {
+                    button.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        const parentItem = button.parentElement; // The list item wrapping the button
+                        const dropdown = parentItem.querySelector('.mobile-dropdown');
+                        const isExpanded = parentItem.classList.contains('active');
+
+                        // Optional: Close other open dropdowns on desktop
+                        if (window.innerWidth > 992) {
+                            document.querySelectorAll('.mobile-dropdown-item.active').forEach(item => {
+                                if (item !== parentItem) {
+                                    item.classList.remove('active');
+                                    const btn = item.querySelector('.split-button');
+                                    if (btn) btn.setAttribute('aria-expanded', 'false');
+                                    const otherDropdown = item.querySelector('.mobile-dropdown');
+                                    if (otherDropdown) otherDropdown.style.maxHeight = '0';
+                                }
+                            });
+                        }
+
+                        // Toggle current state
+                        parentItem.classList.toggle('active');
+                        button.setAttribute('aria-expanded', !isExpanded);
+
+                        // Handle dropdown animation (if using max-height transition)
+                        if (dropdown) {
+                            if (!isExpanded) {
+                                dropdown.style.maxHeight = dropdown.scrollHeight + 'px';
+                            } else {
+                                dropdown.style.maxHeight = '0';
+                            }
+                        }
+                    });
+                }
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.mobile-dropdown-item')) {
+                    document.querySelectorAll('.mobile-dropdown-item.active').forEach(item => {
+                        item.classList.remove('active');
+                        const btn = item.querySelector('.split-button');
+                        if (btn) btn.setAttribute('aria-expanded', 'false');
+                        const dropdown = item.querySelector('.mobile-dropdown');
+                        if (dropdown) dropdown.style.maxHeight = '0';
+                    });
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const collapsibles = document.querySelectorAll('.sidebar-collapsible');
+            collapsibles.forEach(col => {
+                const btn = col.querySelector('.collapsible-trigger');
+                btn.addEventListener('click', () => {
+                    // Close all other collapsibles
+                    document.querySelectorAll('.sidebar-collapsible').forEach(other => {
+                        if (other !== col) {
+                            other.classList.remove('open');
+                        }
+                    });
+                    // Toggle current
+                    col.classList.toggle('open');
+                });
+            });
+        });
+    </script>
+</body>
+<!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <!-- Scroll Reveal & Lenis Init -->
+  <script src="js/scroll-reveal.js"></script>
+</html>

@@ -1,0 +1,3093 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';">
+  <meta name="description"
+    content="premium Store from trusted global brands at Blue Ember Store. Find energy-efficient refrigerators, washers, air conditioners, microwaves and more with expert installation and support.">
+  <meta name="keywords"
+    content="Store, refrigerators, washing machines, air conditioners, microwaves, dishwashers, energy efficient appliances, appliance store">
+  <meta name="author" content="Blue Ember Store">
+  <link rel="icon" type="image/png" href="assets/favicon.png" style="border-radius: 50%;">
+  <title>Blue Ember Store - Premium Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="universal.css" rel="stylesheet">
+  <link href="home.css" rel="stylesheet">
+  <link href="darkmode.css" rel="stylesheet">
+  <link href="navbar.css" rel="stylesheet">
+  <link href="chatbot.css" rel="stylesheet">
+  <script src="js/chatbot.js" defer></script>
+  <link href="mobile-sidebar.css" rel="stylesheet">
+  <script src="https://unpkg.com/finisher-header@1.0.0/dist/finisher-header.es5.min.js"></script>
+  <link rel="stylesheet" href="product.css">
+  <link rel="stylesheet" href="brands-premium.css">
+
+  <!-- Preload Boxicons CSS for faster loading - more effective than preloading font alone -->
+  <link rel="preload" href='https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css' as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link href='https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  </noscript>
+
+  <script src="js/cart.js" defer></script>
+  <script src="js/order-manager.js" defer></script>
+  <script src="js/cart-manager.js" defer></script>
+  <script src="js/cookie-manager.js" defer></script>
+  <link rel="stylesheet" href="css/cookie-consent.css">
+  <script src="js/navigation.js" defer></script>
+  <script src="js/dollar-font.js" defer></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/search-integration.js"></script>
+  <script src="js/darkmode.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/db-client.js"></script>
+
+  <!-- Auth UI Manager (handles user authentication UI state) -->
+  <script src="js/auth.js"></script>
+
+  <!-- Logout Modal Script (MUST load first to avoid conflicts) -->
+  <script src="js/logout-modal.js"></script>
+
+  <script src="js/profile-dropdown.js" defer></script>
+  <script src="js/logout-injector.js" defer></script>
+  <script src="js/scroll-reveal.js" defer></script>
+  <!-- Universal Navbar Script -->
+  <script src="js/navbar-universal.js"></script>
+  <link href="RESPONSIVENESS.css" rel="stylesheet">
+  <link href='https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <style>
+    .add-to-cart-btn.added {
+      pointer-events: none;
+      transform: scale(1.02);
+      padding: 10px;
+      border-radius: 30px;
+      border: none !important;
+      box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+      font-weight: bold;
+    }
+
+    #wishlist-toggle {
+      position: static !important;
+    }
+
+    :ROOT {
+      --fade-amount: 40%;
+    }
+
+    /* Media query for max-width: 700px - Space for manual editing */
+    @media (max-width: 700px) {
+      .hero-images .hero-img {
+        height: 285PX;
+        POSITION: RELATIVE;
+        TOP: -13PX;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-images .hero-img {
+        height: 270PX;
+        POSITION: RELATIVE;
+        TOP: -30PX;
+      }
+
+      body {
+        padding: 0px;
+      }
+
+      .search-container::before,
+      .search-container::after {
+        inset: -2px !important;
+      }
+
+      .search-input {
+        margin: 0px -35px 0px 0px !important;
+      }
+
+      .search-button {
+        right: -8px !important;
+      }
+
+      .search-button i {
+        padding: 8px 19px 8px 19px !important;
+      }
+    }
+
+    /* --- Animated Search Bar Styles --- */
+    /* Define the Angle Property for smooth rotation */
+    @property --angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    /* The Animated RGB Border & Glow */
+    .search-container::before,
+    .search-container::after {
+      content: '';
+      position: absolute;
+      /* Negative inset controls border thickness */
+      inset: -3px;
+      border-radius: 50px;
+      z-index: -1;
+      /* YOUR SPECIFIC COLORS */
+      background: conic-gradient(from var(--angle), #0099ff, #0099ff, #01e8bc, #01e8bc, #0099ff);
+      /* Start Hidden */
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Special Blur for the Shadow (::after) */
+    .search-container::after {
+      filter: blur(25px);
+      z-index: -2;
+    }
+
+    /* Animation Triggers (Hover AND Click/Focus) */
+    /* When Hovering OR When Input is Focused (Clicked) */
+    .search-container:hover::before,
+    .search-container:hover::after,
+    .search-container:focus-within::before,
+    .search-container:focus-within::after {
+      opacity: 1;
+      animation: spin-clockwise 10s linear infinite;
+    }
+
+    /* The Input Field */
+    .search-input {
+      height: 100%;
+      border: none;
+      outline: none;
+      position: relative;
+      z-index: 501;
+      background: #ffffff;
+      border-radius: 50px;
+      margin: 0px -30px 0px 0px;
+      padding: 0 15px 0 15px;
+      font-size: 18px;
+      color: #000000;
+      box-shadow: inset 0 0 0 1px #000000;
+      transition: box-shadow 0.3s ease;
+
+
+    }
+
+    .search-input::placeholder {
+      color: #008080;
+      /* Teal Placeholder */
+      opacity: 0.7;
+    }
+
+    /* Hide the static Teal border when the animated border is active */
+    .search-container:hover .search-input,
+    .search-container:focus-within .search-input {
+      box-shadow: inset 0 0 0 0 transparent;
+    }
+
+    /* Search Icon */
+    .search-button {
+      position: relative;
+      right: -6px;
+      width: 103px;
+      height: 65px;
+      pointer-events: auto;
+      background: #0099ff;
+      border: none;
+      padding: 16px 19px 15px 40px;
+    }
+
+    .search-button i {
+      fill: #008080;
+      margin: 16px;
+      padding: 11px 22px 11px 22px;
+      align-self: center;
+      border-radius: 25px;
+      display: table;
+      background: #ffffff8a;
+      transition: color 0.3s ease;
+    }
+
+    /* Make icon black when typing */
+    .search-container:focus-within .search-button i {
+      color: #000000;
+    }
+
+    /* The Animation Keyframes */
+    @keyframes spin-clockwise {
+      0% {
+        --angle: 0deg;
+      }
+
+      100% {
+        --angle: 360deg;
+      }
+    }
+
+    /* Override existing search-container styles */
+    .search-container {
+      position: relative;
+      width: 400px;
+      min-width: 200px;
+      height: 50px;
+      border-radius: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      padding: 0;
+      /* Remove existing padding */
+    }
+
+    .search-container form {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    @media (max-width: 480px) {
+      .navbar-logo {
+        width: 75px !important;
+        height: 5px !important;
+        scale: 1 !important;
+      }
+
+      .search-container {
+        height: 44px !important;
+        width: 220px;
+        display: none;
+      }
+
+      .search-input {
+        padding: 0 15px 0 10px !important;
+      }
+    }
+
+    /* Mobile Dropdown */
+    .mobile-dropdown-item {
+      position: relative;
+
+      &::after {
+        box-shadow: inset 0 0 0 1px red !important;
+      }
+
+      &::before {
+        background: red;
+        box-shadow: inset 0 0 0 1px #ffffff !important;
+      }
+
+      &:hover::before {
+        box-shadow: inset 0 0 0 1px #ffffff !important;
+      }
+    }
+
+    .mobile-dropdown {
+      display: none;
+      list-style: none;
+      padding-left: 0;
+      margin: 8px 0 0;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.9s ease-in-out;
+    }
+
+    .mobile-dropdown-item.active .mobile-dropdown {
+      display: block;
+      transition: max-height 0.9s ease-in-out;
+      max-height: 500px;
+    }
+
+    /* Enhanced Split Button & Dropdown Theme */
+    .split-button {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    }
+
+    .split-button.single-toggle-action:before {
+      transform: scaleX(1.015) scaleY(1.035) perspective(1px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+      transition: transform .2s cubic-bezier(.345, .115, .135, 1.42), opacity .15s ease-out;
+    }
+
+    .split-button:hover {
+      box-shadow: 0 8px 15px rgba(0, 153, 255, 0.15) !important;
+      border-color: rgba(0, 153, 255, 0.3);
+      transform: translateY(-1px);
+
+      .split-button-content {
+        color: #0064e7 !important;
+      }
+
+      .split-button-content i {
+        color: #0099ff !important;
+      }
+    }
+
+    .split-button-right {
+      border-left: 1px solid rgba(0, 0, 0, 0.06);
+      position: relative;
+      overflow: hidden;
+      color: #1e293b;
+    }
+
+    .split-button-right::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #0099ff, #00c11b);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 0;
+    }
+
+    .split-button-right:hover::before {
+      opacity: 0.1;
+    }
+
+    .split-button-right i {
+      z-index: 1;
+      position: relative;
+      transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+
+    .split-button-right:hover i {
+      color: #0099ff;
+    }
+
+    /* Update for Single Toggle Button */
+    .split-button.single-toggle-action {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0;
+    }
+
+    .split-button.single-toggle-action:active {
+      transform: scale(0.98);
+    }
+
+    .split-button-content {
+      display: flex;
+      align-items: center;
+      padding: 10px 0px 10px 6px;
+      flex-grow: 1;
+      font-weight: bold;
+      color: #1e293b;
+      gap: 0px;
+    }
+
+    .split-button-content i {
+      color: #8f8e8e;
+      font-size: 13px;
+    }
+
+    .split-button-icon {
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+
+    /* Remove the split border */
+    .split-button.single-toggle-action .split-button-right,
+    .split-button.single-toggle-action .split-button-icon {
+      border-left: none;
+      background: transparent;
+    }
+
+    /* Hover effect for the whole button */
+    .split-button.single-toggle-action:hover {
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    /* Rotate icon when expanded */
+    .split-button.single-toggle-action[aria-expanded="true"] .split-button-icon i {
+      transform: rotate(180deg);
+    }
+
+    /* Ensure existing split-button styles don't conflict */
+    .split-button.single-toggle-action .split-button-content {
+      cursor: pointer;
+    }
+
+    /* Desktop Dropdown Specifics */
+    @media (min-width: 993px) {
+      .navbar .mobile-dropdown {
+        position: absolute;
+        top: 56px;
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+        width: 200px;
+        background: rgb(255 255 255);
+        backdrop-filter: blur(20px);
+        border-radius: 19px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+        padding: 10px;
+        opacity: 0;
+        visibility: hidden;
+        overflow: visible;
+        display: block !important;
+        max-height: none !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1100;
+      }
+
+      .navbar .mobile-dropdown-item.active .mobile-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      .navbar .mobile-dropdown::before {
+        content: '';
+        position: absolute;
+        top: -16px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 32px;
+        height: 32px;
+        background-color: #ffffff;
+        /* Curved 4-point star (Sparkle) shape using SVG mask */
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0C12 8 20 12 24 12C20 12 12 20 12 24C12 20 4 12 0 12C4 12 12 8 12 0Z'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0C12 8 20 12 24 12C20 12 12 20 12 24C12 20 4 12 0 12C4 12 12 8 12 0Z'/%3E%3C/svg%3E");
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        /* Use drop-shadow filter since mask clips box-shadow */
+        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+        clip-path: none;
+        mix-blend-mode: darken;
+        box-shadow: none;
+      }
+
+      .navbar .mobile-dropdown li {
+        margin: 0;
+      }
+
+      .navbar .mobile-dropdown a {
+        background: transparent;
+        color: #334155;
+        font-weight: 500;
+        padding: 10px 15px;
+        border-radius: 10px;
+        text-align: left;
+        border: none;
+        display: block;
+      }
+
+      .navbar .mobile-dropdown a:hover {
+        background: rgba(0, 153, 255, 0.08);
+        color: #0099ff;
+        padding-left: 20px;
+      }
+    }
+
+    .profile-dropdown-container {
+      list-style: none;
+      position: absolute !important;
+      top: 10vh;
+      right: 72px;
+      z-index: 1000;
+      background: white;
+      border-radius: 20px;
+      padding: 0px;
+      box-shadow: 0px 24px 25px -2px rgba(0, 0, 0, 0.1);
+      display: none;
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    .profile-dropdown-container.active {
+      display: block;
+    }
+
+    .profile-dropdown-container.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Force inner dropdown to be visible and static within the container */
+    .profile-dropdown-container .profile-dropdown {
+      position: static;
+      opacity: 1;
+      border-radius: 20px;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      overflow: hidden;
+      background: transparent;
+      padding: 0;
+      width: 100%;
+      min-width: 260px;
+    }
+
+    .profile-dropdown-list {
+      justify-items: flex-start;
+      padding-top: 5px;
+    }
+
+    .profile-dropdown-divider {
+      border: 1px solid #80808038;
+    }
+
+    .profile-icon-btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid #33333367;
+      background: grey;
+
+    }
+
+    .profile-icon-placeholder {
+      color: #ffffff;
+      font-size: 20px;
+      margin: 10px;
+    }
+
+
+
+    /* Profile Dropdown Header Styles */
+    .profile-header {
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile-name {
+      font-weight: 600;
+      color: #333;
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    .profile-email {
+      color: #666;
+      font-size: 13px;
+      margin: 4px 0 0 0;
+      line-height: 1.2;
+    }
+
+    /* Dark Mode Overrides */
+    body.dark-mode .profile-header {
+      border-bottom-color: var(--dm-border, #444);
+    }
+
+    body.dark-mode .profile-name {
+      color: var(--dm-text-primary, #fff);
+    }
+
+    /* Dark Mode Overrides */
+    body.dark-mode .profile-header {
+      border-bottom-color: var(--dm-border, #444);
+    }
+
+    body.dark-mode .profile-name {
+      color: var(--dm-text-primary, #fff);
+    }
+
+    body.dark-mode .profile-email {
+      color: var(--dm-text-secondary, #aaa);
+    }
+
+    /* Profile Image Modal Styles */
+    .profile-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+
+      transition: opacity 1s ease;
+    }
+
+    .profile-modal-overlay.show {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .profile-image-displaying-window {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.8);
+      z-index: 1001;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 1s ease, transform 1s ease;
+      width: 90%;
+      height: 90%;
+      border-radius: 12px;
+    }
+
+
+    @media (max-width: 768px) {
+      .profile-image-displaying-window {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.8);
+        z-index: 1001;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 1s ease, transform 1s ease;
+        width: 100%;
+      }
+    }
+
+    .profile-image-displaying-window.show {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .profile-modal-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.2s ease;
+      transform-origin: center center;
+    }
+
+    /* Prevent body scroll when modal is open */
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    /* Profile Modal Close Button */
+    .profile-modal-close-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+      z-index: 1003;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-modal-close-btn:hover {
+      background: rgba(255, 255, 255, 1);
+    }
+
+    /* Dark mode for close button */
+    body.dark-mode .profile-modal-close-btn {
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+    }
+
+    body.dark-mode .profile-modal-close-btn:hover {
+      background: rgba(0, 0, 0, 1);
+    }
+
+    /* Added for Profile Image in Dropdown Header */
+    #dropdownHeaderImg {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid #ddd;
+    }
+
+    /* Mobile Sidebar Profile Styles */
+    .header-profile {
+      display: none;
+      /* Hidden by default */
+      align-items: center;
+      gap: 6px;
+      padding: 15px 0px 15px 4px;
+      cursor: pointer;
+      scale: 1.05;
+      border-radius: 8px;
+      transition: background-color 0.2s;
+      width: 100%;
+    }
+
+
+    .header-profile:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+      /* Subtle hover */
+    }
+
+    body.dark-mode .header-profile:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    #navbar-avatar-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #0099ff;
+      /* Branded border */
+    }
+
+    .header-profile .user-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .header-profile .user-name {
+      font-weight: 600;
+      font-size: 16px;
+      color: #333;
+      line-height: 1.2;
+    }
+
+    body.dark-mode .header-profile .user-name {
+      color: #fff;
+    }
+
+    .header-profile .user-email {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.2;
+    }
+
+    body.dark-mode .header-profile .user-email {
+      color: #bbb;
+    }
+
+    /* Ensure Dropdown is above sidebar */
+    .profile-dropdown-container {
+      z-index: 2100 !important;
+      /* Higher than typical mobile menu z-index */
+    }
+
+    .thebigthree-btns-wrapper {
+      display: flex;
+      align-items: center;
+      border-radius: 50px;
+      border: 1px solid #414141;
+      padding: 0px 4px 0px 0px;
+    }
+
+
+    /* --- Main Card Container --- */
+    .newsletter {
+      width: 100%;
+      max-width: 1101px;
+      background: var(--card-bg);
+      border-radius: 40px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      place-self: center;
+      scale: 0.9;
+      top: -35px;
+      box-shadow: 21px 41px 46px #18181b36, -21px -41px 46px 0px #fff;
+    }
+
+    /* --- Left Side (Visuals) --- */
+    /* Simulating the 3D graphic area from the screenshot */
+    .newsletter-visual {
+      flex: 1;
+      background: linear-gradient(135deg, #e0e7ff 0%, #f0f4ff 100%);
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 350px;
+    }
+
+    .newsletter-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      /* If you don't have the 3D image, this ensures it looks clean */
+      mix-blend-mode: multiply;
+    }
+
+    /* --- Right Side (Content) --- */
+    .newsletter-container {
+      flex: 1;
+      padding: 40px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: var(--text-main);
+      margin-bottom: 15px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    /* --- Form Styling --- */
+    .newsletter-form {
+      display: flex;
+      flex-direction: row;
+      /* Default stacked matching the screenshot */
+      gap: 12px;
+      width: 100%;
+    }
+
+    /* Input Styling */
+    .input-group {
+      position: relative;
+      width: 100%;
+    }
+
+    .input-group i {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #9ca3af;
+    }
+
+    .newsletter-form input {
+      width: 100%;
+      padding: 16px 20px 16px 50px;
+      /* Space for icon */
+      border: none;
+      border-radius: 50px;
+      background-color: var(--input-bg);
+      font-size: 1rem;
+      outline: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .newsletter-form input:focus {
+      box-shadow: 0 4px 20px rgba(118, 123, 245, 0.2);
+    }
+
+    /* Button Styling */
+    .btn-container {
+      --btn-color: #0099ff;
+      --corner-color: #0002;
+      --corner-dist: 24px;
+      --corner-multiplier: 1.5;
+      --timing-function: cubic-bezier(0, 0, 0, 2.5);
+      --duration: 250ms;
+
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .submit {
+      position: relative;
+      width: auto;
+      min-height: calc(var(--corner-dist) * 2);
+      border-radius: 16px;
+      border: none;
+      padding: 0.25em 1em;
+
+      background: linear-gradient(#fff2, #0001), var(--btn-color);
+      box-shadow:
+        1px 1px 2px -1px #fff inset,
+        0 2px 1px #00000010,
+        0 4px 2px #00000010,
+        0 8px 4px #00000010,
+        0 16px 8px #00000010,
+        0 32px 16px #00000010;
+
+      transition:
+        transform var(--duration) var(--timing-function),
+        filter var(--duration) var(--timing-function);
+      -webkit-transition:
+        transform var(--duration) var(--timing-function),
+        -webkit-filter var(--duration) var(--timing-function);
+
+      cursor: pointer;
+    }
+
+
+    .btn-container:has(.submit:hover),
+    .btn-container:has(.submit:focus-visible) {
+      .submit {
+        filter: drop-shadow(0 16px 16px #0002);
+        -webkit-filter: drop-shadow(0 16px 16px #0002);
+      }
+    }
+
+
+    .btn-container:has(.submit:active) {
+      .submit {
+        transform: scale(0.95);
+        box-shadow: 0px 0px 0px 0px #000;
+        filter: drop-shadow(0 10px 4px #0002);
+        -webkit-filter: drop-shadow(0 10px 4px #0002);
+      }
+    }
+
+    /* Privacy Note */
+    .privacy-note {
+      font-size: 0.75rem;
+      margin-top: 20px;
+      margin-bottom: 0;
+      color: #9ca3af;
+    }
+
+    /* --- RESPONSIVE LOGIC --- */
+
+    /* Tablet: Stack Card vertically, but keep form standard */
+    @media (max-width: 850px) {
+      .newsletter {
+        flex-direction: row;
+        max-width: fit-content;
+      }
+
+      .newsletter-visual {
+        min-height: 200px;
+      }
+
+      .newsletter-container {
+        padding: 50px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .newsletter-container {
+        padding: 25px;
+      }
+
+      .newsletter {
+        scale: 0.9;
+        top: -10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .newsletter-form {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .newsletter-visual img {
+        width: 50%;
+      }
+
+      .newsletter {
+        flex-direction: column;
+        scale: 0.9;
+        top: -50px;
+      }
+
+      .input-group {
+        flex: 1;
+        /* Input takes available space */
+      }
+
+      .newsletter-form button {
+        width: auto;
+        /* Button shrinks to content */
+        padding: 16px 20px;
+      }
+
+      /* Hide button text on small screens if needed to fit,
+         or just the icon. keeping strictly flex-row here. */
+      .btn-text {
+        white-space: nowrap;
+      }
+    }
+
+    @media (max-width: 401px) {
+
+
+      .newsletter-form button {
+        width: 100%;
+        /* Full width again */
+      }
+    }
+
+
+    /* --- SPINNER CSS (Keeping Intact) --- */
+    /* Hiding the spinner container by default, toggle via JS typically.
+       For this demo, we layout it inside the button but hidden or overlayed. */
+    .custom-spinner {
+      display: none;
+      /* Set to block when loading */
+      margin-left: 10px;
+    }
+
+    /* To show spinner for demo purposes, you can uncomment below: */
+    /* .custom-spinner { display: block; } .btn-text { display: none; } */
+
+    .spinner {
+      font-size: 20px;
+      position: relative;
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+    }
+
+    .spinner-blade {
+      position: absolute;
+      left: 0.4629em;
+      bottom: 0;
+      width: 0.074em;
+      height: 0.2777em;
+      border-radius: 0.0555em;
+      background-color: transparent;
+      transform-origin: center -0.2222em;
+      animation: spinner-fade 1s infinite linear;
+    }
+
+    .spinner-blade:nth-child(1) {
+      animation-delay: 0s;
+      transform: rotate(0deg);
+      background-color: white;
+    }
+
+    .spinner-blade:nth-child(2) {
+      animation-delay: 0.083s;
+      transform: rotate(30deg);
+      background-color: white;
+    }
+
+    .spinner-blade:nth-child(3) {
+      animation-delay: 0.166s;
+      transform: rotate(60deg);
+      background-color: white;
+    }
+
+    .spinner-blade:nth-child(4) {
+      animation-delay: 0.249s;
+      transform: rotate(90deg);
+      background-color: white;
+    }
+
+    .spinner-blade:nth-child(5) {
+      animation-delay: 0.332s;
+      transform: rotate(120deg);
+      background-color: white;
+    }
+
+    .spinner-blade:nth-child(6) {
+      animation-delay: 0.415s;
+      transform: rotate(150deg);
+      background-color: white;
+    }
+
+    .spinner-blade:nth-child(7) {
+      animation-delay: 0.498s;
+      transform: rotate(180deg);
+      background-color: white;
+    }
+
+    .spinner-blade:nth-child(8) {
+      animation-delay: 0.581s;
+      transform: rotate(210deg);
+      background-color: white;
+    }
+
+    .spinner-blade:nth-child(9) {
+      animation-delay: 0.664s;
+      transform: rotate(240deg);
+      background-color: white;
+    }
+
+    .spinner-blade:nth-child(10) {
+      animation-delay: 0.747s;
+      transform: rotate(270deg);
+      background-color: white;
+    }
+
+    .spinner-blade:nth-child(11) {
+      animation-delay: 0.83s;
+      transform: rotate(300deg);
+      background-color: white;
+    }
+
+    .spinner-blade:nth-child(12) {
+      animation-delay: 0.913s;
+      transform: rotate(330deg);
+      background-color: white;
+    }
+
+    @keyframes spinner-fade {
+      0% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0.25;
+      }
+    }
+
+    /* Dark mode styles for newsletter */
+    body.dark-mode .form-control,
+    body.dark-mode input,
+    body.dark-mode select,
+    body.dark-mode textarea {
+      background: var(--dm-bg-tertiary);
+      border-color: var(--dm-border);
+      color: var(--dm-text-primary);
+    }
+
+
+
+
+    /* Animated Signup Button Styles */
+    .button {
+      all: unset;
+      position: relative;
+      display: inline-flex;
+      height: 2.5rem;
+      align-items: center;
+      border-radius: 9999px;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      font-family: Segoe UI;
+      font-size: 1.2rem;
+      font-weight: 640;
+      color: #ffffff;
+      letter-spacing: -0.06em;
+      cursor: pointer;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      height: min-content;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: stretch;
+      border: 1px solid #a9a9a96b;
+    }
+
+    .button-item {
+      background-color: transparent;
+      color: #000000;
+    }
+
+    .button-item .button-bg {
+      border-color: rgb(255, 255, 255);
+      background-color: rgb(255, 255, 255);
+    }
+
+    .button-inner,
+    .button-inner-hover,
+    .button-inner-static {
+      pointer-events: none;
+      display: block;
+    }
+
+    .button-inner {
+      position: relative;
+    }
+
+    .button-inner-hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transform: translateY(70%);
+    }
+
+    .button-bg {
+      overflow: hidden;
+      border-radius: 2rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: scale(1);
+      transition: transform 1.8s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .button-bg,
+    .button-bg-layer,
+    .button-bg-layers {
+      display: block;
+    }
+
+    .button-bg-layers {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+      top: -60%;
+      aspect-ratio: 1 / 1;
+      width: max(200%, 10rem);
+    }
+
+    .button-bg-layer {
+      border-radius: 9999px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: scale(0);
+    }
+
+    .button-bg-layer.-purple {
+      background-color: rgb(26, 80, 255);
+    }
+
+    .button-bg-layer.-turquoise {
+      background-color: rgb(9, 255, 218);
+    }
+
+    .button-bg-layer.-yellow {
+      --tw-bg-opacity: 1;
+      background: linear-gradient(45deg, rgb(3, 226, 255), rgb(0, 89, 255));
+    }
+
+    .button:hover .button-inner-static {
+      opacity: 0;
+      transform: translateY(-70%);
+      transition:
+        transform 1.4s cubic-bezier(0.19, 1, 0.22, 1),
+        opacity 0.3s linear;
+    }
+
+    .button:hover .button-inner-hover {
+      opacity: 1;
+      transform: translateY(0);
+      transition:
+        transform 1.4s cubic-bezier(0.19, 1, 0.22, 1),
+        opacity 1.4s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .button:hover .button-bg-layer {
+      transition:
+        transform 1.3s cubic-bezier(0.19, 1, 0.22, 1),
+        opacity 0.3s linear;
+    }
+
+    .button:hover .button-bg-layer-1 {
+      transform: scale(1);
+    }
+
+    .button:hover .button-bg-layer-2 {
+      transition-delay: 0.1s;
+      transform: scale(1);
+    }
+
+    .button:hover .button-bg-layer-3 {
+      transition-delay: 0.2s;
+      transform: scale(1);
+    }
+
+
+
+    .logout-confirm-btn::before {
+      content: '';
+      width: -webkit-fill-available !important;
+      height: -webkit-fill-available;
+      border-radius: inherit;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(to right, #b70000 0%, #ff3333 100%);
+      transition: .5s ease;
+      display: block;
+      z-index: -1;
+    }
+
+    .logout-confirm-btn:hover::before {
+      width: 11em;
+    }
+
+
+    .viewbrands {
+      width: 175px;
+      height: 50px;
+      margin: 10px 0 40px;
+      place-self: center;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 4px;
+      background: linear-gradient(45deg, #00ceff, #00ff5b);
+      border-radius: 30px;
+      color: rgb(19, 19, 19);
+      font-weight: 600;
+      border: none;
+      font-size: 16px;
+      position: relative;
+      cursor: pointer;
+      transition-duration: .2s;
+      box-shadow: 0px 5px 10px rgb(0 0 0 / 22%);
+      padding-left: 4px;
+      transition-duration: .5s;
+    }
+
+    .viewbrands:hover {
+      scale: 1.1;
+    }
+
+    .svgIcon {
+      height: 42px;
+      transition-duration: 1.5s;
+    }
+
+    .bell path {
+      fill: rgb(19, 19, 19);
+    }
+
+    .viewbrands:hover {
+      background-color: rgb(192, 255, 20);
+      transition-duration: .5s;
+    }
+
+    .viewbrands:active {
+      transform: scale(0.97);
+      transition-duration: .2s;
+    }
+
+    .viewbrands:hover .svgIcon {
+      transform: rotate(250deg);
+      transition-duration: 1.5s;
+    }
+
+    /* Navigation Links Hover Effect - Radial Expanding Background */
+    .split-button.single-toggle-action,
+    .navbar a {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .split-button.single-toggle-action::before,
+    .navbar a::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      background-color: #ccebff;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+      transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      z-index: -1;
+    }
+
+    .split-button.single-toggle-action:hover::before,
+    .navbar a:hover::before {
+      transform: translate(-50%, -50%) scale(2);
+      opacity: 1;
+    }
+
+    /* Dark mode - same color for expanding background */
+    body.dark-mode .split-button.single-toggle-action::before,
+    body.dark-mode .navbar a::before {
+      background-color: #ccebff;
+      transition: all 1.1s cubic-bezier(0.04, 0.86, 0, 1.08);
+    }
+
+    /* Ensure text and icons stay above the background */
+    .split-button-content,
+    .split-button-icon,
+    .navbar a {
+      position: relative;
+      z-index: 1;
+    }
+
+    #main-nav-link {
+      background-color: transparent !important;
+      padding: 3px !important;
+    }
+
+    /* --- MOBILE PILL NAVBAR INTEGRATION --- */
+    @media (max-width: 768px) {
+
+      /* --- SEARCH BAR OVERLAY --- */
+      #mobilePillSearchBar {
+        position: fixed;
+        bottom: 90px;
+        /* Adjusted to be above navbar */
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
+        width: 85%;
+        background: rgb(39, 39, 39);
+        border-radius: 50px;
+        padding: 6px 6px 6px 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        z-index: 999;
+      }
+
+      #mobilePillSearchBar.active {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+        pointer-events: all;
+      }
+
+      #mobilePillSearchBar input {
+        border: none;
+        outline: none;
+        width: 100%;
+        font-size: 14px;
+        border-radius: 30px;
+        padding: 15px 0px 15px 10px;
+        background: transparent;
+      }
+
+      /* --- THE NAVBAR --- */
+      #mobilePillNavbar {
+        position: fixed;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #ffffff;
+        padding: 5px;
+        border-radius: 50px;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        align-items: center;
+        gap: 0px;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        z-index: 999;
+        /* Higher priority */
+      }
+
+      #mobilePillNavbar .nav-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 45px;
+        padding: 0 15px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        color: #888;
+        overflow: hidden;
+      }
+
+      #mobilePillNavbar .nav-item ion-icon {
+        font-size: 22px;
+        min-width: 22px;
+        transition: color 0.3s;
+        color: #232323;
+      }
+
+      #mobilePillNavbar .nav-text {
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap;
+        max-width: 0;
+        opacity: 0;
+        margin-left: 0;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        transition: all 0.4s ease;
+      }
+
+      #mobilePillNavbar .nav-item.active {
+        background-color: #232323;
+        color: #ffffff;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        padding: 22px 0px 22px 12px;
+      }
+
+      #mobilePillNavbar .nav-item.active ion-icon {
+        color: #ffffff;
+      }
+
+      #mobilePillNavbar .nav-item.active .nav-text {
+        max-width: 100px;
+        opacity: 1;
+        margin-left: 10px;
+      }
+    }
+
+    /* Hide on Desktop */
+    @media (min-width: 769px) {
+
+      #mobilePillNavbar,
+      #mobilePillSearchBar {
+        display: none !important;
+      }
+    }
+
+
+    .partner-logo-slider {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      position: relative;
+      padding: 20px 0;
+    }
+
+    body.dark-mode .partner-logo-slider:before {
+      background: linear-gradient(to right, #18181b 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    body.dark-mode .partner-logo-slider:after {
+      background: linear-gradient(to left, #18181b 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    .partner-logo-slider:before {
+      content: "";
+      background: linear-gradient(to right, #f6f6f6 0%, rgba(255, 255, 255, 0) 100%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 120px;
+      height: 100%;
+      z-index: 9;
+    }
+
+    .partner-logo-slider:after {
+      content: "";
+      background: linear-gradient(to left, #f6f6f6 0%, rgba(255, 255, 255, 0) 100%);
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 120px;
+      height: 100%;
+      z-index: 9;
+    }
+
+    .partner-logo-slide {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: partner-logo-scroll-desktop 60s linear infinite;
+      width: fit-content;
+    }
+
+    /* Ensure wrapper doesn't break layout */
+    .logo-slide-wrapper {
+      display: flex;
+      align-items: center;
+      gap: inherit;
+    }
+
+    @keyframes partner-logo-scroll-desktop {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        /* Use the same dynamic distance for desktop */
+        transform: translateX(var(--move-distance, -50%));
+      }
+    }
+
+    .partner-logo-slide:hover {
+      animation-play-state: paused;
+    }
+
+    .partner-logo-slide img {
+      width: 180px;
+      height: 120px;
+      border: 1px solid #b2b2b2;
+      padding: 15px;
+      border-radius: 10px;
+      object-fit: contain;
+      background: #ffffff;
+      flex-shrink: 0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .partner-logo-slide img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    @keyframes partner-logo-scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        /* Move by one original content width for seamless loop */
+        transform: translateX(var(--move-distance, -50%));
+      }
+    }
+
+    /* Mobile optimizations */
+    @media (max-width: 480px) {
+      .partner-logo-slide {
+        animation: partner-logo-scroll-mobile 20s linear infinite;
+        /* 1.25x speed (60s / 1.25 = 48s) */
+        gap: 20px;
+      }
+
+      .partner-logo-slide img {
+        width: 140px;
+        height: 90px;
+        padding: 10px;
+      }
+    }
+
+    @keyframes partner-logo-scroll-mobile {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        /* Use the same dynamic distance for mobile */
+        transform: translateX(var(--move-distance, -50%));
+      }
+    }
+
+    /* Tablet optimization (481px to 768px) */
+    @media (min-width: 481px) and (max-width: 768px) {
+      .partner-logo-slide {
+        animation: partner-logo-scroll-tablet 60s linear infinite;
+        /* 1x speed */
+        gap: 30px;
+      }
+
+      .partner-logo-slide img {
+        width: 160px;
+        height: 100px;
+        padding: 12px;
+      }
+    }
+
+    @keyframes partner-logo-scroll-tablet {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        /* Use the same dynamic distance for tablet */
+        transform: translateX(var(--move-distance, -50%));
+      }
+    }
+
+    @media only screen and (max-width: 1025px) {
+      .partner-logo-slide {
+        gap: 5px;
+      }
+
+      .partner-logo-slide img {
+        height: 90px;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .partner-logo-slide img {
+        height: 90px;
+      }
+
+      .viewbrands {
+        scale: 0.8;
+      }
+    }
+
+    .input-group .input {
+      font-size: 1rem;
+      border: 1.5px solid #000;
+      border-radius: 14px;
+      box-shadow: 2.5px 3px 0 #000;
+      outline: none;
+      transition: ease 0.25s;
+    }
+
+    .input-group .input:focus {
+      box-shadow: 5.5px 7px 0 black;
+    }
+
+    body.dark-mode .newsletter {
+      box-shadow: none;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <nav>
+    <div class="navbar-container">
+      <a href="index.html" aria-label="Navigate to home page">
+        <div class="navbar-logo">
+          <img src="assets/BlueEmber-ezgif.com-gif-maker.gif" alt="Blue Ember animated logo"
+            style="width: 30px;height: auto;">
+          <span>
+            <h6 style="color: #0099ff;font-size: large;margin: 0px 0px -6px 0px;">BLUE</h6>
+            <h6 style="color: #000000;font-size: large;margin: 0px 0px -6px 0px;">EMBER</h6>
+          </span>
+        </div>
+      </a>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <form action="search-results.html" method="GET" id="searchForm">
+          <input type="search" class="search-input" id="searchInput" name="q" placeholder="Search..."
+            aria-label="Search products">
+          <button type="submit" class="search-button" aria-label="Search">
+            <i class='bx  bx-search-big'></i>
+          </button>
+        </form>
+      </div>
+
+
+      <div class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <div class="cart-icon-cont-0">
+        <div class="cart-link">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count" id="cart-count">0</span>
+        </div>
+      </div>
+      <!-- Main navigation menu -->
+      <ul class="navbar">
+        <li class="mobile-dropdown-item" id="main-nav-link">
+          <div class="split-button single-toggle-action">
+            <div class="split-button-content">
+              <i class='bx  bx-menu'></i>
+              Categories
+            </div>
+            <div class="split-button-icon">
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+          </div>
+          <ul class="mobile-dropdown">
+            <li><a href="product2.html">Toys</a></li>
+            <li><a href="product2.html">Supplyments</a></li>
+            <li><a href="product2.html">Beauty</a></li>
+            <li><a href="product2.html">HomeGoods</a></li>
+          </ul>
+        </li>
+        <li class="mobile-dropdown-item" id="main-nav-link">
+          <div class="split-button single-toggle-action">
+            <div class="split-button-content">
+              <i class="fa-solid fa-building"></i>
+              Brands
+            </div>
+            <div class="split-button-icon">
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+          </div>
+          <ul class="mobile-dropdown">
+            <li><a href="samsung-productpage.html">Samsung</a></li>
+            <li><a href="LG-productpage.html">LG</a></li>
+            <li><a href="Whirlpool-productpage.html">Whirlpool</a></li>
+            <li><a href="BOSCH-productpage.html">Bosch</a></li>
+            <li><a href="Revlon-productpage.html">Revlon</a></li>
+            <li><a href="Toys-r-us-productpage.html">Toys R Us</a></li>
+          </ul>
+        </li>
+        <li style="display: none;"><a href="product2.html">Product</a></li>
+        <li><a href="compare.html" style="display: none;"><i class='bx  bxs-compare'></i> Compare</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <!-- Profile Dropdown -->
+
+        <div class="profile-dropdown-container" id="profileDropdownContainer" style="display: none;">
+          <div class="profile-dropdown" id="profileDropdown">
+            <!-- Profile Header Added by Fix -->
+            <div class="profile-header">
+              <img src="assets/profilepreview.jpg" alt="User" id="dropdownHeaderImg">
+              <div class="profile-info">
+                <p id="profileDropdownName" class="profile-name">Guest</p>
+                <p id="profileDropdownEmail" class="profile-email">Please log in</p>
+              </div>
+            </div>
+            <div class="profile-dropdown-divider"></div>
+
+            <ul class="profile-dropdown-list">
+              <li>
+                <a href="profile.html" class="profile-dropdown-item">
+                  <i class="fa-regular fa-user"></i>
+                  <span>Profile</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="profile-dropdown-item">
+                  <i class="fa-regular fa-comments"></i>
+                  <span>Purchases & Reviews</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="account.html" class="profile-dropdown-item">
+                  <i class="fa-solid fa-toggle-off"></i>
+                  <span>Account Settings</span>
+                </a>
+              </li>
+            </ul>
+            <div class="profile-dropdown-divider"></div>
+            <ul class="profile-dropdown-list">
+              <li>
+                <a href="Contact.html" class="profile-dropdown-item">
+                  <i class="fa-regular fa-circle-question"></i>
+                  <span>Help center</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="profile-dropdown-item" id="nav-dropdown-logout">
+                  <i class="fas fa-sign-out-alt"></i>
+                  <span>Logout</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        </li>
+        <div class="thebigthree-btns-wrapper" style="display: flex; align-items: center;">
+          <li id="dark-mode-li" style="display: flex; align-items: center; margin:0 !important;"></li>
+          <!-- Wishlist Button -->
+          <div class="wishlist-icon-container" id="wishlist-toggle">
+            <div class="wishlist-link">
+              <i class='bx bx-heart'></i>
+              <span class="wishlist-count">0</span>
+            </div>
+          </div>
+          <!-- Cart icon moved OUTSIDE the main navbar list, the profile button is by default stays displayed none until signed up, when client log out, the profile button will be displayed none -->
+          <button class="profile-icon-btn" id="profileIconBtn" aria-label="Open profile menu"
+            style="display: none; align-items: center;">
+            <img src="assets/profilepreview.jpg" alt="Profile" id="profileIconImg" class="profile-icon-img">
+            <i class="fa-solid fa-user profile-icon-placeholder"></i>
+          </button>
+          <li class="thebigthree-login/signup-btn">
+            <button class="button button-item" id="signupNavBtn">
+              <span class="button-bg">
+                <span class="button-bg-layers">
+                  <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+                  <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+                  <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+                </span>
+              </span>
+              <span class="button-inner">
+                <span class="button-inner-static">SignUp</span>
+                <span class="button-inner-hover" style="color: #ffffff;">SignUp</span>
+              </span>
+            </button>
+
+
+
+          </li>
+          <div class="cart-icon-container cart-link">
+            <div class="cart-link">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="cart-count">0</span>
+            </div>
+          </div>
+        </div>
+
+
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Cart Popup Overlay -->
+  <div class="cart-popup-overlay" id="cart-overlay"></div>
+
+  <!-- Cart Popup -->
+  <div class="cart-popup" id="cart-popup">
+    <div class="cart-header">
+      <h3><i class="fa-solid fa-cart-shopping me-2"></i> Your Shopping Cart <span id="cart-item-count">(0)</span></h3>
+      <button class="cart-close" id="cart-close"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-items" id="cart-items-container">
+      <!-- Cart items will be populated here dynamically -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+      <button class="checkout-btn" id="checkout-btn" disabled>
+        <span class="payment-icon"></span>Proceed to Checkout</button>
+      <button class="continue-btn" id="continue-btn"><i class="fa-solid fa-arrow-left me-2"></i>Continue
+        Shopping</button>
+    </div>
+  </div>
+
+  <!-- Wishlist Popup Overlay -->
+  <div class="wishlist-overlay" id="wishlist-overlay"></div>
+
+  <!-- Wishlist Popup -->
+  <div class="wishlist-popup" id="wishlist-popup">
+    <div class="cart-header" style="background: linear-gradient(150deg, #ff4b2b, #ff416c);">
+      <h3><i class='bx bxs-heart me-2'></i> My Wishlist</h3>
+      <button class="cart-close" id="wishlist-close"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-items" id="wishlist-items-container">
+      <!-- Wishlist items will be populated here dynamically -->
+    </div>
+    <div class="cart-footer">
+      <button class="continue-btn" id="wishlist-continue" style="background-color: #ff4b2b;"><i
+          class="fa-solid fa-arrow-left me-2"></i>Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- Mobile Sidebar Menu (Redesigned) -->
+  <div class="mobile-menu" id="mobileMenu">
+
+    <!-- 1. Header: Brand or User Profile -->
+    <div class="sidebar-header" id="sidebarHeader">
+      <!-- Default State: Brand Logo -->
+      <div class="header-brand default-brand" id="sidebarBrand">
+        <div class="navbar-logo">
+          <img src="assets/BlueEmber-ezgif.com-gif-maker.gif" alt="Blue Ember animated logo"
+            style="width: 30px;height: auto;">
+          <span>
+            <h6 style="color: #0099ff;font-size: large;margin: 0px 0px -6px 0px;">BLUE</h6>
+            <h6 style="color: #000000;font-size: large;margin: 0px 0px -6px 0px;">EMBER</h6>
+          </span>
+        </div>
+      </div>
+
+      <!-- User State (Logged In) -->
+      <div class="header-profile" id="sidebarProfileContainer">
+        <img src="assets/profilepreview.jpg" alt="Profile" id="navbar-avatar-img">
+        <div class="user-info">
+          <span class="user-name" id="sidebarUserName">User Name</span>
+          <span class="user-email" id="sidebarUserEmail">email@example.com</span>
+        </div>
+        <i class='bx  bx-chevron-down'></i>
+      </div>
+
+      <!-- Close Button -->
+      <button class="close-btn" id="closeBtn" aria-label="Close menu"
+        style="right: -19px;padding: inherit;display: flex;position: relative;">
+        <i class='bx  bx-caret-big-left'></i>
+      </button>
+
+
+      <!-- Mobile Specific Profile Dropdown (Floating) -->
+      <div class="mobile-profile-dropdown" id="mobileProfileDropdown" style="display: none;">
+
+        <div class="mobile-dropdown-items">
+          <a href="profile.html" class="mobile-dropdown-item mobile-item-links">
+            <i class="fa-regular fa-user"></i> Profile
+          </a>
+          <a href="account.html" class="mobile-dropdown-item mobile-item-links">
+            <i class="fa-solid fa-toggle-off"></i> Account Settings
+          </a>
+          <a href="purchases.html" class="mobile-dropdown-item mobile-item-links">
+            <i class="fa-regular fa-comments"></i> Purchases & Reviews
+          </a>
+          <a href="Contact.html" class="mobile-dropdown-item mobile-item-links">
+            <i class="fa-regular fa-circle-question"></i> Help Center
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Content: Navigation Links -->
+    <div class="sidebar-content">
+
+      <a href="index.html" class="sidebar-nav-item">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+
+      <!-- Collapsible: Categories -->
+      <div class="sidebar-collapsible" id="col-categories">
+        <button class="collapsible-trigger">
+          <div style="display:flex; align-items:center;">
+            <i class='bx  bx-categories'></i>
+            <span>Categories</span>
+          </div>
+          <i class="fa-solid fa-chevron-down chevron"></i>
+        </button>
+        <div class="collapsible-content">
+          <a href="product2.html" class="sub-link">Toys</a>
+          <a href="product2.html" class="sub-link">Supplyments</a>
+          <a href="product2.html" class="sub-link">Beauty</a>
+          <a href="product2.html" class="sub-link">HomeGoods</a>
+        </div>
+      </div>
+
+      <!-- Collapsible: Brands -->
+      <div class="sidebar-collapsible" id="col-brands">
+        <button class="collapsible-trigger">
+          <div style="display:flex; align-items:center;">
+            <i class="fa-solid fa-building trigger-icon"></i>
+            <span>Brands</span>
+          </div>
+          <i class="fa-solid fa-chevron-down chevron"></i>
+        </button>
+        <div class="collapsible-content">
+          <a href="samsung-productpage.html" class="sub-link">Samsung</a>
+          <a href="LG-productpage.html" class="sub-link">LG</a>
+          <a href="Whirlpool-productpage.html" class="sub-link">Whirlpool</a>
+          <a href="BOSCH-productpage.html" class="sub-link">Bosch</a>
+          <a href="Electrolux-productpage.html" class="sub-link">Revlon</a>
+          <a href="Apple-productpage.html" class="sub-link">Toys R Us</a>
+        </div>
+      </div>
+
+      <a href="product2.html" class="sidebar-nav-item">
+        <i class="fa-solid fa-tags"></i>
+        <span>Products</span>
+      </a>
+
+      <a href="Contact.html" class="sidebar-nav-item">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Contact Us</span>
+      </a>
+
+      <!-- Dynamic Cart Link -->
+      <li>
+        <a href="#" id="mobile-cart-link" class="mobile-cart-link">
+          <i class="fa-solid fa-cart-shopping me-2"></i>Shopping Cart
+        </a>
+      </li>
+
+      <!-- Mobile Wishlist Link -->
+      <li>
+        <a href="#" id="mobile-wishlist-link" class="mobile-wishlist-link">
+          <i class="fa-solid fa-heart"></i>Wishlist <span class="wishlist-count">(0)</span>
+        </a>
+      </li>
+
+      <!-- Login Link (Hidden if logged in) -->
+      <div id="sidebar-login-container">
+        <a href="login.html" class="sidebar-nav-item" id="sidebar-login-link">
+          <i class="fa-solid fa-right-to-bracket"></i>
+          <span>Login</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- 3. Footer: Settings / Logout -->
+    <div class="sidebar-footer" id="sidebarFooter">
+      <button id="mobile-theme-toggle" class="footer-btn">
+        <i class="fa-solid fa-moon"></i>
+        <span>Toggle Theme</span>
+      </button>
+
+      <!-- Logout will be injected here -->
+    </div>
+
+  </div>
+
+  <!-- Brands Container -->
+  <div class="brands-container">
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1 class="page-title">Premium Appliance Brands</h1>
+      <p class="page-subtitle">Discover the world's leading appliance manufacturers, all available at Blue Ember Store.
+        We partner with top global brands to bring you the latest in home appliance technology.</p>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="filter-section">
+      <h2 class="filter-title">Filter by Category</h2>
+      <div class="filter-options">
+        <button class="filter-btn active" data-category="all">All Brands</button>
+        <button class="filter-btn" data-category="refrigerators">Refrigerators</button>
+        <button class="filter-btn" data-category="washers">Washers & Dryers</button>
+        <button class="filter-btn" data-category="kitchen">Kitchen Appliances</button>
+        <button class="filter-btn" data-category="cooling">Cooling & Heating</button>
+        <button class="filter-btn" data-category="cleaning">Cleaning Appliances</button>
+      </div>
+    </div>
+
+    <!-- Brands Grid -->
+    <div class="brands-grid" id="brandsGrid">
+      <!-- Brand 1: LG -->
+      <div class="brand-card" data-category="refrigerators washers kitchen">
+        <div class="brand-image">
+          <img src="assets/download-removebg-preview.png" alt="LG Logo">
+        </div>
+        <div class="brand-info">
+          <h3 class="brand-name">LG Electronics</h3>
+          <p class="brand-country">South Korea</p>
+          <p class="brand-description">Innovative Store with cutting-edge technology including ThinQ AI,
+            InstaView, and TurboWash features.</p>
+          <div class="brand-stats">
+            <div class="stat-item">
+              <div class="stat-value">4.6</div>
+              <div class="stat-label">Rating</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">32+</div>
+              <div class="stat-label">Products</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">87%</div>
+              <div class="stat-label">Satisfaction</div>
+            </div>
+          </div>
+          <a href="LG-productpage.html" class="view-products">View Products</a>
+        </div>
+      </div>
+
+      <!-- Brand 2: Samsung -->
+      <div class="brand-card" data-category="refrigerators kitchen cooling">
+        <div class="brand-image">
+          <img src="assets/download__1_-removebg-preview.png" alt="Samsung Logo">
+        </div>
+        <div class="brand-info">
+          <h3 class="brand-name">Samsung</h3>
+          <p class="brand-country">South Korea</p>
+          <p class="brand-description">Premium appliances featuring Family Hub technology, Bespoke customization, and
+            smart home integration.</p>
+          <div class="brand-stats">
+            <div class="stat-item">
+              <div class="stat-value">4.5</div>
+              <div class="stat-label">Rating</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">28+</div>
+              <div class="stat-label">Products</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">85%</div>
+              <div class="stat-label">Satisfaction</div>
+            </div>
+          </div>
+          <a href="samsung-productpage.html" class="view-products">View Products</a>
+        </div>
+      </div>
+
+      <!-- Brand 3: Whirlpool -->
+      <div class="brand-card" data-category="washers cleaning">
+        <div class="brand-image">
+          <img src="assets/download__4_-removebg-preview.png" alt="Whirlpool Logo">
+        </div>
+        <div class="brand-info">
+          <h3 class="brand-name">Whirlpool</h3>
+          <p class="brand-country">United States</p>
+          <p class="brand-description">Reliable and durable appliances with innovative features like Load & Go
+            dispensers and intuitive controls.</p>
+          <div class="brand-stats">
+            <div class="stat-item">
+              <div class="stat-value">4.4</div>
+              <div class="stat-label">Rating</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">35+</div>
+              <div class="stat-label">Products</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">82%</div>
+              <div class="stat-label">Satisfaction</div>
+            </div>
+          </div>
+          <a href="Whirlpool-productpage.html" class="view-products">View Products</a>
+        </div>
+      </div>
+
+      <!-- Brand 4: Bosch -->
+      <div class="brand-card" data-category="kitchen cooling">
+        <div class="brand-image">
+          <img src="assets/download__5_-removebg-preview.png" alt="Bosch Logo">
+        </div>
+        <div class="brand-info">
+          <h3 class="brand-name">Bosch</h3>
+          <p class="brand-country">Germany</p>
+          <p class="brand-description">German-engineered appliances known for quiet operation, precision cooking, and
+            innovative dishwasher technology.</p>
+          <div class="brand-stats">
+            <div class="stat-item">
+              <div class="stat-value">4.7</div>
+              <div class="stat-label">Rating</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">22+</div>
+              <div class="stat-label">Products</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">89%</div>
+              <div class="stat-label">Satisfaction</div>
+            </div>
+          </div>
+          <a href="BOSCH-productpage.html" class="view-products">View Products</a>
+        </div>
+      </div>
+
+      <!-- Brand 5: Haier -->
+      <div class="brand-card" data-category="refrigerators washers">
+        <div class="brand-image">
+          <img src="assets/download__2_-removebg-preview.png" alt="Haier Logo">
+        </div>
+        <div class="brand-info">
+          <h3 class="brand-name">Haier</h3>
+          <p class="brand-country">China</p>
+          <p class="brand-description">Global leader in smart Store with innovative designs and
+            energy-efficient technologies.</p>
+          <div class="brand-stats">
+            <div class="stat-item">
+              <div class="stat-value">4.3</div>
+              <div class="stat-label">Rating</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">40+</div>
+              <div class="stat-label">Products</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">80%</div>
+              <div class="stat-label">Satisfaction</div>
+            </div>
+          </div>
+          <a href="Haier-productpage.html" class="view-products">View Products</a>
+        </div>
+      </div>
+
+      <!-- Brand 6: Panasonic -->
+      <div class="brand-card" data-category="kitchen cooling cleaning">
+        <div class="brand-image">
+          <img src="assets/download__3_-removebg-preview.png" alt="Panasonic Logo">
+        </div>
+        <div class="brand-info">
+          <h3 class="brand-name">Panasonic</h3>
+          <p class="brand-country">Japan</p>
+          <p class="brand-description">Japanese quality and innovation in Store featuring nanoeX technology
+            and advanced cooking systems.</p>
+          <div class="brand-stats">
+            <div class="stat-item">
+              <div class="stat-value">4.5</div>
+              <div class="stat-label">Rating</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">25+</div>
+              <div class="stat-label">Products</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">86%</div>
+              <div class="stat-label">Satisfaction</div>
+            </div>
+          </div>
+          <a href="Panasonic-productpage.html" class="view-products">View Products</a>
+        </div>
+      </div>
+
+      <!-- Brand 7: Electrolux -->
+      <div class="brand-card" data-category="kitchen cleaning">
+        <div class="brand-image">
+          <img src="assets/download__6_-removebg-preview.png" alt="Electrolux Logo">
+        </div>
+        <div class="brand-info">
+          <h3 class="brand-name">Electrolux</h3>
+          <p class="brand-country">Sweden</p>
+          <p class="brand-description">Premium Store designed for modern living with focus on sustainability
+            and innovation.</p>
+          <div class="brand-stats">
+            <div class="stat-item">
+              <div class="stat-value">4.4</div>
+              <div class="stat-label">Rating</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">30+</div>
+              <div class="stat-label">Products</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">84%</div>
+              <div class="stat-label">Satisfaction</div>
+            </div>
+          </div>
+          <a href="Electrolux-productpage.html" class="view-products">View Products</a>
+        </div>
+      </div>
+
+
+      <!-- Brand 9: Apple -->
+      <div class="brand-card" data-category="kitchen">
+        <div class="brand-image">
+          <img src="assets/download__9_-removebg-preview.png" alt="Apple Logo">
+        </div>
+        <div class="brand-info">
+          <h3 class="brand-name">Apple</h3>
+          <p class="brand-country">United States</p>
+          <p class="brand-description">Premium smart Store with seamless integration into Apple ecosystem and
+            HomeKit compatibility.</p>
+          <div class="brand-stats">
+            <div class="stat-item">
+              <div class="stat-value">4.8</div>
+              <div class="stat-label">Rating</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">8+</div>
+              <div class="stat-label">Products</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">92%</div>
+              <div class="stat-label">Satisfaction</div>
+            </div>
+          </div>
+          <a href="Apple-productpage.html" class="view-products">View Products</a>
+        </div>
+      </div>
+
+      <!-- Brand 10: Sony -->
+      <div class="brand-card" data-category="kitchen cooling">
+        <div class="brand-image">
+          <img src="assets/download__8_-removebg-preview.png" alt="Sony Logo">
+        </div>
+        <div class="brand-info">
+          <h3 class="brand-name">Sony</h3>
+          <p class="brand-country">Japan</p>
+          <p class="brand-description">Innovative Store with advanced technology and premium design for modern
+            kitchens.</p>
+          <div class="brand-stats">
+            <div class="stat-item">
+              <div class="stat-value">4.6</div>
+              <div class="stat-label">Rating</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">12+</div>
+              <div class="stat-label">Products</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">87%</div>
+              <div class="stat-label">Satisfaction</div>
+            </div>
+          </div>
+          <a href="Sony-productpage.html" class="view-products">View Products</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Brands -->
+    <div class="featured-section">
+      <h2 class="featured-title">Our Top Partner Brands</h2>
+      <div class="featured-brands">
+        <div class="featured-brand">
+          <img src="assets/download-removebg-preview.png" alt="LG">
+        </div>
+        <div class="featured-brand">
+          <img src="assets/download__1_-removebg-preview.png" alt="Samsung">
+        </div>
+        <div class="featured-brand">
+          <img src="assets/download__4_-removebg-preview.png" alt="Whirlpool">
+        </div>
+        <div class="featured-brand">
+          <img src="assets/download__5_-removebg-preview.png" alt="Bosch">
+        </div>
+        <div class="featured-brand">
+          <img src="assets/download__2_-removebg-preview.png" alt="Haier">
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Choose Section -->
+    <div class="why-choose">
+      <h2>Why Choose Blue Ember Store?</h2>
+      <p>We've built strong partnerships with the world's leading appliance brands to bring you the best selection,
+        competitive pricing, and expert support.</p>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 class="benefit-title">Authorized Dealers</h3>
+          <p class="benefit-desc">All our products are 100% genuine with full manufacturer warranties and support.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-truck"></i>
+          </div>
+          <h3 class="benefit-title">Free Delivery & Installation</h3>
+          <p class="benefit-desc">We offer professional delivery and installation services at no extra cost.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3 class="benefit-title">Expert Support</h3>
+          <p class="benefit-desc">Our appliance specialists are ready to help you choose the perfect products.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="showcase-title">Featured Products</h2>
+    <!-- Product Showcase -->
+    <div class="product-showcase">
+
+      <div class="product-grid">
+        <!-- LG Product -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/download (2).jfif" alt="LG Refrigerator">
+          </div>
+          <div class="product-details">
+            <h3 class="product-name">LG InstaView Door-in-Door Refrigerator</h3>
+            <p class="product-brand">LG Electronics</p>
+            <div class="product-price">$1,299.99</div>
+            <button class="btn btn-primary mt-2 add-to-cart-btn" data-product-id="61"
+              data-product-name="LG InstaView Door-in-Door Refrigerator" data-product-price="1299.99"
+              data-product-image="./assets/download (2).jfif">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Samsung Product -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/download (6).jfif" alt="Samsung Washer">
+          </div>
+          <div class="product-details">
+            <h3 class="product-name">Samsung Front Load Washer</h3>
+            <p class="product-brand">Samsung</p>
+            <div class="product-price">$849.99</div>
+            <button class="btn btn-primary mt-2 add-to-cart-btn" data-product-id="66"
+              data-product-name="Samsung Front Load Washer" data-product-price="849.99"
+              data-product-image="./assets/download (6).jfif">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Whirlpool Product -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/download (7).jfif" alt="Whirlpool Dishwasher">
+          </div>
+          <div class="product-details">
+            <h3 class="product-name">Whirlpool Dishwasher <br> advanced cleaning</h3>
+            <p class="product-brand">Whirlpool</p>
+            <div class="product-price">$699.99</div>
+            <button class="btn btn-primary mt-2 add-to-cart-btn" data-product-id="65"
+              data-product-name="Whirlpool Dishwasher advanced cleaning" data-product-price="699.99"
+              data-product-image="./assets/download (7).jfif">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Bosch Product -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/download (11).jfif" alt="Bosch Air Conditioner">
+          </div>
+          <div class="product-details">
+            <h3 class="product-name">Bosch Air Conditioner <br>High efficiency</h3>
+            <p class="product-brand">Bosch</p>
+            <div class="product-price">$549.99</div>
+            <button class="btn btn-primary mt-2 add-to-cart-btn" data-product-id="64"
+              data-product-name="Bosch Air Conditioner High efficiency" data-product-price="549.99"
+              data-product-image="./assets/download (11).jfif">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Haier Product -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/download (9).jfif" alt="Haier Microwave">
+          </div>
+          <div class="product-details">
+            <h3 class="product-name">Haier Microwave Oven</h3>
+            <p class="product-brand">Haier</p>
+            <div class="product-price">$129.99</div>
+            <button class="btn btn-primary mt-2 add-to-cart-btn" data-product-id="63"
+              data-product-name="Haier Microwave Oven" data-product-price="129.99"
+              data-product-image="./assets/download (9).jfif">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Panasonic Product -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/download (10).jfif" alt="Panasonic Cooktop">
+          </div>
+          <div class="product-details">
+            <h3 class="product-name">Panasonic Cooktop</h3>
+            <p class="product-brand">Panasonic</p>
+            <div class="product-price">$399.99</div>
+            <button class="btn btn-primary mt-2 add-to-cart-btn" data-product-id="62"
+              data-product-name="Panasonic Cooktop" data-product-price="399.99"
+              data-product-image="./assets/download (10).jfif">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- Brand Section -->
+      <div class="footer-section">
+        <div class="footer-logo"><a href="index.html">
+            <div class="navbar-logo"><img src="assets/BlueEmber-ezgif.com-gif-maker.gif" style="width: 30px;">
+              <SPAN>
+                <h6 style="color: #0099ff; font-size: large; margin: 0px 0px -6px 0px;">BLUE</h6>
+                <H6 style="color: #000000; font-size: large; margin: 0px 0px -6px 0px;">EMBER</H6>
+              </SPAN>
+            </div>
+          </a></div>
+        <p class="footer-tagline">Premium Store from trusted global brands. Serving customers since 2005.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="terms and services.html">Terms & Services</a></li>
+          <li><a href="privacy policy.html">Privacy Policy</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <li><a href="Refund and Exchange.html">Refund & Exchange</a></li>
+          <li><a href="About us .html">About Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Categories -->
+      <div class="footer-section">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="product2.html">Toys</a></li>
+          <li><a href="product2.html">Supplyments</a></li>
+          <li><a href="product2.html">Beauty</a></li>
+          <li><a href="product2.html">HomeGoods</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <ul>
+          <li>
+            <a>
+              <address>
+                <p><a href="https://maps.app.goo.gl/BGBAUvaKPHLhTqvh6">Hasbrouck Heights NJ 07604 USA</a>
+                </p>
+                <i class="fa-solid fa-phone-volume" style="color:rgb(0, 89, 255)"></i> +1 (800) 123-4567<br>
+                <i class="fa-solid fa-envelope" style="color:rgb(0, 89, 255)"></i> <a
+                  href="mailto:support@blue-ember.us">support@blue-ember.us</a>
+              </address>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Blue Ember Store. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="privacy policy.html">Privacy Policy</a> •
+        <a href="terms and services.html">Terms of Service</a> •
+      </div>
+      <!-- Footer Brand Watermark -->
+    <div class="footer-trending">
+      <span class="footer-trending-text">BLUE </span>
+      <span class="footer-trending-text">EMBER</span>
+    </div>
+    </div>
+
+    
+  </footer>
+
+
+
+
+  <!-- The Pill Navbar -->
+  <div class="mobnav" id="mobilePillNavbar">
+    <div class="nav-item" data-target="home" title="Home">
+      <ion-icon name="home-outline"></ion-icon>
+      <span class="nav-text"><a href="index.html"><i class='bx  bx-rotate-cw' title="Reload page"></i></a></span>
+    </div>
+
+    <div class="nav-item" data-target="search" title="Search">
+      <ion-icon name="search-outline"></ion-icon>
+      <span class="nav-text"><a href="#">Search</a></span>
+    </div>
+
+    <div class="nav-item signup-nav-item" data-target="signup" id="Hide/UnhideSignupBtn" title="Signup">
+      <a href="login.html">
+        <li class="thebigthree-login/signup-btn">
+          <button class="button button-itempill" id="signupNavBtnPill">
+            <span class="button-bg">
+              <span class="button-bg-layers">
+                <span class="button-bg-layer button-bg-layer-1 -purple"></span>
+                <span class="button-bg-layer button-bg-layer-2 -turquoise"></span>
+                <span class="button-bg-layer button-bg-layer-3 -yellow"></span>
+              </span>
+            </span>
+            <span class="button-inner">
+              <span class="button-inner-static">SignUp</span>
+              <span class="button-inner-hover" style="color: #ffffff;">SignUp</span>
+            </span>
+          </button>
+        </li>
+      </a>
+    </div>
+
+    <div class="nav-item" data-target="user" id="Hide/UnhideUserIcon" style="display: none;" title="Profile">
+      <ion-icon name="person-outline"></ion-icon>
+      <span class="nav-text"><a href="profile.html">User</a></span>
+    </div>
+
+    <div class="nav-item" data-target="shop" title="Shop">
+      <ion-icon name="storefront-outline"></ion-icon>
+      <span class="nav-text"><a href="product2.html">Shop</a></span>
+    </div>
+
+    <div class="nav-item" data-target="chatbot" style="padding:22px;" title="Chat with us">
+      <button id="chat-bubble-btn" class="chat-bubble-btn" aria-label="Chat with us">
+        <ion-icon name="chatbubbles-outline"></ion-icon>
+        <span class="feature-badge" id="chat-badge-1" style="display:none"><i class='bx bx-sparkles'></i></span>
+      </button>
+    </div>
+  </div>
+
+
+
+  <abbr title="Chat with us">
+    <button id="chat-bubble-btn-two" class="chat-bubble-btn" aria-label="Chat with us">
+      <ion-icon name="chatbubbles-outline"></ion-icon>
+      <span class="feature-badge" id="chat-badge-2" style="display:none"><i class='bx bx-sparkles'></i></span>
+    </button>
+  </abbr>
+  <div id="chat-window" class="chat-window">
+
+    <!-- Header -->
+    <div class="chat-header">
+      <div class="header-brand">
+        <div class="wrapper" style="overflow: unset;margin: -5px;contain: layout;">
+          <button class="icon-btn" id="emberSidebarToggle">
+            <i class='bx bx-menu'><span class="feature-badge" id="sidebar-toggle-badge" style="display:none"><i
+                  class='bx bx-sparkles'></i></span></i>
+            <span class="feature-badge" id="sidebar-toggle-badge" style="display:none"><i
+                class='bx bx-sparkles'></i></span>
+          </button>
+        </div>
+        <div class="header-brand">
+          <!-- From Uiverse.io by dexter-st -->
+          <div class="loader-wrapper-chatbot-avatar">
+            <span STYLE="FONT-FAMILY:'FontAwesome';z-index:1">E</span>
+            <div class="loader-chatbot-avatar"></div>
+          </div>
+
+          <span class="header-title">Chatbase AI Agent</span>
+        </div>
+      </div>
+      <button class="icon-btn" id="emberMenuToggle"><i class='bx bx-dots-horizontal-rounded'></i></button>
+    </div>
+
+    <!-- Dropdown Menu -->
+    <div id="emberDropdown" class="dropdown-menu">
+      <button class="menu-item" onclick="EmberCore.startNewChat()"><i class='bx bx-plus'></i> Start a new chat</button>
+      <button class="menu-item" onclick="EmberCore.endChat()"><i class='bx bx-x'></i> End chat</button>
+      <button class="menu-item" onclick="EmberCore.showRecentChats()"><i class='bx bx-history'></i> View recent
+        chats</button>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="emberSidebar" class="sidebar">
+      <h4 style="color:var(--text-main); margin-top:0;">Menu</h4>
+
+      <button class="menu-item" onclick="EmberCore.switchView('notifications')">
+        <i class='bx bx-bell'></i> Notifications
+        <span class="notification-badge" style="display:none"></span>
+      </button>
+
+      <button class="menu-item" onclick="EmberCore.switchView('settings')">
+        <i class='bx bx-cog'></i> Settings
+      </button>
+
+      <button class="menu-item" onclick="EmberCore.switchView('whatsnew')">
+        <i class='bx bx-party'></i> What's new in v2.8
+        <span class="feature-badge" id="whatsnew-sidebar-badge" style="display:none"><i
+            class='bx bx-sparkles'></i></span>
+      </button>
+
+      <button class="menu-item" onclick="EmberCore.switchView('chat')">
+        <i class='bx  bx-arrow-s-left'></i> Back to Chat
+      </button>
+    </div>
+
+    <!-- Drag & Drop Overlay -->
+    <div id="emberDropZone" class="drop-overlay">
+      <i class='bx bx-cloud-upload' style="font-size: 48px; color: var(--text-sub);"></i>
+      <h3 style="color: var(--text-main); margin: 10px 0;">Drop file to upload</h3>
+    </div>
+
+    <!-- VIEW: CHAT -->
+    <div id="view_chat" class="view-container active">
+
+      <div id="emberChatBody" class="chat-body">
+        <!-- Messages Injected Here -->
+      </div>
+
+      <!-- Footer Section -->
+      <div class="footer-wrapper">
+
+
+
+
+        <!-- Privacy Toast -->
+        <div id="privacyToast" class="privacy-toast">
+          <span>By chatting, you agree to our <u style="cursor:pointer">privacy policy</u>.</span>
+          <i class='bx bx-x' style="font-size:16px; cursor:pointer;"
+            onclick="this.parentElement.classList.add('closing')"></i>
+        </div>
+
+        <div class="preview-of-file-upload-before-send" id="preview-window-2A">
+          <p>Images Uploaded in Chat are Temporary & Deleted after Web reloads.</p>
+          <!-- Preview of File Upload Before Send, edit structure if something a miss -->
+        </div>
+        <!-- Emoji window moved to floating position outside chat -->
+
+        <!-- Input Card -->
+        <div class="input-card">
+          <div id="emberInput" class="chat-input" contenteditable="true" placeholder="Message..."></div>
+
+          <div class="input-actions">
+            <input type="file" id="emberFileInput" class="hidden" multiple onchange="EmberCore.handleFileUpload(this)">
+
+            <!-- Paperclip -->
+            <button class="action-btn" title="Attach File" onclick="document.getElementById('emberFileInput').click()">
+              <i class='bx bx-paperclip'></i>
+            </button>
+
+            <!-- Emojis -->
+            <button class="action-btn" id="emoji-trigger" title="Emojis">
+              <i class='bx bx-smile'></i>
+            </button>
+
+            <!-- Send -->
+            <button id="emberSendBtn" class="action-btn" style="color:var(--text-main);">
+              <i class='bx bx-send'></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW: NOTIFICATIONS -->
+    <div id="view_notifications" class="view-container">
+      <div class="list-view-content">
+        <h3 class="list-header">Notifications</h3>
+        <div class="list-item">
+          <span style="font-weight:600; font-size:14px;">System Update</span>
+          <span style="font-size:12px; color:var(--text-sub);">We have updated our privacy policy.</span>
+        </div>
+        <div class="list-item">
+          <span style="font-weight:600; font-size:14px;">New Feature</span>
+          <span style="font-size:12px; color:var(--text-sub);">Drag and drop file upload is now available!</span>
+        </div>
+        <button class="menu-item" onclick="EmberCore.switchView('chat')" style="margin-top:20px">
+          <i class='bx  bx-arrow-s-left'></i> Back
+        </button>
+      </div>
+    </div>
+
+    <!-- VIEW: SETTINGS -->
+    <div id="view_settings" class="view-container">
+      <div class="list-view-content">
+        <h3 class="list-header">Settings</h3>
+        <div
+          style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; color:var(--text-main);">
+          <span>Dark Mode</span>
+          <input type="checkbox" id="darkModeToggle" onchange="EmberCore.toggleDarkMode(this.checked)">
+        </div>
+        <button class="menu-item" style="color:red" onclick="localStorage.clear(); location.reload();">
+          <i class='bx bx-trash'></i> Clear Data
+        </button>
+        <button class="menu-item" onclick="EmberCore.switchView('chat')">
+          <i class='bx  bx-arrow-s-left'></i> Back
+        </button>
+      </div>
+    </div>
+
+    <!-- VIEW: WHAT'S NEW -->
+    <div id="view_whatsnew" class="view-container">
+      <div class="list-view-content">
+        <h3 class="list-header">What's New in v2.8</h3>
+        <div class="whatsnew-content" style="padding: 15px 0; color: var(--text-main);">
+          <div class="whatsnew-item" style="margin-bottom: 25px;">
+            <h4 style="color: var(--text-main); margin: 0 0 8px 0; font-size: 16px; font-weight: 600;">
+              <i class='bx bx-party' style="color: #ff6b6b; margin-right: 8px;"></i>
+              Enhanced Chatbot Features
+            </h4>
+            <p
+              style="color: var(--text-sub); margin: 0; font-size: 13.5px; line-height: 1.5; font-weight: 400; letter-spacing: -0.2px;">
+              Introducing our most intelligent assistant yet. With a beautifully refined interface and deep
+              architectural improvements, the new chatbot feels more human, more responsive, and more capable. It's not
+              just a chat; it's a seamless extension of your workflow, designed to understand you better with every
+              interaction.
+            </p>
+          </div>
+
+          <div class="whatsnew-item" style="margin-bottom: 25px;">
+            <h4 style="color: var(--text-main); margin: 0 0 8px 0; font-size: 16px; font-weight: 600;">
+              <i class='bx bx-sync' style="color: #4facfe; margin-right: 8px;"></i>
+              Smart Sync Technology
+            </h4>
+            <p
+              style="color: var(--text-sub); margin: 0; font-size: 13.5px; line-height: 1.5; font-weight: 400; letter-spacing: -0.2px;">
+              Your experience, synchronized. Whether you're switching between pages or opening a new tab, your chat
+              history and state now travel with you. Experience a truly unified interface where your data is always
+              exactly where you left it.
+            </p>
+          </div>
+
+          <div class="whatsnew-item" style="margin-bottom: 25px;">
+            <h4 style="color: var(--text-main); margin: 0 0 8px 0; font-size: 16px; font-weight: 600;">
+              <i class='bx bx-palette' style="color: #f093fb; margin-right: 8px;"></i>
+              Elegance in Every Pixel
+            </h4>
+            <p
+              style="color: var(--text-sub); margin: 0; font-size: 13.5px; line-height: 1.5; font-weight: 400; letter-spacing: -0.2px;">
+              A stunning new dark mode and retina-ready visuals designed to be as easy on the eyes as they are elegant.
+              Every animation and shadow has been meticulously tuned for a buttery-smooth, premium feel.
+            </p>
+          </div>
+
+          <div class="whatsnew-item" style="margin-bottom: 20px;">
+            <h4 style="color: var(--text-main); margin: 0 0 8px 0; font-size: 16px;">
+              <i class='bx bx-search' style="color: #4ecdc4; margin-right: 8px;"></i>
+              Advanced Search Features
+            </h4>
+            <p style="color: var(--text-sub); margin: 0; font-size: 14px; line-height: 1.4;">
+              Real-time product filtering and improved search functionality across all product pages.
+            </p>
+          </div>
+
+          <div class="whatsnew-item" style="margin-bottom: 20px;">
+            <h4 style="color: var(--text-main); margin: 0 0 8px 0; font-size: 16px;">
+              <i class='bx bx-mobile' style="color: #45b7d1; margin-right: 8px;"></i>
+              Mobile Experience Improvements
+            </h4>
+            <p style="color: var(--text-sub); margin: 0; font-size: 14px; line-height: 1.4;">
+              Enhanced mobile navigation, improved responsive design, and better touch interactions.
+            </p>
+          </div>
+
+          <div class="whatsnew-item" style="margin-bottom: 20px;">
+            <h4 style="color: var(--text-main); margin: 0 0 8px 0; font-size: 16px;">
+              <i class='bx bx-bell' style="color: #f9ca24; margin-right: 8px;"></i>
+              Smart Notifications
+            </h4>
+            <p style="color: var(--text-sub); margin: 0; font-size: 14px; line-height: 1.4;">
+              Intelligent notification system for order updates, promotions, and important announcements.
+            </p>
+          </div>
+
+          <div class="whatsnew-item">
+            <h4 style="color: var(--text-main); margin: 0 0 8px 0; font-size: 16px;">
+              <i class='bx bx-shield' style="color: #6c5ce7; margin-right: 8px;"></i>
+              Enhanced Security
+            </h4>
+            <p style="color: var(--text-sub); margin: 0; font-size: 14px; line-height: 1.4;">
+              Improved authentication system and better data protection for user accounts.
+            </p>
+          </div>
+        </div>
+        <button class="menu-item" onclick="EmberCore.switchView('chat')" style="margin-top: 20px;">
+          <i class='bx bx-arrow-s-left'></i> Back to Chat
+        </button>
+      </div>
+    </div>
+
+    <!-- VIEW: RECENT CHATS -->
+    <div id="view_recent" class="view-container">
+      <div class="list-view-content">
+        <h3 class="list-header">Recent Chats</h3>
+        <div id="emberHistoryList" style="display:flex; flex-direction:column;"></div>
+        <button class="menu-item" onclick="EmberCore.switchView('chat')">
+          <i class='bx  bx-arrow-s-left'></i> Back
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Floating Draggable Emoji Window -->
+  <div id="emoji-window-2B" class="Emoji-container emoji-floating-window">
+    <div class="emoji-window-header">
+      <span class="emoji-window-title">Emojis</span>
+      <div class="emoji-drag-handle" title="Drag to move">
+        <i class='bx bx-apps'></i>
+      </div>
+      <button class="emoji-close-btn" title="Close">
+        <i class='bx bx-x'></i>
+      </button>
+    </div>
+    <div class="emoji-window-body">
+      <!-- Populated by JavaScript for extreme content & performance -->
+    </div>
+  </div>
+
+  <!-- Lightbox Modal for Image Gallery -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <span class="lightbox-close" onclick="event.stopPropagation(); EmberCore.closeLightbox()">
+      <i class='bx bx-x'></i>
+    </span>
+    <img id="lightbox-img" class="lightbox-content" src="" alt="">
+    <p id="lightbox-caption" class="lightbox-caption"></p>
+  </div>
+
+  <!-- Report Modal -->
+  <div id="report-modal" class="report-modal">
+    <div class="report-modal-content" onclick="event.stopPropagation()">
+      <div class="report-modal-header">
+        <h3>Report</h3>
+        <button class="report-close-btn" onclick="event.stopPropagation(); EmberCore.closeReportModal()">
+          <i class='bx bx-x'></i>
+        </button>
+      </div>
+      <div class="report-modal-body">
+        <div class="report-options">
+          <div class="report-column">
+            <label class="report-option">
+              <input type="radio" name="report-reason" value="threats">
+              <span>Threats & Harassment</span>
+            </label>
+            <label class="report-option">
+              <input type="radio" name="report-reason" value="false">
+              <span>False Statements</span>
+            </label>
+            <label class="report-option">
+              <input type="radio" name="report-reason" value="nsfw">
+              <span>NSFW</span>
+            </label>
+            <label class="report-option">
+              <input type="radio" name="report-reason" value="exploitation">
+              <span>Child Exploitation</span>
+            </label>
+            <label class="report-option">
+              <input type="radio" name="report-reason" value="terrorism">
+              <span>Terrorism & Extremism</span>
+            </label>
+            <label class="report-option">
+              <input type="radio" name="report-reason" value="drugs">
+              <span>Drug Transactions</span>
+            </label>
+            <label class="report-option">
+              <input type="radio" name="report-reason" value="impersonation">
+              <span>Impersonation</span>
+            </label>
+          </div>
+          <div class="report-column">
+            <label class="report-option">
+              <input type="radio" name="report-reason" value="violence">
+              <span>Excessive Violence</span>
+            </label>
+            <label class="report-option">
+              <input type="radio" name="report-reason" value="hate">
+              <span>Hate Speech</span>
+            </label>
+            <label class="report-option">
+              <input type="radio" name="report-reason" value="harassment">
+              <span>Sexual Harassment</span>
+            </label>
+            <label class="report-option">
+              <input type="radio" name="report-reason" value="self-harm">
+              <span>Self Harm</span>
+            </label>
+            <label class="report-option">
+              <input type="radio" name="report-reason" value="illegal">
+              <span>Illegal Activities</span>
+            </label>
+            <label class="report-option">
+              <input type="radio" name="report-reason" value="privacy">
+              <span>Invading Privacy</span>
+            </label>
+            <label class="report-option">
+              <input type="radio" name="report-reason" value="spam">
+              <span>Commercial Spam</span>
+            </label>
+          </div>
+        </div>
+        <div class="report-details">
+          <label>Additional details</label>
+          <textarea id="report-details-input" placeholder="Describe the issue in further detail"></textarea>
+        </div>
+      </div>
+      <div class="report-modal-footer">
+        <button class="report-cancel-btn"
+          onclick="event.stopPropagation(); EmberCore.closeReportModal()">Cancel</button>
+        <button class="report-submit-btn" onclick="event.stopPropagation(); EmberCore.submitReport()">Submit</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    // Brand filtering functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const brandCards = document.querySelectorAll('.brand-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        // Update active button
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+
+        const category = this.getAttribute('data-category');
+
+        // Filter brand cards
+        brandCards.forEach(card => {
+          if (category === 'all' || card.getAttribute('data-category').includes(category)) {
+            // Show: remove inline display so CSS flex takes over
+            card.style.removeProperty('display');
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          } else {
+            // Hide: use setProperty with important to override CSS !important
+            card.style.setProperty('display', 'none', 'important');
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.95)';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+ <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <!-- Scroll Reveal & Lenis Init -->
+  <script src="js/scroll-reveal.js"></script>
+</html>

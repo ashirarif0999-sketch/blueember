@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blue Ember - Order Concierge</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#111827", // Black for primary actions as requested
+                        "primary-hover": "#374151",
+                        "background-light": "#EEF1F6", 
+                        "background-dark": "#0B1120",
+                        "surface-dark": "#161E2E",
+                        "surface-light": "#FFFFFF",
+                        "soft-pink": "#FFF1F2",
+                        "soft-blue": "#F0F9FF",
+                        "soft-green": "#F0FDF4",
+                        "soft-purple": "#FAF5FF",
+                        "soft-orange": "#FFF7ED",
+                        "soft-mint": "#ECFDF5",
+                        "soft-peach": "#FFF5F5",
+                        "soft-lavender": "#F5F3FF",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                        '3xl': '2rem',
+                        'card': '16px', // Strict 16px radius
+                    },
+                    boxShadow: {
+                        'soft': '5px 5px 10px #D1D9E6, -5px -5px 10px #ffffff',
+                        'deep-soft': '0 20px 40px -10px rgba(0,0,0,0.08), 0 0 15px rgba(0,0,0,0.03)',
+                        'inner': 'inset 5px 5px 10px #D1D9E6, inset -5px -5px 10px #ffffff',
+                        'lift': '0 10px 30px -5px rgba(0,0,0,0.1)',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'sound-wave': 'wave 1.2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        wave: {
+                            '0%, 100%': { height: '20%' },
+                            '50%': { height: '80%' },
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+<style>
+        .compact-hub-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        @media (min-width: 1024px) {
+            .compact-hub-grid {
+                grid-template-columns: 1.5fr 1fr 1fr;grid-template-rows: auto auto; 
+                gap: 1.25rem;
+            }
+            .hub-hero { 
+                grid-column: 1 / 2; 
+                grid-row: 1 / 3; 
+            }.hub-features { 
+                grid-column: 2 / 3; 
+                grid-row: 1 / 2; 
+            }
+            .hub-categories { 
+                grid-column: 3 / 4; 
+                grid-row: 1 / 2; 
+            }.hub-recommendation { 
+                grid-column: 2 / 4; 
+                grid-row: 2 / 3; 
+            }
+        }
+        .soft-card-base {
+            background-color: #FAFAFA;border-radius: 16px;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.08);
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+        .gradient-blue-soft {
+            background: linear-gradient(135deg, #F0F9FF 0%, #FAFAFA 100%);
+        }
+        .gradient-green-soft {
+            background: linear-gradient(135deg, #F0FDF4 0%, #FAFAFA 100%);
+        }
+        .gradient-purple-soft {
+            background: linear-gradient(135deg, #FAF5FF 0%, #FAFAFA 100%);
+        }
+        .gradient-peach-vibrant {
+            background: linear-gradient(135deg, #FECACA 0%, #FDE68A 100%);}
+        .pastel-tile-mint { background-color: #ECFDF5; }
+        .pastel-tile-peach { background-color: #FFF5F5; }
+        .pastel-tile-lavender { background-color: #F5F3FF; }
+        .neumo-card {
+            background: #EEF1F6;
+            border-radius: 16px;
+            box-shadow: 8px 8px 16px #D1D9E6, -8px -8px 16px #ffffff;
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+        .neumo-card-inset {
+            background: #EEF1F6;
+            border-radius: 12px;
+            box-shadow: inset 5px 5px 10px #D1D9E6, inset -5px -5px 10px #ffffff;
+        }
+        .soft-pill {
+            background: #EEF1F6;
+            box-shadow: 4px 4px 8px #D1D9E6, -4px -4px 8px #ffffff;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-700 dark:text-gray-200 transition-colors duration-300">
+<nav class="sticky top-0 z-50 bg-[#EEF1F6]/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-2">
+<div class="text-2xl font-bold tracking-tight text-gray-800 dark:text-white flex flex-col leading-none">
+<span class="text-blue-600 text-sm uppercase">Blue</span>
+<span>EMBER</span>
+</div>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<div class="relative">
+<input class="bg-[#EEF1F6] dark:bg-surface-dark border-none rounded-full py-2 px-4 text-sm shadow-[inset_3px_3px_6px_#D1D9E6,inset_-3px_-3px_6px_#ffffff] focus:ring-0 w-64 text-gray-700 dark:text-white placeholder-gray-400" placeholder="Search products..." type="text"/>
+<span class="absolute right-3 top-2 text-gray-400 material-icons-outlined text-sm">search</span>
+</div>
+<button class="text-sm font-medium hover:text-blue-600 text-gray-600 dark:text-gray-300">Categories</button>
+<button class="text-sm font-medium hover:text-blue-600 text-gray-600 dark:text-gray-300">Brands</button>
+<button class="text-sm font-medium hover:text-blue-600 text-gray-600 dark:text-gray-300">Concierge</button>
+</div>
+<div class="flex items-center space-x-4">
+<button class="p-2 rounded-full soft-pill text-gray-500">
+<span class="material-icons-outlined text-xl">dark_mode</span>
+</button>
+<button class="p-2 rounded-full soft-pill text-gray-500 relative">
+<span class="material-icons-outlined text-xl">shopping_cart</span>
+<span class="absolute top-0 right-0 h-4 w-4 bg-red-400 rounded-full text-[10px] flex items-center justify-center text-white shadow-sm">2</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<div class="relative bg-[#EEF1F6] h-[300px] flex items-center justify-center overflow-hidden"><div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-transparent z-10"></div><div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80')] opacity-10 bg-cover bg-center mix-blend-overlay"></div><div class="text-center z-20"><div class="inline-flex items-center gap-1.5 bg-blue-600 text-white px-3 py-1 rounded-full text-[10px] font-bold mb-4 shadow-md uppercase tracking-wider"><i class="bx bxs-zap"></i><span>Limited Time Offer</span></div><h1 class="text-5xl md:text-6xl font-bold text-gray-800 mb-4 tracking-tight" style="text-shadow: 0 2px 10px rgba(0,0,0,0.1);">BLUE EMBER</h1><p class="text-xl text-gray-500 font-light tracking-wide">Smart Living for Modern Homes</p></div></div>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+<section>
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-2xl font-bold text-gray-800">Featured Products</h2>
+<a class="text-blue-600 hover:text-blue-400 text-sm flex items-center bg-white px-4 py-2 rounded-full shadow-soft hover:shadow-lg transition-all" href="#">View all products <span class="material-icons-outlined text-sm ml-1">chevron_right</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="neumo-card p-6">
+<div class="relative mb-6 neumo-card-inset p-6 flex items-center justify-center h-48">
+<span class="absolute top-3 right-3 p-2 bg-[#EEF1F6] rounded-full shadow-soft cursor-pointer text-red-400 hover:text-red-500">
+<span class="material-icons-outlined text-sm">favorite</span>
+</span>
+<img alt="Refrigerator" class="max-h-full object-contain mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbpCYudtlLKrgKVQPJrvfNZJjJi38xIMlri9zHL_7inGHTCY1wFCCGNwbVu1p0mCA1FfIcBZXDhRy-JDrWnkpjKbkUnBnt4a_TZo735Q6y3ogtZffJSvSKUi2zNK6Prhp0ZZuH4DCYB4hnmVFCKa1B_XBAFDZ1BcHFtZwkLOaECuVJ0bA5hxlpXAlNN5SO5_9StSZyNJXB6SV3YMzFmiDmCYdDpT9B6OelV4DkUInzbSxsARK-dCxU9gD4PA0joAiSSvErfHiTe5s"/>
+</div>
+<h3 class="font-semibold text-gray-700 text-base mb-1 truncate">Haier FrostShield 400L</h3>
+<div class="flex items-center justify-between mt-4">
+<span class="text-lg font-bold text-gray-800">$749</span>
+<button class="bg-[#EEF1F6] text-blue-600 text-xs font-semibold px-4 py-2 rounded-full shadow-soft hover:shadow-inner active:scale-95 transition-all">Details</button>
+</div>
+</div>
+<div class="neumo-card p-6">
+<div class="relative mb-6 neumo-card-inset p-6 flex items-center justify-center h-48">
+<span class="absolute top-3 right-3 p-2 bg-[#EEF1F6] rounded-full shadow-soft cursor-pointer text-gray-400 hover:text-red-400">
+<span class="material-icons-outlined text-sm">favorite_border</span>
+</span>
+<img alt="Washing Machine" class="max-h-full object-contain mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3onvtUGBYouronPwuMlir22Ge0Kdz4o9reTxxwP_5vIIyqCK5ID5bPoo71Nsgha5eJQahT8l8lczhWsU1YDbfEFvwH5_yuYEQtvpYIQ3GPqT1Cbo2X6TcR_0R2uYUwSDeWGqYi3rrk0IYCa4TB9Auj4MNH2kuALiOBC7HbcKNHdj6hwLw2UXs7b5LM2ENmGRQPcPD76-eKMcZpBLxLYCPMDGBTLf5uphsizYhp56d2E1DRynoHb5BDzAxrIM0wsEednX-WXgNMb8"/>
+</div>
+<h3 class="font-semibold text-gray-700 text-base mb-1 truncate">Panasonic 7Kg Front Load</h3>
+<div class="flex items-center justify-between mt-4">
+<span class="text-lg font-bold text-gray-800">$399</span>
+<button class="bg-[#EEF1F6] text-blue-600 text-xs font-semibold px-4 py-2 rounded-full shadow-soft hover:shadow-inner active:scale-95 transition-all">Details</button>
+</div>
+</div>
+<div class="neumo-card p-6">
+<div class="relative mb-6 neumo-card-inset p-6 flex items-center justify-center h-48">
+<span class="absolute top-3 right-3 p-2 bg-[#EEF1F6] rounded-full shadow-soft cursor-pointer text-gray-400 hover:text-red-400">
+<span class="material-icons-outlined text-sm">favorite_border</span>
+</span>
+<img alt="AC Unit" class="max-h-full object-contain mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqiKs1GHE_2D90XfJVzAbTIxe0PJma5uWYXRsoMeksNNn4bHqcBZghQXTQvlKrfwQajTsUbzfKsUnd1vv0d2_aQLkV5YKWVtTlGG7ytJO6cblpY86TX79T3Q3RpNt3a4Eg6zvH4t2lISOmUxJ1v6O7GMxsYeN_jgLfZrQMkrcIYzVw7wUSU03rL5koM_RkCoh9flH2bAjrPl1ccVwY84oY0DkNU7Gr9KNaFbMN_lVefWoH53DwbeZuZ3ekZVVART5CjydTDj8quQg"/>
+</div>
+<h3 class="font-semibold text-gray-700 text-base mb-1 truncate">Blue Ember ClimatePro</h3>
+<div class="flex items-center justify-between mt-4">
+<span class="text-lg font-bold text-gray-800">$599</span>
+<button class="bg-[#EEF1F6] text-blue-600 text-xs font-semibold px-4 py-2 rounded-full shadow-soft hover:shadow-inner active:scale-95 transition-all">Details</button>
+</div>
+</div>
+<div class="neumo-card p-6">
+<div class="relative mb-6 neumo-card-inset p-6 flex items-center justify-center h-48">
+<span class="absolute top-3 right-3 p-2 bg-[#EEF1F6] rounded-full shadow-soft cursor-pointer text-gray-400 hover:text-red-400">
+<span class="material-icons-outlined text-sm">favorite_border</span>
+</span>
+<img alt="Microwave" class="max-h-full object-contain mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXRPdQaZnhUo5UR0v1gJyLGC8VGRGmjmz9zVWvOC3drw1BWY6pSaf_Q93LaSNGKxxjwTP20maEtax4UbuSPxhBEr0DsniHUiRxSzlVZFnvDBhMcQXA3FtiBaH1vDUI4Uv9f7A2FqMz6Njf8B6bF1D_7DO-nKSc0q37kWfDOtR-tRPLb8t31NhJ22Y7PsyNsCk29m4EzOyGzA05m2c_59aEDYA-fyvGoafGmrZOoSPBZPlSTZK6zed6vJYv3s3UOnqFfxcZ-2s1OgE"/>
+</div>
+<h3 class="font-semibold text-gray-700 text-base mb-1 truncate">Blue Ember MicroChef</h3>
+<div class="flex items-center justify-between mt-4">
+<span class="text-lg font-bold text-gray-800">$229</span>
+<button class="bg-[#EEF1F6] text-blue-600 text-xs font-semibold px-4 py-2 rounded-full shadow-soft hover:shadow-inner active:scale-95 transition-all">Details</button>
+</div>
+</div>
+</div>
+
+
+</section>
+<section class="relative" id="order-concierge">
+<div class="text-center mb-6">
+<h2 class="text-3xl font-extrabold tracking-tight mb-2 text-gray-900">Proactive Shopping Concierge</h2>
+<p class="text-gray-500 max-w-2xl mx-auto text-sm font-light">
+                Curated selections, concierge-level support, and exclusive offers.
+            </p>
+</div>
+<div class="compact-hub-grid">
+<div class="hub-hero relative group h-full min-h-[400px] rounded-card overflow-hidden shadow-deep-soft border border-white/60 bg-[#FAFAFA] flex flex-col justify-end">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556909212-d5b604d0c90d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=2370&amp;q=80')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-80 mix-blend-luminosity"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-white/10 opacity-90"></div>
+<div class="relative z-10 p-6 flex flex-col h-full justify-between">
+<div class="mt-4">
+<div class="inline-flex items-center gap-1.5 bg-black text-white px-3 py-1 rounded-full text-[10px] font-bold mb-3 shadow-md uppercase tracking-wider self-start">
+<i class="bx bxs-zap text-yellow-300"></i>
+<span>Offer</span>
+</div>
+<h3 class="text-4xl font-bold text-gray-900 mb-2 leading-[1.1] tracking-tight">Best Kitchen<br/>Appliances</h3>
+<p class="text-gray-600 font-medium text-sm max-w-sm">Top-rated refrigerators, free shipping over $199.</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-2 text-gray-800 text-xs bg-white/80 backdrop-blur-md p-1.5 rounded-full w-fit px-3 shadow-sm border border-gray-100">
+<span class="flex items-center text-yellow-500 gap-1 font-semibold"><i class="bx bxs-star"></i> 4.8</span>
+<span class="opacity-70">(12k)</span>
+<span class="w-1 h-1 bg-gray-400 rounded-full mx-1"></span>
+<span class="font-medium text-gray-700">Free 30-day returns</span>
+</div>
+<div class="flex flex-col sm:flex-row gap-2">
+<button class="bg-primary text-white hover:bg-primary-hover px-5 py-2.5 rounded-full font-semibold shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-xs w-full sm:w-auto tracking-wide">
+                            Shop Bestsellers
+                        </button>
+<button class="bg-transparent border border-gray-900 text-gray-900 hover:bg-gray-50 px-5 py-2.5 rounded-full font-semibold transition-all duration-300 text-xs w-full sm:w-auto tracking-wide">
+                            Today's Deals
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<div class="hub-features soft-card-base gradient-blue-soft p-5 flex flex-col justify-center h-full relative overflow-hidden group">
+<div class="relative z-10">
+<h3 class="text-sm font-bold text-gray-800 mb-4 uppercase tracking-wider">Why Choose Us</h3>
+<ul class="space-y-3">
+<li class="flex items-center gap-3">
+<div class="bg-blue-100 p-2 rounded-full text-blue-600 shrink-0 shadow-sm">
+<i class="bx bxs-truck text-lg"></i>
+</div>
+<div class="min-w-0">
+<h4 class="font-semibold text-gray-900 text-xs">Fast shipping</h4>
+<p class="text-[10px] text-gray-500 truncate">94% within 3 days</p>
+</div>
+</li>
+<li class="flex items-center gap-3">
+<div class="bg-green-100 p-2 rounded-full text-green-600 shrink-0 shadow-sm">
+<i class="bx bx-rotate-left text-lg"></i>
+</div>
+<div class="min-w-0">
+<h4 class="font-semibold text-gray-900 text-xs">30-day returns</h4>
+<p class="text-[10px] text-gray-500 truncate">Hassle-free process</p>
+</div>
+</li>
+<li class="flex items-center gap-3">
+<div class="bg-purple-100 p-2 rounded-full text-purple-600 shrink-0 shadow-sm">
+<i class="bx bx-support text-lg"></i>
+</div>
+<div class="min-w-0">
+<h4 class="font-semibold text-gray-900 text-xs">Expert 24/7 support</h4>
+<p class="text-[10px] text-gray-500 truncate">Real human experts</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="hub-categories soft-card-base p-5 flex flex-col h-full bg-[#FAFAFA]">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-sm font-bold text-gray-800 uppercase tracking-wider">Top Categories</h3>
+</div>
+<div class="grid grid-cols-1 gap-2 flex-1">
+<a class="flex items-center justify-between p-2.5 rounded-xl pastel-tile-mint hover:bg-green-50 transition-all duration-300 group border border-transparent hover:border-green-100 shadow-sm" href="#">
+<div class="flex items-center gap-3">
+<div class="bg-white p-1.5 rounded-lg shadow-sm text-green-600">
+<i class="bx bx-joystick text-lg"></i>
+</div>
+<span class="font-semibold text-xs text-gray-800">Tech &amp; Toys</span>
+</div>
+<i class="bx bx-chevron-right text-gray-400 group-hover:text-green-600 transition-colors text-lg"></i>
+</a>
+<a class="flex items-center justify-between p-2.5 rounded-xl pastel-tile-peach hover:bg-red-50 transition-all duration-300 group border border-transparent hover:border-red-100 shadow-sm" href="#">
+<div class="flex items-center gap-3">
+<div class="bg-white p-1.5 rounded-lg shadow-sm text-red-500">
+<i class="bx bx-spray-can text-lg"></i>
+</div>
+<span class="font-semibold text-xs text-gray-800">Beauty</span>
+</div>
+<i class="bx bx-chevron-right text-gray-400 group-hover:text-red-500 transition-colors text-lg"></i>
+</a>
+<a class="flex items-center justify-between p-2.5 rounded-xl pastel-tile-lavender hover:bg-purple-50 transition-all duration-300 group border border-transparent hover:border-purple-100 shadow-sm" href="#">
+<div class="flex items-center gap-3">
+<div class="bg-white p-1.5 rounded-lg shadow-sm text-purple-500">
+<i class="bx bx-home-smile text-lg"></i>
+</div>
+<span class="font-semibold text-xs text-gray-800">Home</span>
+</div>
+<i class="bx bx-chevron-right text-gray-400 group-hover:text-purple-500 transition-colors text-lg"></i>
+</a>
+</div>
+</div>
+<div class="hub-recommendation soft-card-base gradient-peach-vibrant relative overflow-hidden flex items-center justify-between px-6 py-4 shadow-lift">
+<div class="absolute right-0 top-0 bottom-0 w-1/3 bg-white/20 -skew-x-12 transform translate-x-4"></div>
+<div class="relative z-10 flex flex-col sm:flex-row sm:items-center gap-4 w-full">
+<div class="flex items-center gap-4">
+<div class="relative">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-md">
+<i class="bx bx-bot text-2xl text-pink-500"></i>
+</div>
+<span class="absolute -top-1 -right-1 flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-green-500 border-2 border-white"></span>
+</span>
+</div>
+<div>
+<h3 class="text-sm font-bold text-gray-900 leading-tight">Need a Recommendation?</h3>
+<p class="text-gray-700 text-xs font-medium">Chat now to unlock a <span class="font-bold text-black">10% discount</span>.</p>
+</div>
+</div>
+<div class="flex items-center gap-3 sm:ml-auto">
+<button class="bg-black text-white px-5 py-2 rounded-full shadow-lg hover:bg-gray-800 transition-all text-xs font-bold tracking-wide whitespace-nowrap">
+                        Talk to an Expert
+                    </button>
+<a class="text-xs font-semibold text-gray-700 hover:text-black underline decoration-gray-400 underline-offset-2" href="#">FAQ</a>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 flex flex-col md:flex-row items-center justify-between bg-[#FAFAFA] rounded-card p-3 border border-white shadow-sm gap-4 relative z-10 max-w-4xl mx-auto">
+<div class="flex items-center gap-3 px-2 pr-6">
+<div class="flex -space-x-2">
+<img alt="User" class="w-6 h-6 rounded-full border-2 border-white shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5t8WQeIXJSnsfFsTrO4CyK51__Vg2P7duSA4656dSKw5qlbeb7ql_FG0nMGScxyvjCegNrTn4sxTn1cLs8qIMcuuMcDIygXtRxebeKTqcjXDoGxB7z8U0ECecWRlBk_BItmyKuTYZkSUNXLxwu6wIcogFbJgwd9_qEKTpUUVz2bV9g2Gxu79sbggWMdU5fgjBQOxGfu4p0jFtos0RHhYxNgXrhtwgHbwL7rp_JDa4mQ726QBWSNQbKyYGEzlV9jI8_FUayQTi5V4"/>
+<img alt="User" class="w-6 h-6 rounded-full border-2 border-white shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk0PBpM6O56mgKhD1c5hI_IFUrta-SD2LP36pDwwpoUk0vXk6GGAnRXJ-KpCDrOdb12CghXk03_wWZ2CVHYnSJB0Tck8l3sIuoxayDIQ9OXkScMMBJ6ueQ8qv8SPo5whgc0QbrxgzEBU_zAMePrbxt3f0XJsx425GA7Fadd1LWcdVpiNRd5ONsKtbEmu5DatDGd0RG9mIiA53JGOcZ8Tk07AQ1S16Yrrp6Ey7kjglkZbZhqx6Hy6MVn3tz79ckv6YgI-b97A4Guz0"/>
+</div>
+<div class="text-[10px] text-gray-500">
+<div class="flex items-center gap-1"><i class="bx bxs-star text-green-500"></i><span class="font-bold text-gray-800 text-xs">TrustPilot 4.9/5</span></div>
+</div>
+</div>
+<div class="flex-1 flex justify-center">
+<p class="text-xs italic text-gray-600 truncate">"Customer service was beyond helpful with my order."</p>
+</div>
+<a class="text-xs font-semibold text-gray-900 hover:text-blue-600 whitespace-nowrap flex items-center gap-1 bg-white px-3 py-1.5 rounded-full shadow-sm hover:shadow-md transition-all border border-gray-100" href="#">
+        Read reviews <i class="bx bx-right-arrow-alt"></i>
+</a>
+</div>
+</section>
+<section>
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-2xl font-bold text-gray-800">Appliance Insights</h2>
+<div class="h-1 bg-gray-200 w-full ml-6 rounded-full overflow-hidden shadow-inner">
+<div class="h-full bg-blue-600 w-1/4 rounded-full"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="group cursor-pointer neumo-card p-4 hover:shadow-lift transition-shadow duration-300">
+<div class="overflow-hidden rounded-xl mb-4 shadow-inner border border-white">
+<img alt="Fridge Blog" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNnJcX61Q1D3hjXTy_TGwSx4yy6Q7mpwOTSRx0HjkDqvLLbbSNWUcpMd4zd4mrY1bgXdnTJfqvUDESr4IzxscJDK9SPbTVX_9XsyE2qBcnq-TDPDn0ZwKWWV7IIWnYyLzNsCI-k61i36tf_3nxlZloNGrup6Lh3tRnaKhscAfcM11Ab1MLxMuc__eIQ3zU9GdxFutkiJ6Yxq4v3PXEAllDNhimJQhGhuAg8VPVWw6v1Kczlm4pjLdZ6jOxFOoyz_-BS__WzfbikD4"/>
+</div>
+<div class="text-xs text-gray-500 mb-2 flex items-center gap-2">
+<span class="material-icons-outlined text-sm">calendar_today</span> May 15, 2025
+                </div>
+<h3 class="text-lg font-bold mb-2 text-gray-800 group-hover:text-blue-600 transition-colors">10 Ways to Organize Your Refrigerator</h3>
+<p class="text-sm text-gray-600 mb-4 line-clamp-2">Learn how proper organization can extend food freshness and reduce energy consumption.</p>
+<a class="text-blue-600 text-sm font-semibold flex items-center hover:underline" href="#">Read Article <span class="material-icons-outlined text-sm ml-1">arrow_forward</span></a>
+</div>
+<div class="group cursor-pointer neumo-card p-4 hover:shadow-lift transition-shadow duration-300">
+<div class="overflow-hidden rounded-xl mb-4 shadow-inner border border-white">
+<img alt="Washer Blog" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA__GtBL0BDNRK3KN7Kqy5und8_jevNPaxeslds8ctKiwQa6RfrdLGywktPg3nLqVqDFnXKMJCevysBsdJADOOt12O_IWG4mBvZTBx9YCB2PajQoRxL39Mb1ybIkCdWCpJYHOWYL8CtKaPrVTnnJ3m03ESwyvdnInOJ2YR3854Elmam9ivkioDfpB1uQE6rV0VaL8Ou2ALDETyEf87nn5Mufw4j1_x-_YTwp9u88vYh4-9rqPO6_xFulo7G2UzP3cQErEMpy12dK8o"/>
+</div>
+<div class="text-xs text-gray-500 mb-2 flex items-center gap-2">
+<span class="material-icons-outlined text-sm">calendar_today</span> May 8, 2025
+                </div>
+<h3 class="text-lg font-bold mb-2 text-gray-800 group-hover:text-blue-600 transition-colors">How to Extend Washing Machine Life</h3>
+<p class="text-sm text-gray-600 mb-4 line-clamp-2">Simple maintenance routines that prevent common issues and keep your washer running efficiently.</p>
+<a class="text-blue-600 text-sm font-semibold flex items-center hover:underline" href="#">Read Article <span class="material-icons-outlined text-sm ml-1">arrow_forward</span></a>
+</div>
+<div class="group cursor-pointer neumo-card p-4 hover:shadow-lift transition-shadow duration-300">
+<div class="overflow-hidden rounded-xl mb-4 shadow-inner border border-white">
+<img alt="Energy Blog" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMmehqpSAhIp9l-FMDiwinrTONuvJDxfl816gRHnMRql-pOlpmwfp6opePHVIrLYQUQOtfURGfZqDDpGj1iX_Khj3IgAOCQXae3pvdKZgFmpvxuAiscU8zhXKxtvYrqKQDr6MM7QtNUejA5wpEexZmDfedoW3D4G3R1FpM6GUaI-sn4lXOyylIzgR9To25YXnQq8SOdkPXcjYtAisYkaOGe62zGdnmx1MBhnmlt1MdNEL4lob85ivRJxxkFv5LqosjM1u78izsiVk"/>
+</div>
+<div class="text-xs text-gray-500 mb-2 flex items-center gap-2">
+<span class="material-icons-outlined text-sm">calendar_today</span> May 1, 2025
+                </div>
+<h3 class="text-lg font-bold mb-2 text-gray-800 group-hover:text-blue-600 transition-colors">5 Energy-Saving Tips for Your Store</h3>
+<p class="text-sm text-gray-600 mb-4 line-clamp-2">Practical strategies to reduce your electricity bills while maintaining comfort in your home.</p>
+<a class="text-blue-600 text-sm font-semibold flex items-center hover:underline" href="#">Read Article <span class="material-icons-outlined text-sm ml-1">arrow_forward</span></a>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800 pt-24">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+<div class="text-2xl font-bold tracking-tight text-white flex flex-col leading-none mb-4">
+<span class="text-blue-600 text-sm uppercase">Blue</span>
+<span>EMBER</span>
+</div>
+<p class="text-sm mb-4">Premium Store from trusted global brands. Serving customers since 2005.</p>
+<div class="text-xs">© 2025 Blue Ember Store. All rights reserved.</div>
+</div>
+<div>
+<h4 class="text-white font-semibold mb-4">Quick Links</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-blue-600" href="#">Terms &amp; Services</a></li>
+<li><a class="hover:text-blue-600" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-blue-600" href="#">Contact</a></li>
+<li><a class="hover:text-blue-600" href="#">Refund &amp; Exchange</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-semibold mb-4">Categories</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-blue-600" href="#">Toys</a></li>
+<li><a class="hover:text-blue-600" href="#">Supplements</a></li>
+<li><a class="hover:text-blue-600" href="#">Beauty</a></li>
+<li><a class="hover:text-blue-600" href="#">Home Goods</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-semibold mb-4">Contact Us</h4>
+<p class="text-sm mb-2">Hasbrouck Heights NJ 07604 USA</p>
+<p class="text-sm mb-2 flex items-center gap-2"><span class="material-icons-outlined text-sm">phone</span> +1 (800) 123-4567</p>
+<p class="text-sm mb-2 flex items-center gap-2"><span class="material-icons-outlined text-sm">email</span> support@blue-ember.us</p>
+</div>
+</div>
+<div class="text-center mt-12 opacity-10">
+<h1 class="text-8xl font-black uppercase tracking-widest text-white/20 select-none">BLUEMBER</h1>
+</div>
+</footer>
+<div class="fixed bottom-6 right-6 z-50">
+<button class="bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg shadow-blue-500/40 transition-transform hover:scale-110 relative group">
+<span class="material-icons-outlined text-2xl group-hover:hidden">chat_bubble</span>
+<span class="material-icons-outlined text-2xl hidden group-hover:block">support_agent</span>
+<span class="absolute -top-1 -right-1 flex h-4 w-4">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-4 w-4 bg-red-500 border-2 border-white"></span>
+</span>
+</button>
+</div>
+</body></html>

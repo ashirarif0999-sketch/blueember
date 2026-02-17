@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Blue Ember Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="darkmode.css">
+    <link rel="stylesheet" href="css/cookie-consent.css">
+    <script src="js/darkmode.js"></script>
+    <script src="js/cookie-manager.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="footer.css">
+
+    <style>
+        :root {
+            --primary: #0099ff;
+            --primary-gradient: linear-gradient(135deg, #0099ff 0%, #00c6ff 100%);
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-color: #f0f2f5;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-color);
+            background-image:
+                radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+                radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Grid Background */
+        .grid-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .grid-background {
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 50px 50px;
+            }
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .login-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--primary-gradient);
+        }
+
+        .brand-logo {
+            margin-bottom: 25px;
+        }
+
+        .brand-logo h2 {
+            margin: 0;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: -0.5px;
+        }
+
+        .brand-logo span {
+            color: var(--primary);
+        }
+
+        .welcome-text h3 {
+            margin: 0 0 5px;
+            color: var(--text-dark);
+            font-size: 24px;
+        }
+
+        .welcome-text p {
+            margin: 0 0 30px;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            text-align: left;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-left: 5px;
+        }
+
+        /* Updated Input Wrapper - From Uiverse.io */
+        .input-wrapper {
+            position: relative;
+            text-align: center;
+        }
+
+        .input-wrapper i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+            font-size: 16px;
+            transition: color 0.3s;
+            z-index: 1;
+        }
+
+        .input-wrapper input {
+            background-color: #eee;
+            border: none;
+            padding: 1rem;
+            padding-left: 45px;
+            padding-right: 45px;
+            font-size: 1rem;
+            width: calc(100% - 45px - 45px - 1rem);
+            border-radius: 1rem;
+            color: #374151;
+            box-shadow: 0 0.4rem #dfd9d9;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .input-wrapper input:focus {
+            outline-color: var(--primary);
+            box-shadow: 0 0.6rem #c9c3c3, 0 0 0 4px rgba(0, 153, 255, 0.1);
+        }
+
+        .input-wrapper input:focus+i {
+            color: var(--primary);
+        }
+
+        .input-wrapper input::placeholder {
+            color: #d4a5a5;
+        }
+
+        /* 3D Button Styles */
+        .button-3d {
+            position: relative;
+            top: -6px;
+            border: 1.5px rgb(0, 0, 0) inset;
+            border-radius: 10px;
+            transition: all 40ms ease-out;
+            margin-top: 31px;
+            margin-bottom: 1px;
+            margin-left: 2px;
+            margin-right: 2px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            color: #666666;
+            box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset, 0px 8px 0px -1px #f5f5f5, 0 8px 8px 1px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+            width: 96%;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .button-3d:active {
+            top: 1px;
+            color: #ffffff;
+            box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+                0 1px 3px 1px rgba(136, 136, 136, 0.479);
+            background: linear-gradient(45deg, rgb(0, 255, 242), rgb(0, 145, 255));
+        }
+
+        .button-3d .button-text {
+            transition: opacity 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .button-3d.loading .button-text {
+            opacity: 0;
+        }
+
+        .button-3d .spinner {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .button-3d.loading .spinner {
+            opacity: 1;
+        }
+
+        .spinner {
+            font-size: 28px;
+            position: relative;
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+        }
+
+        .spinner.center {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .spinner .spinner-blade {
+            position: absolute;
+            left: 0.4629em;
+            bottom: 0;
+            width: 0.074em;
+            height: 0.2777em;
+            border-radius: 0.0555em;
+            background-color: transparent;
+            -webkit-transform-origin: center -0.2222em;
+            -ms-transform-origin: center -0.2222em;
+            transform-origin: center -0.2222em;
+            animation: spinner-fade9234 1s infinite linear;
+        }
+
+        .spinner .spinner-blade:nth-child(1) {
+            -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+            -webkit-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        .spinner .spinner-blade:nth-child(2) {
+            -webkit-animation-delay: 0.083s;
+            animation-delay: 0.083s;
+            -webkit-transform: rotate(30deg);
+            -ms-transform: rotate(30deg);
+            transform: rotate(30deg);
+        }
+
+        .spinner .spinner-blade:nth-child(3) {
+            -webkit-animation-delay: 0.166s;
+            animation-delay: 0.166s;
+            -webkit-transform: rotate(60deg);
+            -ms-transform: rotate(60deg);
+            transform: rotate(60deg);
+        }
+
+        .spinner .spinner-blade:nth-child(4) {
+            -webkit-animation-delay: 0.249s;
+            animation-delay: 0.249s;
+            -webkit-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+
+        .spinner .spinner-blade:nth-child(5) {
+            -webkit-animation-delay: 0.332s;
+            animation-delay: 0.332s;
+            -webkit-transform: rotate(120deg);
+            -ms-transform: rotate(120deg);
+            transform: rotate(120deg);
+        }
+
+        .spinner .spinner-blade:nth-child(6) {
+            -webkit-animation-delay: 0.415s;
+            animation-delay: 0.415s;
+            -webkit-transform: rotate(150deg);
+            -ms-transform: rotate(150deg);
+            transform: rotate(150deg);
+        }
+
+        .spinner .spinner-blade:nth-child(7) {
+            -webkit-animation-delay: 0.498s;
+            animation-delay: 0.498s;
+            -webkit-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+
+        .spinner .spinner-blade:nth-child(8) {
+            -webkit-animation-delay: 0.581s;
+            animation-delay: 0.581s;
+            -webkit-transform: rotate(210deg);
+            -ms-transform: rotate(210deg);
+            transform: rotate(210deg);
+        }
+
+        .spinner .spinner-blade:nth-child(9) {
+            -webkit-animation-delay: 0.664s;
+            animation-delay: 0.664s;
+            -webkit-transform: rotate(240deg);
+            -ms-transform: rotate(240deg);
+            transform: rotate(240deg);
+        }
+
+        .spinner .spinner-blade:nth-child(10) {
+            -webkit-animation-delay: 0.747s;
+            animation-delay: 0.747s;
+            -webkit-transform: rotate(270deg);
+            -ms-transform: rotate(270deg);
+            transform: rotate(270deg);
+        }
+
+        .spinner .spinner-blade:nth-child(11) {
+            -webkit-animation-delay: 0.83s;
+            animation-delay: 0.83s;
+            -webkit-transform: rotate(300deg);
+            -ms-transform: rotate(300deg);
+            transform: rotate(300deg);
+        }
+
+        .spinner .spinner-blade:nth-child(12) {
+            -webkit-animation-delay: 0.913s;
+            animation-delay: 0.913s;
+            -webkit-transform: rotate(330deg);
+            -ms-transform: rotate(330deg);
+            transform: rotate(330deg);
+        }
+
+        @keyframes spinner-fade9234 {
+            0% {
+                background-color: #69717d;
+            }
+
+            100% {
+                background-color: transparent;
+            }
+        }
+
+        /* Password Toggle Eye - Enhanced Styling */
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 3;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 8px;
+            border-radius: 50%;
+            background: transparent;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .password-toggle:hover {
+            color: var(--primary);
+            background: rgba(0, 153, 255, 0.1);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 153, 255, 0.2);
+        }
+
+        .password-toggle:active {
+            transform: translateY(-50%) scale(0.95);
+            background: rgba(0, 153, 255, 0.15);
+        }
+
+        /* Eye icon animation */
+        .password-toggle.fa-eye:before {
+            transition: all 0.3s ease;
+        }
+
+        .password-toggle.fa-eye-slash:before {
+            transition: all 0.3s ease;
+        }
+
+        /* Spinner Loader - From Uiverse.io */
+
+        .footer-text {
+            margin-top: 25px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .footer-text a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 30px 25px;
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Grid Background -->
+    <div class="grid-wrapper">
+        <div class="grid-background"></div>
+    </div>
+
+    <div class="login-card">
+        <div class="brand-logo">
+            <h2>Blue<span>Ember</span></h2>
+        </div>
+
+        <div class="welcome-text">
+            <h3>Create Account</h3>
+            <p>Join us to start shopping today.</p>
+        </div>
+
+        <form id="signup-form">
+            <div class="form-group">
+                <label>Full Name</label>
+                <div class="input-wrapper">
+                    <input type="text" id="signup-name" placeholder="John Doe" required>
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <div class="input-wrapper">
+                    <input type="email" id="signup-email" placeholder="name@company.com" required>
+                    <i class="fas fa-envelope"></i>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <div class="input-wrapper">
+                    <input type="password" id="signup-password" placeholder="Create strong password" required
+                        minlength="6">
+                    <i class="fas fa-lock"></i>
+                    <i class="fas fa-eye password-toggle" id="toggleSignupPassword"
+                        style="margin-left: auto !important;"></i>
+                </div>
+            </div>
+
+            <button type="submit" class="button-3d" id="signupBtn">
+                <span class="button-text">
+                    Sign Up <i class="fas fa-user-plus"></i>
+                </span>
+                <div class="spinner center" style="position: absolute;">
+                    <div class="spinner-blade"></div>
+                    <div class="spinner-blade"></div>
+                    <div class="spinner-blade"></div>
+                    <div class="spinner-blade"></div>
+                    <div class="spinner-blade"></div>
+                    <div class="spinner-blade"></div>
+                    <div class="spinner-blade"></div>
+                    <div class="spinner-blade"></div>
+                    <div class="spinner-blade"></div>
+                    <div class="spinner-blade"></div>
+                    <div class="spinner-blade"></div>
+                    <div class="spinner-blade"></div>
+                </div>
+            </button>
+        </form>
+
+        <div class="footer-text">
+            Already have an account? <a href="login.html">Sign In</a>
+        </div>
+    </div>
+
+    <!-- Auth Scripts -->
+    <script src="js/db-client.js"></script>
+    <script src="js/auth.js"></script>
+
+    <script>
+        // Password Toggle
+        const toggleSignupPassword = document.getElementById('toggleSignupPassword');
+        const signupPasswordInput = document.getElementById('signup-password');
+
+        toggleSignupPassword.addEventListener('click', function () {
+            const type = signupPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            signupPasswordInput.setAttribute('type', type);
+
+            // Toggle eye icon
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        // Add loader functionality to signup button
+        const signupBtn = document.getElementById('signupBtn');
+        const signupForm = document.getElementById('signup-form');
+
+        // Inject the splash effect and path animation CSS
+        const animationStyle = document.createElement('style');
+        animationStyle.textContent = `
+            .button-3d {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .splash-effects {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 10;
+            }
+            
+            .splash-circle {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.7);
+                transform: scale(0);
+                animation: splashAnimation 0.8s ease-out forwards;
+            }
+            
+            @keyframes splashAnimation {
+                0% {
+                    transform: scale(0);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(15);
+                    opacity: 0;
+                }
+            }
+            
+            /* Path animation styles */
+            .path-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 5;
+            }
+            
+            .path-svg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+            
+            .path-element {
+                fill: none;
+                stroke: white;
+                stroke-width: 2;
+                stroke-dasharray: 150 480;
+                stroke-dashoffset: 150;
+                pointer-events: none;
+            }
+            
+            .button-3d.loading .path-element {
+                animation: pathAnimation 1.6s ease forwards 0.2s;
+            }
+            
+            @keyframes pathAnimation {
+                from {
+                    stroke: white;
+                }
+                to {
+                    stroke-dashoffset: -480;
+                    stroke: #c6e0fe;
+                }
+            }
+        `;
+        document.head.appendChild(animationStyle);
+
+        // Add splash effect on button click
+        signupBtn.addEventListener('mousedown', function (e) {
+            // Create splash effect container if it doesn't exist
+            let splashContainer = this.querySelector('.splash-effects');
+            if (!splashContainer) {
+                splashContainer = document.createElement('div');
+                splashContainer.className = 'splash-effects';
+                this.appendChild(splashContainer);
+            }
+
+            // Create splash circle
+            const splashCircle = document.createElement('div');
+            splashCircle.className = 'splash-circle';
+
+            // Position splash circle at click location
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            splashCircle.style.left = x + 'px';
+            splashCircle.style.top = y + 'px';
+
+            splashContainer.appendChild(splashCircle);
+
+            // Remove splash circle after animation completes
+            setTimeout(() => {
+                splashCircle.remove();
+            }, 800);
+        });
+
+        // Add path animation container
+        document.addEventListener('DOMContentLoaded', function () {
+            const pathContainer = document.createElement('div');
+            pathContainer.className = 'path-container';
+            pathContainer.innerHTML = `
+                <svg class="path-svg" viewBox="0 0 221 42" preserveAspectRatio="none">
+                    <path class="path-element" d="M182.674 2H203C211.837 2 219 9.16344 219 18V24C219 32.8366 211.837 40 203 40H18C9.16345 40 2 32.8366 2 24V18C2 9.16344 9.16344 2 18 2H47.8855"></path>
+                </svg>
+            `;
+            signupBtn.appendChild(pathContainer);
+        });
+
+        signupForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Show loader (only spinner, no text)
+            signupBtn.classList.add('loading');
+            signupBtn.disabled = true;
+
+            // Simulate 2.8s delay to show loader
+            setTimeout(() => {
+                // Get form values
+                const name = document.getElementById('signup-name').value;
+                const email = document.getElementById('signup-email').value;
+                const password = document.getElementById('signup-password').value;
+
+                // Trigger the actual signup (from auth.js)
+                if (window.handleSignup) {
+                    window.handleSignup(name, email, password);
+                }
+
+                // Reset button state after another brief moment
+                setTimeout(() => {
+                    signupBtn.classList.remove('loading');
+                    signupBtn.disabled = false;
+                }, 500);
+            }, 2800);
+        });
+    </script>
+
+</body>
+<!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <!-- Scroll Reveal & Lenis Init -->
+  <script src="js/scroll-reveal.js"></script>
+</html>

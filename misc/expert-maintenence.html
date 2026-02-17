@@ -1,0 +1,3632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Maintenance Guide | Blue Ember Professional Services</title>
+    <script src="../js/server.js"></script>
+    <link rel="stylesheet" href="../css/cookie-consent.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../js/cookie-manager.js" defer></script>
+
+    <!-- Updated Theme CSS to Match Blue Ember Website -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Tourney:wdth,wght@92.4,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+        :root {
+            /* Blue Ember Brand Colors from Website */
+            --blue-ember-primary: #00B4D8;
+            /* Updated to match website's teal color */
+            --blue-ember-primary-dark: #0093B5;
+            /* Slightly darker shade for hover states */
+            --blue-ember-secondary: #000000;
+            /* Black */
+            --blue-ember-accent: #00B4D8;
+            --blue-ember-light: #EAF6FD;
+            /* Light blue background from website */
+            --blue-ember-lighter: #FFFFFF;
+            --blue-ember-white: #FFFFFF;
+            --blue-ember-text: #000000;
+            --blue-ember-gray: #555555;
+            --blue-ember-border: #E0E0E0;
+            --blue-ember-warning: #FF6B6B;
+            --blue-ember-success: #4CAF50;
+            --blue-ember-maintenance: #FF6B6B;
+            --blue-ember-diagnostic: #00B4D8;
+
+            /* Additional colors from website */
+            --blue-ember-dark-bg: #121212;
+            /* Dark background for headers */
+            --blue-ember-card-bg: #F8FAFC;
+            /* Card background color */
+            --blue-ember-footer-bg: linear-gradient(135deg, #006B8D, #004A6B);
+            /* Footer gradient */
+            --blue-ember-grid-bg: linear-gradient(90deg, rgba(0, 180, 216, 0.05) 12.5%, rgba(0, 0, 0, 0) 12.5%),
+                linear-gradient(0deg, rgba(0, 180, 216, 0.05) 12.5%, rgba(0, 0, 0, 0) 12.5%);
+
+            /* Spacing and border radius from website */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-full: 50%;
+
+            /* Shadow styles */
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Rubik', 'Space Grotesk', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--blue-ember-text);
+            line-height: 1.6;
+            background-color: var(--blue-ember-light);
+            background-image: var(--blue-ember-grid-bg);
+            background-size: 40px 40px;
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 25px;
+            position: relative;
+        }
+
+        /* Updated Header to Match Blue Ember Website */
+        .header {
+            background: #ffffff93;
+            color: white;
+            backdrop-filter: blur(10px);
+            padding: 12px 35px;
+            MARGIN: 0PX 45PX 0PX 45PX;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            border-radius: 0px 0px 20px 20px;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition-normal);
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--blue-ember-primary);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 6px rgba(0, 180, 216, 0.4);
+        }
+
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: white;
+            font-family: 'Tourney', 'League Spartan', sans-serif;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: rgba(0, 0, 0, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: var(--radius-sm);
+            transition: var(--transition-fast);
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: rgb(0, 0, 0);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--blue-ember-primary);
+            transition: var(--transition-fast);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Updated Page Title to Match Blue Ember Website */
+        .page-title {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--blue-ember-border);
+        }
+
+        .page-title::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--blue-ember-primary);
+        }
+
+        .title-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+        }
+
+        .title-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--blue-ember-primary);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition-normal);
+            flex-shrink: 0;
+        }
+
+        .title-icon:hover {
+            transform: rotate(5deg) scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 180, 216, 0.4);
+        }
+
+        .title-text h1 {
+            color: var(--blue-ember-secondary);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.2;
+            font-family: 'Tourney', 'League Spartan', sans-serif;
+        }
+
+        .title-text p {
+            color: var(--blue-ember-gray);
+            font-size: 1.2rem;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        /* Content Sections with Updated Blue Ember Theme */
+        .guide-section {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 35px;
+            margin: 35px 0;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--blue-ember-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guide-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--blue-ember-primary), var(--blue-ember-primary-dark));
+            opacity: 1;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--blue-ember-border);
+        }
+
+        .section-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--blue-ember-primary);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            transition: var(--transition-fast);
+        }
+
+        .section-icon:hover {
+            transform: scale(1.1);
+            background: var(--blue-ember-primary-dark);
+        }
+
+        .section-title {
+            color: var(--blue-ember-secondary);
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Tourney', 'League Spartan', sans-serif;
+        }
+
+        .section-subtitle {
+            color: var(--blue-ember-gray);
+            font-size: 1.1rem;
+            margin-top: 5px;
+            font-weight: 400;
+        }
+
+        /* Updated Interactive Elements */
+        .checklist {
+            margin: 25px 0;
+        }
+
+        .checklist-title {
+            font-weight: 600;
+            color: var(--blue-ember-secondary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            position: relative;
+        }
+
+        .checklist-title::before {
+            content: "✓";
+            color: var(--blue-ember-success);
+            font-size: 1.4rem;
+        }
+
+        .checklist-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            border: 1px solid var(--blue-ember-border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 17px;
+            border: 1px solid var(--blue-ember-border);
+            transition: var(--transition-fast);
+            position: relative;
+        }
+
+        .checklist-item:hover {
+            background: rgba(0, 180, 216, 0.03);
+        }
+
+        .checklist-item::before {
+            content: "•";
+            color: var(--blue-ember-primary);
+            font-size: 1.5rem;
+            line-height: 1;
+            min-width: 20px;
+        }
+
+        /* Step-by-Step Styles */
+        .step-container {
+            margin: 25px 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed var(--blue-ember-border);
+            transition: var(--transition-fast);
+        }
+
+        .step:hover {
+            background: rgba(0, 180, 216, 0.02);
+        }
+
+        .step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--blue-ember-primary);
+            color: white;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            transition: var(--transition-fast);
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: var(--radius-full);
+            background: var(--blue-ember-primary);
+            opacity: 0.1;
+            transition: var(--transition-fast);
+            z-index: -1;
+        }
+
+        .step:hover .step-number::after {
+            opacity: 0.3;
+        }
+
+        .step-content h4 {
+            color: var(--blue-ember-secondary);
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Warning/Notice Boxes */
+        .warning-box {
+            background: #fff8e1;
+            border-left: 4px solid var(--blue-ember-warning);
+            padding: 20px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin: 25px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .warning-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--blue-ember-warning);
+            opacity: 0.2;
+        }
+
+        .warning-title {
+            color: var(--blue-ember-warning);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .warning-title::before {
+            content: "!";
+            width: 20px;
+            height: 20px;
+            background: var(--blue-ember-warning);
+            color: white;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .warning-content {
+            padding-left: 30px;
+        }
+
+        /* Badges and Labels */
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .badge {
+            background: linear-gradient(45deg, #ffffff, #e3e3e3);
+            ;
+            border: 1px solid var(--blue-ember-border);
+            border-radius: var(--radius-sm);
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: var(--blue-ember-secondary);
+            transition: var(--transition-fast);
+            box-shadow: var(--shadow-sm);
+            font-size: 0.9rem;
+        }
+
+        .badge:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--blue-ember-primary);
+        }
+
+        .badge-icon {
+            color: var(--blue-ember-primary);
+            font-size: 1rem;
+        }
+
+        /* Tables with Blue Ember Theme */
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .spec-table th {
+            background: var(--blue-ember-primary);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border: none;
+        }
+
+        .spec-table td {
+            padding: 15px;
+            border: 1px solid var(--blue-ember-border);
+        }
+
+        .spec-table tr:nth-child(even) {
+            background-color: var(--blue-ember-light);
+        }
+
+        .spec-table tr:hover td {
+            background: rgba(0, 180, 216, 0.05);
+        }
+
+        /* Diagram Section */
+        .diagram {
+            background: var(--blue-ember-light);
+            border-radius: var(--radius-md);
+            padding: 25px;
+            margin: 25px 0;
+            text-align: center;
+            border: 1px solid var(--blue-ember-border);
+            transition: var(--transition-normal);
+        }
+
+        .diagram:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--blue-ember-primary);
+        }
+
+        .diagram-title {
+            font-weight: 600;
+            color: var(--blue-ember-secondary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .diagram-content {
+            height: 200px;
+            background: white;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            color: var(--blue-ember-gray);
+            border: 1px dashed var(--blue-ember-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .diagram-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(45deg, var(--Blue Ember-primary) 25%, transparent 25%),
+                linear-gradient(-45deg, var(--Blue Ember-primary) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, var(--Blue Ember-primary) 75%),
+                linear-gradient(-45deg, transparent 75%, var(--Blue Ember-primary) 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        /* Maintenance Schedule Cards */
+        .maintenance-schedule {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .schedule-card {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            overflow: auto;
+            border: 1px solid var(--Blue Ember-border);
+            transition: var(--transition-normal);
+            position: relative;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .schedule-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--Blue Ember-primary);
+        }
+
+        .schedule-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--Blue Ember-primary), var(--Blue Ember-primary-dark));
+        }
+
+        .schedule-card h4 {
+            color: var(--Blue Ember-primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+
+        .schedule-card ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+
+        .schedule-card li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+            position: relative;
+        }
+
+
+
+        /* Diagnostic Table */
+        .diagnostic-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            border-radius: var(--radius-md);
+            overflow: OVERLAY;
+            box-shadow: var(--shadow-sm);
+            DISPLAY: BLOCK;
+        }
+
+        .diagnostic-table th {
+            background: var(--Blue Ember-primary);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .diagnostic-table td {
+            padding: 12px;
+            border: 1px solid var(--Blue Ember-border);
+        }
+
+        .diagnostic-table tr:nth-child(even) {
+            background-color: var(--Blue Ember-light);
+        }
+
+        .diagnostic-table tr:hover td {
+            background: rgba(0, 180, 216, 0.05);
+        }
+
+        /* Tools Section */
+        .tools-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .tool-card {
+            background: white;
+            border: 1px solid var(--Blue Ember-border);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--Blue Ember-primary);
+        }
+
+        .tool-icon {
+            font-size: 2.5rem;
+            color: var(--Blue Ember-primary);
+            margin-bottom: 15px;
+            transition: var(--transition-fast);
+        }
+
+        .tool-card:hover .tool-icon {
+            transform: scale(1.2) rotate(10deg);
+            color: var(--Blue Ember-primary-dark);
+        }
+
+        .tool-name {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--Blue Ember-secondary);
+            font-size: 1.1rem;
+        }
+
+        .tool-desc {
+            font-size: 0.9rem;
+            color: var(--Blue Ember-gray);
+            min-height: 48px;
+        }
+
+        .tool-specs {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* FAQ and Support */
+        .faq-item {
+            margin: 25px 0;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--Blue Ember-border);
+            transition: var(--transition-fast);
+        }
+
+        .faq-item:hover {
+            padding-left: 5px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--Blue Ember-secondary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: var(--transition-fast);
+            padding: 8px 0;
+        }
+
+        .faq-question:hover {
+            color: var(--Blue Ember-primary);
+        }
+
+        .faq-question::before {
+            content: "Q:";
+            color: var(--Blue Ember-primary);
+            font-weight: bold;
+            min-width: 24px;
+        }
+
+        .faq-answer {
+            padding-left: 25px;
+            color: var(--Blue Ember-gray);
+            line-height: 1.7;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .support-btn {
+            background: linear-gradient(135deg, var(--Blue Ember-primary), var(--Blue Ember-primary-dark));
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .support-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .support-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Updated Footer to Match Blue Ember Website */
+        .footer {
+            background: var(--Blue Ember-footer-bg);
+            color: white;
+            padding: 45px 0 30px;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--Blue Ember-primary), var(--Blue Ember-primary-dark));
+        }
+
+        .footer-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+            color: white;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--Blue Ember-primary);
+            border-radius: var(--radius-full);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            padding: 25px;
+            backdrop-filter: blur(4px);
+            transition: var(--transition-normal);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: var(--transition-fast);
+        }
+
+        .contact-card:hover .contact-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: rgba(0, 180, 216, 0.3);
+        }
+
+        .contact-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .contact-detail {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition-fast);
+        }
+
+        .contact-detail:hover {
+            color: var(--Blue Ember-primary);
+            transform: translateX(5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+
+        .certification-logos {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+
+        .cert-logo {
+            width: 80px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+            transition: var(--transition-fast);
+        }
+
+        .cert-logo:hover {
+            transform: scale(1.1);
+            background: rgba(0, 180, 216, 0.3);
+        }
+
+        /* Back Button - Updated to Match Blue Ember Design */
+        .magic-back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-full);
+            background: var(--Blue Ember-lighter);
+            color: var(--Blue Ember-primary);
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 1000;
+            overflow: hidden;
+            transition: all var(--transition-normal);
+            box-shadow: var(--shadow-sm);
+            border: 2px solid var(--Blue Ember-border);
+        }
+
+        .magic-back-btn i {
+            position: absolute;
+            font-size: 1.1rem;
+            transition: all 0.7s ease;
+        }
+
+        .idle-icon {
+            opacity: 1;
+            transition: all 0.1s ease !important;
+            transform: translateX(0);
+        }
+
+        .active-icon {
+            opacity: 0;
+            transition: all 0.1s ease !important;
+            transform: translateX(-8px);
+        }
+
+        .magic-back-btn span {
+            white-space: nowrap;
+            opacity: 0;
+            margin-left: 15px;
+            color: var(--Blue Ember-secondary);
+            margin-bottom: 4px;
+            transform: translateX(-8px);
+            transition: all var(--transition-normal);
+        }
+
+        .magic-back-btn:hover,
+        .magic-back-btn:focus {
+            width: 160px;
+            border-radius: 30px;
+            padding: 0 20px;
+            background: var(--Blue Ember-lighter);
+            box-shadow: var(--shadow-md);
+            border-color: var(--Blue Ember-primary);
+        }
+
+        .magic-back-btn:hover .idle-icon,
+        .magic-back-btn:focus .idle-icon {
+            opacity: 0;
+            transform: translateX(8px);
+        }
+
+        .magic-back-btn:hover .active-icon,
+        .magic-back-btn:focus .active-icon {
+            opacity: 1;
+            transform: translateX(-60px);
+        }
+
+        .magic-back-btn:hover span,
+        .magic-back-btn:focus span {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+
+
+        .maintenance-badge {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a5a) !important;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 10px;
+            box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);
+        }
+
+        .diagnostic-badge {
+            background: linear-gradient(135deg, #4ecdc4, #44b8b0);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 10px;
+            box-shadow: 0 2px 4px rgba(78, 205, 196, 0.3);
+        }
+
+        .safety-badge {
+            background: linear-gradient(135deg, #f72585, #e01a70);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 10px;
+            box-shadow: 0 2px 4px rgba(247, 37, 133, 0.3);
+        }
+
+        .energy-badge {
+            background: linear-gradient(135deg, #4361ee, #3a56d4);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 10px;
+            box-shadow: 0 2px 4px rgba(67, 97, 238, 0.3);
+        }
+
+
+
+        /* Print Styles */
+        @media print {
+
+            .header,
+            .magic-back-btn,
+            .footer,
+            .section-indicators {
+                display: none;
+            }
+
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .guide-section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .page-title {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .diagram-content {
+                height: 150px;
+                background: #f9f9f9;
+            }
+
+            .warning-box {
+                background: #fffff0;
+                border-left: 4px solid #ffcc00;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            .print-only {
+                display: block;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 0 15px;
+            }
+        }
+
+        /* Responsive Design - Optimized for Blue Ember Website */
+        @media (max-width: 992px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .header-content {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-menu {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 15px;
+                padding: 10px 0;
+            }
+
+            .nav-menu.active {
+                display: none;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+            }
+
+            .logo-text {
+                font-size: 1.5rem;
+            }
+
+            .logo-icon {
+                width: 32px;
+                height: 32px;
+            }
+
+            .page-title {
+                padding: 20px;
+                border-radius: 18px;
+            }
+
+            .title-container {
+                gap: 15px;
+            }
+
+            .title-icon {
+                width: 70px;
+                height: 70px;
+            }
+
+            .title-icon svg {
+                width: 35px;
+                height: 35px;
+            }
+
+            .title-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .title-text p {
+                font-size: 1.15rem;
+            }
+
+            .guide-section {
+                padding: 30px;
+                margin: 30px 0;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .section-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .step {
+                gap: 15px;
+            }
+
+            .step-number {
+                width: 36px;
+                height: 36px;
+            }
+
+            .spec-table {
+                font-size: 0.95rem;
+            }
+
+            th,
+            td {
+                padding: 12px 10px;
+            }
+
+            .badges {
+                gap: 12px;
+            }
+
+            .badge {
+                padding: 10px 15px;
+                font-size: 0.95rem;
+            }
+
+            .badge-icon {
+                font-size: 1.1rem;
+            }
+
+            .contact-info {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 25px;
+            }
+
+            .contact-card {
+                padding: 22px;
+            }
+
+            .contact-icon {
+                width: 46px;
+                height: 46px;
+                font-size: 1.2rem;
+            }
+
+            .contact-title {
+                font-size: 1.15rem;
+            }
+
+            .magic-back-btn {
+                top: 18px;
+                left: 18px;
+                width: 46px;
+                height: 46px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 5px 0px;
+                margin-bottom: 25px;
+                MARGIN: 0PX 8PX 0PX 8PX;
+                border-radius: 0px 0px 25px 25px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .logo-text {
+                font-size: 1.5rem;
+            }
+
+            .logo-icon {
+                width: 32px;
+                height: 32px;
+                font-size: 0.9rem;
+            }
+
+            .page-title {
+                padding: 18px;
+                margin: 25px 0;
+                border-radius: 16px;
+            }
+
+            .title-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+
+            .title-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .title-icon svg {
+                width: 30px;
+                height: 30px;
+            }
+
+            .title-text h1 {
+                font-size: 1.9rem;
+            }
+
+            .title-text p {
+                font-size: 1rem;
+            }
+
+            .guide-section {
+                padding: 25px;
+                margin: 25px 0;
+                border-radius: 18px;
+            }
+
+            .section-header {
+                margin-bottom: 20px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .checklist-items {
+                grid-template-columns: 1fr;
+                border-radius: 16px;
+                margin: 20px 0;
+            }
+
+            .checklist-item {
+                padding: 14px;
+                font-size: 0.95rem;
+            }
+
+            .checklist-item::before {
+                font-size: 1.4rem;
+            }
+
+            .step {
+                flex-direction: column;
+                margin-bottom: 15px;
+                padding-bottom: 15px;
+            }
+
+            .step-content h4 {
+                font-size: 1.1rem;
+            }
+
+            .spec-table {
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                border-radius: 12px;
+                margin: 20px 0;
+            }
+
+            .warning-box {
+                padding: 16px;
+                border-radius: 0 16px 16px 0;
+                margin: 20px 0;
+            }
+
+            .warning-title {
+                font-size: 1.05rem;
+                margin-bottom: 8px;
+            }
+
+            .diagram {
+                padding: 20px;
+                margin: 20px 0;
+                border-radius: 8px;
+            }
+
+            .diagram-content {
+                height: 160px;
+                font-size: 0.95rem;
+            }
+
+            .faq-item {
+                margin: 20px 0;
+                padding-bottom: 20px;
+            }
+
+            .faq-question {
+                font-size: 1.1rem;
+                gap: 8px;
+            }
+
+            .faq-answer {
+                padding-left: 22px;
+                font-size: 0.95rem;
+            }
+
+            .page-indicator {
+                gap: 8px;
+                margin: 25px 0;
+            }
+
+            .page-dot {
+                width: 10px;
+                height: 10px;
+            }
+
+            .badges {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .badge {
+                padding: 10px;
+                justify-content: center;
+                font-size: 0.9rem;
+            }
+
+            .footer {
+                padding: 35px 0 18px;
+                margin-top: 40px;
+            }
+
+            .footer-title {
+                font-size: 1.6rem;
+                margin-bottom: 20px;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin: 25px 0;
+            }
+
+            .contact-card {
+                padding: 20px;
+                border-radius: 8px;
+            }
+
+            .contact-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.15rem;
+            }
+
+            .contact-title {
+                font-size: 1.1rem;
+                margin-bottom: 12px;
+            }
+
+            .contact-detail {
+                font-size: 0.95rem;
+                gap: 8px;
+            }
+
+            .copyright {
+                font-size: 0.85rem;
+                padding-top: 25px;
+                margin-top: 30px;
+            }
+
+            .magic-back-btn {
+                top: 15px;
+                left: 15px;
+                width: 44px;
+                height: 44px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding-bottom: 40px;
+            }
+
+            .header {
+                padding: 15px 0;
+                margin-bottom: 20px;
+            }
+
+            .logo-text {
+                font-size: 1.35rem;
+            }
+
+            .logo-icon {
+                width: 28px;
+                height: 28px;
+                border-radius: 6px;
+                font-size: 0.8rem;
+                font-weight: 600;
+            }
+
+            .page-title {
+                padding: 15px;
+                margin: 20px 0;
+                border-radius: 14px;
+            }
+
+            .title-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .title-icon svg {
+                width: 25px;
+                height: 25px;
+            }
+
+            .title-text h1 {
+                font-size: 1.6rem;
+                margin-bottom: 10px;
+            }
+
+            .title-text p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            .guide-section {
+                padding: 20px;
+                margin: 20px 0;
+                border-radius: 16px;
+            }
+
+            .section-header {
+                margin-bottom: 18px;
+            }
+
+            .section-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .checklist-title {
+                font-size: 1.05rem;
+                margin-bottom: 12px;
+            }
+
+            .checklist-items {
+                border-radius: 14px;
+            }
+
+            .checklist-item {
+                padding: 12px;
+                font-size: 0.9rem;
+                gap: 8px;
+            }
+
+            .checklist-item::before {
+                font-size: 1.3rem;
+                min-width: 18px;
+            }
+
+            .spec-table {
+                font-size: 0.85rem;
+                margin: 18px 0;
+            }
+
+            th,
+            td {
+                padding: 10px 8px;
+            }
+
+            .step {
+                margin-bottom: 12px;
+                padding-bottom: 12px;
+            }
+
+            .step-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.95rem;
+            }
+
+            .step-content h4 {
+                font-size: 1rem;
+                margin-bottom: 6px;
+            }
+
+            .step-content p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            .warning-box {
+                padding: 14px;
+                margin: 18px 0;
+            }
+
+            .warning-title {
+                font-size: 1rem;
+            }
+
+            .warning-title::before {
+                width: 18px;
+                height: 18px;
+                font-size: 0.8rem;
+            }
+
+            .diagram {
+                padding: 16px;
+                margin: 18px 0;
+                border-radius: 6px;
+            }
+
+            .diagram-title {
+                font-size: 1.05rem;
+                margin-bottom: 12px;
+            }
+
+            .diagram-content {
+                height: 140px;
+                font-size: 0.9rem;
+            }
+
+            .faq-item {
+                margin: 16px 0;
+                padding-bottom: 16px;
+                border-bottom-width: 1px;
+            }
+
+            .faq-question {
+                font-size: 1.05rem;
+                gap: 6px;
+            }
+
+            .faq-question::before {
+                font-size: 1.2rem;
+            }
+
+            .faq-answer {
+                padding-left: 20px;
+                font-size: 0.9rem;
+                line-height: 1.55;
+            }
+
+            .page-indicator {
+                gap: 6px;
+                margin: 22px 0;
+            }
+
+            .page-dot {
+                width: 8px;
+                height: 8px;
+            }
+
+            .badges {
+                gap: 8px;
+            }
+
+            .badge {
+                padding: 8px;
+                font-size: 0.85rem;
+            }
+
+            .badge-icon {
+                font-size: 1rem;
+            }
+
+            .footer {
+                padding: 30px 0 15px;
+                margin-top: 30px;
+            }
+
+            .footer-title {
+                font-size: 1.45rem;
+                margin-bottom: 18px;
+            }
+
+            .contact-info {
+                gap: 16px;
+                margin: 22px 0;
+            }
+
+            .contact-card {
+                padding: 16px;
+                border-radius: 6px;
+            }
+
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+                border-radius: 8px;
+            }
+
+            .contact-title {
+                font-size: 1.05rem;
+                margin-bottom: 10px;
+            }
+
+            .contact-detail {
+                margin-bottom: 8px;
+                font-size: 0.9rem;
+                gap: 6px;
+            }
+
+            .contact-detail i {
+                font-size: 0.9rem;
+            }
+
+            .copyright {
+                font-size: 0.8rem;
+                padding-top: 22px;
+                margin-top: 25px;
+            }
+
+            .magic-back-btn {
+                top: 12px;
+                left: 12px;
+                width: 42px;
+                height: 42px;
+            }
+
+            .magic-back-btn i {
+                font-size: 1rem;
+            }
+
+            .magic-back-btn:hover,
+            .magic-back-btn:focus {
+                width: 150px;
+            }
+
+            .support-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .tools-section {
+                grid-template-columns: 1fr;
+            }
+
+            .maintenance-schedule {
+                grid-template-columns: 1fr;
+            }
+
+            .diagnostic-table {
+                font-size: 0.8rem;
+            }
+
+            .certification-logos {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .cert-logo {
+                width: 60px;
+                height: 45px;
+                font-size: 0.7rem;
+            }
+        }
+
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            font-family: 'Rubik', 'Space Grotesk', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #chatbot-toggle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--Blue Ember-primary), var(--Blue Ember-primary-dark));
+            color: white;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1001;
+        }
+
+        #chatbot-toggle:hover {
+            transform: scale(1.1) rotate(12deg);
+            box-shadow: 0 6px 20px rgba(0, 180, 216, 0.6);
+        }
+
+        .chatbot-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 319px;
+            height: 640px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            display: none;
+            flex-direction: column;
+            border: 1px solid var(--Blue Ember-border);
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .chatbot-window.active {
+            display: flex;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .chatbot-header {
+            background: linear-gradient(to right, var(--Blue Ember-primary), var(--Blue Ember-primary-dark));
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .chatbot-avatar {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+        }
+
+        .chatbot-avatar i {
+            color: white;
+            font-size: 18px;
+        }
+
+        .chatbot-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            font-family: 'Tourney', 'League Spartan', sans-serif;
+        }
+
+        #chatbot-close {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        #chatbot-close:hover {
+            background: rgba(255, 255, 255, 0.35);
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: var(--Blue Ember-light);
+            background-image: var(--Blue Ember-grid-bg);
+            background-size: 30px 30px;
+        }
+
+        .chatbot-message {
+            margin-bottom: 15px;
+            max-width: 85%;
+            position: relative;
+        }
+
+        .chatbot-message.bot {
+            align-self: flex-start;
+        }
+
+        .chatbot-message.user {
+            align-self: flex-end;
+            margin-left: auto;
+        }
+
+        .message-content {
+            background: white;
+            padding: 12px 16px;
+            border-radius: 18px 18px 18px 6px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .chatbot-message.user .message-content {
+            background: var(--Blue Ember-primary);
+            color: white;
+            border-radius: 18px 18px 6px 18px;
+            box-shadow: 0 2px 8px rgba(0, 180, 216, 0.3);
+        }
+
+        .message-time {
+            font-size: 0.7rem;
+            color: var(--Blue Ember-gray);
+            margin-top: 4px;
+            display: block;
+            text-align: right;
+        }
+
+        .chatbot-message.user .message-time {
+            text-align: left;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Loading indicator */
+        .loading-indicator {
+            display: flex;
+            padding: 10px 0;
+        }
+
+        .loading-dots {
+            display: flex;
+            align-items: center;
+        }
+
+        .loading-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--Blue Ember-primary);
+            border-radius: 50%;
+            margin: 0 2px;
+            opacity: 0.4;
+            animation: loading-fade 1.4s infinite both;
+        }
+
+        .loading-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .loading-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes loading-fade {
+
+            0%,
+            100% {
+                opacity: 0.4;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .chatbot-input-area {
+            padding: 15px;
+            background: white;
+            border-top: 1px solid var(--Blue Ember-border);
+        }
+
+        .suggestion-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .suggestion-btn {
+            background: var(--Blue Ember-light);
+            border: 1px solid var(--Blue Ember-border);
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            color: var(--Blue Ember-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .suggestion-btn:hover {
+            background: var(--Blue Ember-primary);
+            color: white;
+            border-color: var(--Blue Ember-primary);
+        }
+
+        .input-container {
+            display: flex;
+            background: white;
+            border: 1px solid var(--Blue Ember-border);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        #chatbot-input {
+            flex: 1;
+            border: none;
+            padding: 12px 15px;
+            font-size: 0.95rem;
+            outline: none;
+            background: transparent;
+        }
+
+        #chatbot-send {
+            background: var(--Blue Ember-primary);
+            color: white;
+            border: none;
+            width: 45px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        #chatbot-send:hover {
+            background: var(--Blue Ember-primary-dark);
+        }
+
+        #chatbot-send i {
+            font-size: 16px;
+        }
+
+        .chatbot-footer {
+            margin-top: 10px;
+            font-size: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            color: var(--Blue Ember-gray);
+        }
+
+        .disclaimer {
+            max-width: 70%;
+            text-align: right;
+        }
+
+        .api-status {
+            color: var(--Blue Ember-primary-dark);
+            font-weight: 500;
+        }
+
+        .error-message {
+            background: #fff8e1;
+            border-left: 3px solid var(--Blue Ember-warning);
+            padding: 10px;
+            border-radius: 0 4px 4px 0;
+            margin: 8px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .chatbot-container {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            #chatbot-toggle {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .chatbot-window {
+                width: 357px;
+                height: 685px;
+                bottom: 70px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .chatbot-window {
+                width: 320px;
+                height: 550px;
+                bottom: 70px;
+            }
+
+            .chatbot-message {
+                max-width: 90%;
+            }
+
+            .suggestion-buttons {
+                justify-content: center;
+            }
+
+            .chatbot-footer {
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+            }
+
+            .disclaimer {
+                max-width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="../index.html" class="magic-back-btn" aria-label="Back to Home">
+        <i class="idle-icon fa-solid fa-chevron-left"></i>
+        <i class="active-icon fa-solid fa-chevron-left"></i>
+        <span>Back to Home</span>
+    </a>
+
+    <div class="header">
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html" aria-label="Navigate to home page" style="text-decoration: none;">
+                    <div class="navbar-logo" style="display: flex;">
+                        <img src="../assets/BlueEmber-ezgif.com-gif-maker.gif" alt="Blue Ember animated logo"
+                            style="width: 30px; height: auto;">
+                        <span>
+                            <h6 style="color: #0099ff; font-size: large; margin:5px 0px -12px 0px;">BLUE</h6>
+                            <h6 style="color: #000000; font-size: large; margin:0px;">EMBER</h6>
+                        </span>
+                    </div>
+                </a>
+            </div>
+            <button class="mobile-nav-toggle">
+            </button>
+            <div class="nav-menu">
+                <a href="#preventive" class="nav-link active">Preventive</a>
+                <a href="#diagnostics" class="nav-link">Diagnostics</a>
+                <a href="#components" class="nav-link">Components</a>
+                <a href="#documentation" class="nav-link">Documentation</a>
+                <a href="#seasonal" class="nav-link">Seasonal</a>
+                <a href="#safety" class="nav-link">Safety</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Chatbot Button and Window -->
+    <div class="chatbot-container">
+        <button id="chatbot-toggle" aria-label="Open Blue Ember Assistant">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div id="chatbot-window" class="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="chatbot-title">Blue Ember AI Assistant</div>
+                <button id="chatbot-close" aria-label="Close chat">&times;</button>
+            </div>
+            <div id="chatbot-messages" class="chatbot-messages">
+                <div class="chatbot-message bot">
+                    <div class="message-content">
+                        Hello! I'm your Blue Ember AI Assistant. I can help with maintenance procedures, troubleshooting
+                        guidance, and technical specifications. How can I assist you today?
+                    </div>
+                    <span class="message-time">Now</span>
+                </div>
+            </div>
+            <div class="chatbot-input-area">
+                <div class="suggestion-buttons">
+                    <button class="suggestion-btn">Compressor troubleshooting steps</button>
+                    <button class="suggestion-btn">Preventive maintenance schedule</button>
+                    <button class="suggestion-btn">Water damage emergency protocol</button>
+                </div>
+                <div class="input-container">
+                    <input type="text" id="chatbot-input" placeholder="Ask about maintenance procedures..."
+                        aria-label="Chat input">
+                    <button id="chatbot-send" aria-label="Send message">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="chatbot-footer">
+                    <div class="api-status" id="api-status">Using OpenAI API</div>
+                    <div class="disclaimer">For technical guidance only. Always follow safety protocols.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+
+        <div class="page-title">
+            <div class="title-container">
+                <div class="title-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M19.07 4.93l-1.41 1.41-3.12-3.12c-.78-.78-2.05-.78-2.83 0L6.4 8.53c-.78.78-.78 2.05 0 2.83l3.12 3.12-1.41 1.41-3.12-3.12c-1.56-1.56-1.56-4.09 0-5.66l5.32-5.32c1.56-1.56 4.09-1.56 5.66 0l3.12 3.12zM12.76 12.76l-3.12-3.12 4.24-4.24 3.12 3.12-4.24 4.24zM5.5 15.5h13v2h-13v-2zM5.5 19.5h13v2h-13v-2z" />
+                    </svg>
+                </div>
+                <div class="title-text">
+                    <h1>Expert Maintenance Guide</h1>
+                    <p>Comprehensive procedures for preventive and corrective maintenance of residential and commercial
+                        appliances. All technicians must follow these protocols to ensure optimal performance, extended
+                        equipment life, and customer satisfaction.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 1: Preventive Maintenance Fundamentals -->
+        <div id="preventive" class="guide-section">
+            <div class="section-header">
+                <div class="section-icon">1</div>
+                <div>
+                    <h2 class="section-title">Preventive Maintenance Fundamentals</h2>
+                    <p class="section-subtitle">Core principles and scheduling protocols for equipment longevity</p>
+                </div>
+            </div>
+
+            <div class="checklist">
+                <h3 class="checklist-title">Preventive Maintenance Benefits</h3>
+                <div class="checklist-items">
+                    <div class="checklist-item">Increases equipment lifespan by 40-60% through regular servicing</div>
+                    <div class="checklist-item">Reduces energy consumption by maintaining optimal operating efficiency
+                    </div>
+                    <div class="checklist-item">Prevents 80% of catastrophic failures through early problem detection
+                    </div>
+                    <div class="checklist-item">Minimizes unexpected downtime during critical usage periods</div>
+                    <div class="checklist-item">Maintains manufacturer warranty compliance requirements</div>
+                    <div class="checklist-item">Reduces long-term repair costs through component preservation</div>
+                    <div class="checklist-item">Ensures consistent performance and customer satisfaction</div>
+                    <div class="checklist-item">Documents equipment history for future repair forecasting</div>
+                </div>
+            </div>
+
+            <div class="maintenance-schedule">
+                <div class="schedule-card">
+                    <h4><i class="fas fa-calendar-alt"></i> Monthly Maintenance</h4>
+                    <ul>
+                        <li>Clean condenser coils (refrigeration units)</li>
+                        <li>Inspect and clean water filters</li>
+                        <li>Check door seals and gaskets for integrity</li>
+                        <li>Verify drain pumps are functioning properly</li>
+                        <li>Inspect for unusual vibrations or noises</li>
+                        <li>Clean exterior surfaces and control panels</li>
+                    </ul>
+                    <div class="energy-badge" style="position: absolute; bottom: 10px; right: 10px;">Energy Savings
+                    </div>
+                </div>
+                <div class="schedule-card">
+                    <h4><i class="fas fa-calendar"></i> Quarterly Maintenance</h4>
+                    <ul>
+                        <li>Deep clean evaporator coils</li>
+                        <li>Inspect electrical connections for corrosion</li>
+                        <li>Check refrigerant pressure levels</li>
+                        <li>Lubricate moving parts with approved lubricants</li>
+                        <li>Test safety controls and thermostats</li>
+                        <li>Inspect water inlet valves and solenoids</li>
+                    </ul>
+                    <div class="maintenance-badge" style="position: absolute; bottom: 10px; right: 10px;">Extended Life
+                    </div>
+                </div>
+                <div class="schedule-card">
+                    <h4><i class="fas fa-calendar-week"></i> Bi-Annual Maintenance</h4>
+                    <ul>
+                        <li>Check insulation resistance of all motors</li>
+                        <li>Inspect compressor mounting and vibration dampeners</li>
+                        <li>Test heating elements for proper resistance</li>
+                        <li>Replace water filters and air purification systems</li>
+                        <li>Inspect drain lines for blockages or deterioration</li>
+                        <li>Calibrate temperature controls and sensors</li>
+                    </ul>
+                    <div class="safety-badge" style="position: absolute; bottom: 10px; right: 10px;">Safety Critical
+                    </div>
+                </div>
+                <div class="schedule-card">
+                    <h4><i class="fas fa-calendar-day"></i> Annual Maintenance</h4>
+                    <ul>
+                        <li>Full system performance evaluation</li>
+                        <li>Refrigerant recovery and recharge if necessary</li>
+                        <li>Comprehensive electrical safety testing</li>
+                        <li>Replace worn components before failure</li>
+                        <li>Update firmware/software if applicable</li>
+                        <li>Complete system documentation update</li>
+                    </ul>
+                    <div class="diagnostic-badge" style="position: absolute; bottom: 10px; right: 10px;">System Health
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">Critical Maintenance Notice</div>
+                <div class="warning-content">
+                    <p>Failure to perform scheduled preventive maintenance voids extended warranty coverage on all
+                        compressors, motors, and control boards. Document all maintenance activities using the Blue
+                        Ember Maintenance Log (EV-ML-2023) to preserve warranty status and provide service history for
+                        future diagnostics.</p>
+                    <p style="margin-top: 10px; font-weight: 600; color: var(--Blue Ember-primary);">
+                        <i class="fas fa-info-circle"></i> Pro Tip: Always take before/after photos of filter
+                        replacements and coil cleaning to document maintenance quality for warranty claims.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Equipment History Assessment</h4>
+                        <p>Before any maintenance procedure, review the complete service history of the equipment. Pay
+                            special attention to recurring issues, previous component replacements, and manufacturer
+                            bulletins. This information is critical for identifying potential failure patterns and
+                            optimizing maintenance approach.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Performance Baseline Documentation</h4>
+                        <p>Measure and document all operational parameters before maintenance begins (temperature
+                            differentials, cycle times, amp draw, noise levels, error codes). This baseline allows for
+                            accurate comparison after maintenance to verify successful restoration of optimal
+                            performance.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Maintenance Priority Determination</h4>
+                        <p>Assess equipment usage patterns, criticality to customer operations, age, and current
+                            condition to determine maintenance priority. High-use commercial equipment requires more
+                            frequent attention than residential units. Document your assessment rationale on the
+                            Maintenance Priority Form (EV-MPF-102).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="badges">
+                <div class="badge">
+                    <span class="badge-icon">✓</span> EPA 608 Certified
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✓</span> RSES Member
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✓</span> UL Certified Technician
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✓</span> Advanced Diagnostics Training
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✓</span> Manufacturer Authorized Service
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 2: Diagnostic Procedures & Troubleshooting -->
+        <div id="diagnostics" class="guide-section">
+            <div class="section-header">
+                <div class="section-icon">2</div>
+                <div>
+                    <h2 class="section-title">Diagnostic Procedures & Troubleshooting</h2>
+                    <p class="section-subtitle">Systematic approaches to identify and resolve equipment issues</p>
+                </div>
+            </div>
+
+            <h3 style="color: var(--Blue Ember-secondary); margin: 25px 0 15px;">Comprehensive Troubleshooting Flow</h3>
+            <div class="troubleshooting-flow">
+                <div class="flow-step">
+                    <h4>1. Symptom Verification & Documentation</h4>
+                    <p>Reproduce the reported issue with the customer present. Document exact symptoms, operating
+                        conditions, frequency, and duration. Take photos or video of abnormal conditions whenever
+                        possible.</p>
+                </div>
+                <div class="flow-step">
+                    <h4>2. Electrical System Evaluation</h4>
+                    <p>Perform voltage measurements at all critical points (incoming power, control boards, motors,
+                        sensors). Check for voltage drop under load conditions. Verify ground continuity and measure
+                        resistance of all windings and heating elements.</p>
+                </div>
+                <div class="flow-step">
+                    <h4>3. Control System Diagnostics</h4>
+                    <p>Enter diagnostic mode using manufacturer protocols. Read and record all error codes. Test
+                        individual components through forced operation cycles. Verify sensor readings against expected
+                        values and calibrate if necessary.</p>
+                </div>
+                <div class="flow-step">
+                    <h4>4. Mechanical System Inspection</h4>
+                    <p>Inspect all moving parts for wear, binding, or abnormal operation. Check belts, bearings, seals,
+                        and couplings. Listen for unusual noises and identify their source. Measure vibration levels at
+                        critical points using approved equipment.</p>
+                </div>
+                <div class="flow-step">
+                    <h4>5. Thermodynamic Performance Analysis</h4>
+                    <p>Measure temperature differentials throughout the system. Compare actual performance against
+                        design specifications. Identify efficiency losses and determine root causes. For refrigeration
+                        systems, calculate superheat and subcooling values.</p>
+                </div>
+                <div class="flow-step">
+                    <h4>6. Data-Driven Decision Protocol</h4>
+                    <p>Compare all measurements against baseline values and manufacturer specifications to determine if
+                        components are within acceptable tolerances. Prioritize repairs based on impact on system
+                        performance, safety considerations, and cost-effectiveness.</p>
+                </div>
+            </div>
+
+
+            <h3 style="color: var(--Blue Ember-secondary); margin: 25px 0 15px;">Critical Diagnostic Measurements</h3>
+            <table class="diagnostic-table">
+                <thead>
+                    <tr>
+                        <th>System Type</th>
+                        <th>Measurement</th>
+                        <th>Acceptable Range</th>
+                        <th>Out-of-Spec Protocol</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Refrigeration</td>
+                        <td>Evaporator Superheat</td>
+                        <td>8-12°F</td>
+                        <td>Check refrigerant charge, TXV operation, airflow</td>
+                    </tr>
+                    <tr>
+                        <td>Refrigeration</td>
+                        <td>Condenser Subcooling</td>
+                        <td>8-12°F</td>
+                        <td>Check refrigerant charge, condenser airflow, fan operation</td>
+                    </tr>
+                    <tr>
+                        <td>Washing Machine</td>
+                        <td>Motor Amperage (Spin Cycle)</td>
+                        <td>4-6A @ 120V</td>
+                        <td>Inspect bearings, drum alignment, belt tension, drain system</td>
+                    </tr>
+                    <tr>
+                        <td>Dishwasher</td>
+                        <td>Heating Element Resistance</td>
+                        <td>15-25Ω</td>
+                        <td>Replace element if open or shorted to ground</td>
+                    </tr>
+                    <tr>
+                        <td>Oven/Range</td>
+                        <td>Bake Element Temperature Rise</td>
+                        <td>300°F in 90 sec</td>
+                        <td>Test voltage to element, replace if underperforming</td>
+                    </tr>
+                    <tr>
+                        <td>A/C System</td>
+                        <td>Ambient to Supply Air Delta</td>
+                        <td>17-21°F</td>
+                        <td>Clean coils, verify refrigerant charge, check blower operation</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="warning-box">
+                <div class="warning-title">Critical Diagnostic Notice</div>
+                <div class="warning-content">
+                    <p>Never replace components based solely on error codes. Always perform verification testing of the
+                        actual failed component and identify root causes. Replacing parts without proper diagnosis
+                        results in 73% repeat service calls and significantly increases customer costs. Document all
+                        measurements and decision rationale in the service report.</p>
+                </div>
+            </div>
+
+            <h3 style="color: var(--Blue Ember-secondary); margin: 25px 0 15px;">Essential Diagnostic Tools</h3>
+            <div class="tools-section">
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <div class="tool-name">Digital Thermometer</div>
+                    <div class="tool-desc">±0.5°F accuracy, dual probes for delta measurements</div>
+                    <div class="tool-specs">Resolution: 0.1°F, Range: -58°F to 1022°F</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="tool-name">Multimeter</div>
+                    <div class="tool-desc">True RMS, min/max recording, capacitance testing</div>
+                    <div class="tool-specs">Accuracy: ±0.5%, CAT III 600V rated</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <div class="tool-name">Anemometer</div>
+                    <div class="tool-desc">Measures airflow in CFM for ventilation verification</div>
+                    <div class="tool-specs">Range: 0-6000 CFM, Accuracy: ±2%</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="tool-name">Tachometer</div>
+                    <div class="tool-desc">Contact and non-contact RPM measurement (±1%)</div>
+                    <div class="tool-specs">Range: 1-99,999 RPM, Laser & optical modes</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                    </div>
+                    <div class="tool-name">Manifold Gauges</div>
+                    <div class="tool-desc">4-valve design, compound gauges, refrigerant recovery</div>
+                    <div class="tool-specs">Max Pressure: 800 PSI, Vacuum rated to 30 inHg</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="tool-name">Diagnostic Scanner</div>
+                    <div class="tool-desc">Manufacturer-specific interface with code database</div>
+                    <div class="tool-specs">Bluetooth 5.0, 5-year update subscription included</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 3: Component-Specific Maintenance -->
+        <div id="components" class="guide-section">
+            <div class="section-header">
+                <div class="section-icon">3</div>
+                <div>
+                    <h2 class="section-title">Component-Specific Maintenance Protocols</h2>
+                    <p class="section-subtitle">Detailed procedures for critical system components and wear items</p>
+                </div>
+            </div>
+
+            <h3 style="color: var(--Blue Ember-secondary); margin: 25px 0 15px;">Compressor Maintenance & Evaluation
+            </h3>
+            <div class="step-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Compressor Health Assessment</h4>
+                        <p>Measure amp draw during startup and running conditions. Compare against nameplate rating
+                            (should not exceed 110% of RLA). Listen for abnormal noises (knocking, screeching). Check
+                            case temperature (should not exceed 180°F). Verify proper oil level through sight glass if
+                            equipped.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Terminal & Electrical Inspection</h4>
+                        <p>Inspect all terminals for corrosion or pitting. Measure resistance between terminals (should
+                            match manufacturer specifications). Test for short to ground (infinite resistance required).
+                            Check start relay and overload protection devices for proper operation.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Vibration & Mounting Analysis</h4>
+                        <p>Measure vibration at compressor mounts using accelerometer. Maximum acceptable: 0.2 inches
+                            per second RMS. Inspect mounting pads for deterioration or compression. Verify proper
+                            clearance from cabinet walls (min. 1/2"). Check for refrigerant floodback conditions that
+                            cause excessive vibration.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Oil & Refrigerant Analysis</h4>
+                        <p>Inspect compressor oil through sight glass (golden color, no particles). Test refrigerant for
+                            acid content and moisture contamination. Replace filter-driers whenever the system has been
+                            opened or shows signs of contamination. Document acid test results in maintenance log.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="maintenance-badge">CRITICAL COMPONENT</div>
+            <p
+                style="margin: 15px 0; padding-left: 25px; border-left: 3px solid var(--Blue Ember-maintenance); font-weight: 500;">
+                Compressor failure is the #1 cause of complete appliance replacement. Proper maintenance extends
+                compressor life by 7-10 years on average. Any abnormal readings require immediate attention and detailed
+                documentation.</p>
+
+            <h3 style="color: var(--Blue Ember-secondary); margin: 25px 0 15px;">Water System Maintenance</h3>
+            <div class="spec-table">
+                <h3 style="color: var(--Blue Ember-secondary); margin-bottom: 15px;">Water Filter Replacement Schedule
+                </h3>
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>Filter Type</th>
+                            <th>Replacement Frequency</th>
+                            <th>Capacity Rating</th>
+                            <th>Failure Symptoms</th>
+                            <th>Required Tools</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Prefilter (Sediment)</td>
+                            <td>Every 3-6 months</td>
+                            <td>30,000 gallons</td>
+                            <td>Reduced flow rate, increased pressure drop</td>
+                            <td>Filter wrench, bucket, towel</td>
+                        </tr>
+                        <tr>
+                            <td>Carbon Block</td>
+                            <td>Every 6 months</td>
+                            <td>1,500 gallons</td>
+                            <td>Off taste/odor, chlorine breakthrough</td>
+                            <td>Filter wrench, food-grade lubricant</td>
+                        </tr>
+                        <tr>
+                            <td>Reverse Osmosis Membrane</td>
+                            <td>Every 2-3 years</td>
+                            <td>20,000 gallons</td>
+                            <td>Increased TDS readings, slow production</td>
+                            <td>Allen wrenches, TDS meter, RO flush kit</td>
+                        </tr>
+                        <tr>
+                            <td>UV Purification Lamp</td>
+                            <td>Every 12 months</td>
+                            <td>9,000 hours</td>
+                            <td>Reduced UV intensity, quartz sleeve cloudiness</td>
+                            <td>UV meter, rubber gloves, isopropyl alcohol</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="step-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Water Valve & Solenoid Testing</h4>
+                        <p>Measure coil resistance (typically 500-1500Ω). Test operation by applying rated voltage and
+                            listening for click. Check for slow filling or leaking by monitoring water levels over
+                            15-minute period. Inspect inlet screens for debris and clean with soft brush.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Drain System Inspection</h4>
+                        <p>Remove and clean pump impeller. Check for proper drainage rate (minimum 10 gallons per
+                            minute). Inspect hoses for kinks, cracks, or mineral buildup. Test backup drain systems.
+                            Verify proper air gap in accordance with local plumbing codes.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Leak Detection Protocol</h4>
+                        <p>Use electronic leak detector or pressure testing equipment. Pressurize water system to 1.5x
+                            operating pressure. Monitor for 30 minutes. Check all connections, hoses, valves with UV dye
+                            if necessary. Document leak location, cause, and repair method in service report.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">Water Damage Prevention Protocol</div>
+                <div class="warning-content">
+                    <p>Water damage accounts for 67% of all insurance claims related to appliances. Always install leak
+                        detection sensors on all water-connected appliances. Replace water supply lines every 5 years
+                        regardless of condition. Test automatic shut-off valves quarterly. Document all water system
+                        inspections with date-stamped photographs.</p>
+                    <p
+                        style="margin-top: 10px; background: rgba(255,255,255,0.5); padding: 8px; border-radius: 4px; font-size: 0.9rem;">
+                        <strong><i class="fas fa-shield-alt"></i> Water Damage Protection Tip:</strong> Install a
+                        secondary drain pan under all water-connected appliances as required by many insurance
+                        providers.
+                    </p>
+                </div>
+            </div>
+
+            <h3 style="color: var(--Blue Ember-secondary); margin: 25px 0 15px;">Electronic Control Systems Maintenance
+            </h3>
+            <div class="step-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Control Board Visual Inspection</h4>
+                        <p>Inspect for signs of overheating (discoloration, burnt smell). Check for bulging or leaking
+                            capacitors. Examine solder joints for cracks or cold joints. Verify mounting hardware is
+                            secure and board is properly grounded.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Connector & Harness Testing</h4>
+                        <p>Check all connectors for corrosion, bent pins, or loose fits. Measure resistance across
+                            harness connections (should not exceed 0.5Ω). Perform wiggle test while monitoring operation
+                            to identify intermittent connections. Clean connectors with electrical contact cleaner only.
+                        </p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Sensor Calibration Protocol</h4>
+                        <p>Test temperature sensors at multiple known temperatures (ice bath, boiling water). Compare
+                            readings to calibrated reference thermometer. Replace sensors with >2°F deviation. Calibrate
+                            control board offsets when sensor replacement is not possible.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Firmware & Software Updates</h4>
+                        <p>Check manufacturer website for firmware updates. Backup current settings before updating.
+                            Follow precise manufacturer update protocol. Never interrupt power during firmware update
+                            process. Document previous and new firmware versions in service report.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="diagnostic-badge">ADVANCED DIAGNOSTICS</div>
+            <p
+                style="margin: 15px 0; padding-left: 25px; border-left: 3px solid var(--Blue Ember-diagnostic); font-weight: 500;">
+                Modern appliances contain 30-50% more electronic components than models from 5 years ago. Technicians
+                must stay current with evolving diagnostic software and understand communication protocols between
+                control boards, sensors, and actuators.</p>
+
+
+        </div>
+
+        <!-- Page 4: Maintenance Documentation & Support -->
+        <div id="documentation" class="guide-section">
+            <div class="section-header">
+                <div class="section-icon">4</div>
+                <div>
+                    <h2 class="section-title">Maintenance Documentation & Support Protocols</h2>
+                    <p class="section-subtitle">Reporting requirements, warranty considerations, and customer
+                        communication standards</p>
+                </div>
+            </div>
+
+            <h3 style="color: var(--Blue Ember-secondary); margin: 25px 0 15px;">Maintenance Documentation Standards
+            </h3>
+            <div class="step-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Service Report Requirements</h4>
+                        <p>All maintenance visits require comprehensive documentation including: equipment details,
+                            current operating parameters, maintenance actions performed, parts used/replaced,
+                            before/after measurements, and customer signature. Use Blue Ember Digital Maintenance
+                            Platform (EDMP) or approved paper forms EV-MR-101 through EV-MR-104.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Photographic Evidence Protocol</h4>
+                        <p>Take before and after photos of all maintenance work. Include close-ups of problematic
+                            components and wide shots showing overall equipment condition. Photos must include date/time
+                            stamp and be uploaded to customer's digital profile within 24 hours of service completion.
+                        </p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Parts & Materials Tracking</h4>
+                        <p>Document all parts used with part numbers, quantities, and serial numbers where applicable.
+                            Record materials consumed (refrigerant, lubricants, sealants). Update inventory system
+                            immediately after service completion. Reconcile actual parts used with estimated parts
+                            quoted to customer.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Maintenance Recommendations</h4>
+                        <p>Document all components showing signs of wear or approaching end-of-life. Provide customer
+                            with detailed report including expected remaining service life, replacement cost estimates,
+                            and recommended timeframes. Flag critical items requiring immediate attention with priority
+                            codes P1-P4.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="spec-table">
+                <h3 style="color: var(--Blue Ember-secondary); margin-bottom: 15px;">Warranty Documentation Requirements
+                </h3>
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>Maintenance Type</th>
+                            <th>Warranty Impact</th>
+                            <th>Required Documentation</th>
+                            <th>Verification Method</th>
+                            <th>Retention Period</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Scheduled Preventive Maintenance</td>
+                            <td>Extends compressor warranty by 2 years</td>
+                            <td>EV-PM-202 form, dated photos, measurements</td>
+                            <td>Customer signature, GPS timestamp</td>
+                            <td>10 years</td>
+                        </tr>
+                        <tr>
+                            <td>Component Replacement</td>
+                            <td>New 1-year parts & labor warranty</td>
+                            <td>EV-CR-105 form, old part photos, new part serial #</td>
+                            <td>Before/after performance data</td>
+                            <td>7 years</td>
+                        </tr>
+                        <tr>
+                            <td>Refrigerant Service</td>
+                            <td>90-day system warranty</td>
+                            <td>EV-RS-303 form, refrigerant type/amount, leak test results</td>
+                            <td>Pressure readings, temperature measurements</td>
+                            <td>5 years</td>
+                        </tr>
+                        <tr>
+                            <td>Diagnostic Service Only</td>
+                            <td>No warranty extension</td>
+                            <td>EV-DS-401 form, all measurements, diagnostic conclusion</td>
+                            <td>Customer acknowledgment of findings</td>
+                            <td>3 years</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">Documentation Compliance Notice</div>
+                <div class="warning-content">
+                    <p>Incomplete or missing documentation voids all Blue Ember labor warranties and may invalidate
+                        manufacturer parts warranties. All service reports must be completed and uploaded within 48
+                        hours of service completion. Supervisors conduct random audits with failure rate exceeding 5%
+                        resulting in certification suspension.</p>
+                </div>
+            </div>
+
+            <h3 style="color: var(--Blue Ember-secondary); margin: 25px 0 15px;">Customer Communication Protocol</h3>
+            <div class="checklist">
+                <h3 class="checklist-title">Maintenance Completion Requirements</h3>
+                <div class="checklist-items">
+                    <div class="checklist-item">Review all maintenance actions with customer using layperson terminology
+                    </div>
+                    <div class="checklist-item">Provide printed summary of work performed and parts used</div>
+                    <div class="checklist-item">Explain any components showing early signs of wear</div>
+                    <div class="checklist-item">Set clear expectations for next scheduled maintenance date</div>
+                    <div class="checklist-item">Demonstrate proper equipment operation after maintenance</div>
+                    <div class="checklist-item">Provide emergency contact information for urgent issues</div>
+                    <div class="checklist-item">Schedule next maintenance appointment before departing</div>
+                    <div class="checklist-item">Request customer feedback on service quality</div>
+                </div>
+            </div>
+
+            <div class="faq-section">
+                <h3 style="color: var(--Blue Ember-secondary); margin: 25px 0 15px;">Maintenance Support Questions</h3>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i> What documentation is required to maintain extended
+                        warranty coverage on my equipment?
+                    </div>
+                    <div class="faq-answer">
+                        To maintain extended warranty coverage, we require dated service reports for all preventive
+                        maintenance visits, including before/after performance measurements, parts replaced (if any),
+                        and customer signatures. Digital photographs of the work performed must be uploaded to your
+                        account. Missing documentation for more than one scheduled maintenance interval will void
+                        extended warranty coverage.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i> How do you determine when a component needs replacement
+                        versus repair?
+                    </div>
+                    <div class="faq-answer">
+                        Our technicians follow a comprehensive decision matrix that considers: component age, repair
+                        cost versus replacement cost, impact on system performance, safety implications, and expected
+                        remaining service life. Generally, if repair costs exceed 65% of replacement cost OR if the
+                        component has failed multiple times, replacement is recommended. All recommendations are
+                        documented with technical justification.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i> Can I perform any maintenance tasks myself between
+                        professional visits?
+                    </div>
+                    <div class="faq-answer">
+                        Yes, customers can perform several basic maintenance tasks: cleaning condenser coils with soft
+                        brush, replacing water filters, cleaning exterior surfaces with mild soap, checking door seals
+                        for debris, and ensuring proper airflow around equipment. However, never attempt electrical
+                        work, refrigerant handling, or internal component repairs without proper certification.
+                        Incorrect DIY maintenance may void warranties and create safety hazards.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i> How does regular maintenance impact my equipment's energy
+                        efficiency?
+                    </div>
+                    <div class="faq-answer">
+                        Proper maintenance typically improves energy efficiency by 15-30%. Clean condenser coils reduce
+                        compressor run time by up to 30%. Proper refrigerant levels ensure optimal heat transfer.
+                        Well-lubricated motors reduce electrical consumption by 10-15%. Calibrated thermostats prevent
+                        short-cycling and temperature overshoot. Our maintenance reports include before/after energy
+                        consumption estimates to quantify savings from regular service.
+                    </div>
+                </div>
+            </div>
+
+            <button class="support-btn">
+                <i class="fas fa-headset"></i> Contact Technical Support
+            </button>
+
+            <div class="badges">
+                <div class="badge">
+                    <span class="badge-icon">✓</span> 7-Year Extended Warranty Option
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✓</span> Remote Diagnostics Support
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✓</span> Priority Emergency Service
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✓</span> Automated Maintenance Reminders
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✓</span> Digital Maintenance Records Portal
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 5: Seasonal Maintenance Protocols -->
+        <div id="seasonal" class="guide-section">
+            <div class="section-header">
+                <div class="section-icon">5</div>
+                <div>
+                    <h2 class="section-title">Seasonal Maintenance Protocols</h2>
+                    <p class="section-subtitle">Equipment-specific preparation for seasonal temperature and humidity
+                        changes</p>
+                </div>
+            </div>
+
+
+
+            <h3 style="color: var(--Blue Ember-secondary); margin: 25px 0 15px;">Spring Preparation Protocol</h3>
+            <div class="step-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Refrigeration System Startup</h4>
+                        <p>For seasonal refrigeration units (ice makers, beverage centers), perform full startup
+                            sequence: verify refrigerant levels, check for leaks, clean condenser coils, test compressor
+                            operation under load, and monitor temperature stabilization over 24 hours.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Humidity Control Systems</h4>
+                        <p>Inspect and clean dehumidifier coils and filters. Test condensate pumps and drainage systems.
+                            Verify humidistat calibration. Replace desiccant filters if applicable. Check for
+                            mold/mildew in water collection areas.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Exterior Ventilation Systems</h4>
+                        <p>Clean exterior vents and louvers. Remove winter debris blocking airflow. Inspect and clean
+                            range hood exhaust systems. Verify backdraft dampers operate freely. Test exhaust fans under
+                            full load conditions.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Water Softening Systems</h4>
+                        <p>Reset regeneration cycles for increased water usage. Clean brine tanks and check salt levels.
+                            Inspect resin beds for channeling or exhaustion. Test water hardness before and after
+                            treatment. Calibrate electronic controls for seasonal usage patterns.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="energy-badge">ENERGY OPTIMIZATION</div>
+            <p style="margin: 15px 0; padding-left: 25px; border-left: 3px solid var(--Blue Ember-energy);">Spring
+                maintenance typically reduces summer energy costs by 15-25% through improved system efficiency and
+                preventative component replacement before peak usage periods.</p>
+
+            <h3 style="color: var(--Blue Ember-secondary); margin: 25px 0 15px;">Summer Peak Performance Protocol</h3>
+            <div class="checklist">
+                <h3 class="checklist-title">Critical Summer Maintenance</h3>
+                <div class="checklist-items">
+                    <div class="checklist-item">Condenser coil cleaning (refrigeration and HVAC)</div>
+                    <div class="checklist-item">Verify proper refrigerant charge and subcooling</div>
+                    <div class="checklist-item">Test compressor cooling capacity under full load</div>
+                    <div class="checklist-item">Inspect electrical connections for heat-related deterioration</div>
+                    <div class="checklist-item">Verify proper airflow through all systems</div>
+                    <div class="checklist-item">Check for refrigerant leaks using electronic detector</div>
+                    <div class="checklist-item">Monitor amp draw during peak temperature conditions</div>
+                    <div class="checklist-item">Verify thermostat calibration at high temperature setpoints</div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">Summer Operation Advisory</div>
+                <div class="warning-content">
+                    <p>During extreme heat events (temperatures exceeding 95°F), refrigeration systems experience 30-40%
+                        increased compressor run time. Pre-cool units during off-peak hours when possible. Never block
+                        airflow around condenser units. Install shade structures for outdoor condensers to reduce
+                        ambient temperature exposure by 10-15°F.</p>
+                </div>
+            </div>
+
+            <h3 style="color: var(--Blue Ember-secondary); margin: 25px 0 15px;">Fall & Winter Preparation</h3>
+            <div class="spec-table">
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>System</th>
+                            <th>Fall Maintenance</th>
+                            <th>Winter Protection</th>
+                            <th>Critical Failure Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Refrigeration</td>
+                            <td>Clean condenser coils, test defrost cycles</td>
+                            <td>Verify ambient temperature compensation</td>
+                            <td>Frozen drain lines, compressor overcooling</td>
+                        </tr>
+                        <tr>
+                            <td>Washing Machines</td>
+                            <td>Inspect hoses, clean pumps, test heating elements</td>
+                            <td>Ensure minimum ambient temperature of 40°F</td>
+                            <td>Frozen water lines, pump seal failure</td>
+                        </tr>
+                        <tr>
+                            <td>Dishwashers</td>
+                            <td>Clean filters, test heating elements, inspect seals</td>
+                            <td>Install heat tape on supply lines in unheated spaces</td>
+                            <td>Water inlet valve freezing, drain pump failure</td>
+                        </tr>
+                        <tr>
+                            <td>Ice Makers</td>
+                            <td>Deep clean, replace water filters, test harvest cycles</td>
+                            <td>Install ambient temperature sensors with alarms</td>
+                            <td>Frozen water supply, harvest mechanism binding</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="step-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Unheated Space Protection</h4>
+                        <p>For appliances in garages, basements, or utility rooms, install ambient temperature
+                            monitoring systems with remote alerts. Use heat tape on water supply and drain lines. Verify
+                            proper insulation around refrigerant lines. Install auxiliary heaters to maintain minimum
+                            operating temperatures.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Drain System Winterization</h4>
+                        <p>For seasonal or vacation properties, completely drain water systems. Use compressed air to
+                            blow out drain lines. Add non-toxic antifreeze to drain traps. Disconnect and store ice
+                            maker water lines. Document winterization procedures for spring reactivation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tools-section">
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-temperature-low"></i>
+                    </div>
+                    <div class="tool-name">Ambient Temperature Monitor</div>
+                    <div class="tool-desc">Wireless sensors with remote alerts for low temperature conditions</div>
+                    <div class="tool-specs">Range: -40°F to 150°F, 100-ft wireless range</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="tool-name">Pipe Freeze Protection</div>
+                    <div class="tool-desc">Self-regulating heat tape for water supply and drain lines</div>
+                    <div class="tool-specs">5W/ft, automatic temperature regulation, UL listed</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <div class="tool-name">Refrigeration Winterization Kit</div>
+                    <div class="tool-desc">Complete kit for seasonal refrigeration system protection</div>
+                    <div class="tool-specs">Includes thermostat bypass, drain line heater, condenser blanket</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 6: Safety & Emergency Protocols -->
+        <div id="safety" class="guide-section">
+            <div class="section-header">
+                <div class="section-icon">6</div>
+                <div>
+                    <h2 class="section-title">Safety & Emergency Response Protocols</h2>
+                    <p class="section-subtitle">Critical procedures for hazardous conditions and emergency situations
+                    </p>
+                </div>
+            </div>
+
+            <div class="safety-badge">LIFE SAFETY PROTOCOL</div>
+            <div class="warning-box" style="border-left: 6px solid var(--Blue Ember-safety); background: #fff0f5;">
+                <div class="warning-title" style="color: var(--Blue Ember-safety);">
+                    <i class="fas fa-exclamation-triangle"></i> EMERGENCY PROCEDURES PRIORITY
+                </div>
+                <div class="warning-content">
+                    <p>In any emergency situation, follow this sequence: 1) Ensure personal safety, 2) Secure the area
+                        to prevent harm to others, 3) Shut off utilities (power, gas, water) as appropriate, 4) Contact
+                        emergency services if needed, 5) Document the situation and notify supervisor.</p>
+                </div>
+            </div>
+
+            <h3 style="color: var(--Blue Ember-secondary); margin: 25px 0 15px;">Electrical Emergency Response</h3>
+            <div class="step-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Electrical Shock Response</h4>
+                        <p>NEVER touch a person in contact with live electricity. Immediately disconnect power at the
+                            source (breaker panel). Call 911. Use non-conductive materials (wooden broom handle) to
+                            separate victim from source only if power cannot be disconnected. Begin CPR if trained and
+                            necessary.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Electrical Fire Response</h4>
+                        <p>Disconnect power immediately. Use Class C fire extinguisher ONLY (never water). Evacuate area
+                            if fire spreads beyond initial equipment. Call 911. Document fire origin and cause for
+                            insurance purposes. Tag and isolate damaged equipment.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Overheated Components</h4>
+                        <p>Shut down equipment immediately. Allow components to cool naturally (do not use water).
+                            Inspect for melted insulation, burnt smell, or visible damage. Test for short circuits
+                            before attempting restart. Replace all damaged components. Identify root cause before
+                            returning to service.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="color: var(--Blue Ember-secondary); margin: 25px 0 15px;">Refrigerant Safety & Handling</h3>
+            <div class="spec-table">
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>Refrigerant Type</th>
+                            <th>Hazard Classification</th>
+                            <th>Required PPE</th>
+                            <th>Emergency Response</th>
+                            <th>EPA Certification Required</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>R-134a</td>
+                            <td>A1 (Low toxicity, non-flammable)</td>
+                            <td>Safety glasses, gloves</td>
+                            <td>Ventilate area, avoid inhalation</td>
+                            <td>Type I</td>
+                        </tr>
+                        <tr>
+                            <td>R-410A</td>
+                            <td>A1 (Low toxicity, non-flammable)</td>
+                            <td>Safety glasses, gloves, face shield</td>
+                            <td>Ventilate area, avoid skin contact (frostbite risk)</td>
+                            <td>Type I</td>
+                        </tr>
+                        <tr>
+                            <td>R-290 (Propane)</td>
+                            <td>A3 (Low toxicity, HIGHLY flammable)</td>
+                            <td>Full face shield, fire-resistant clothing, gas monitor</td>
+                            <td>Evacuate area, eliminate ignition sources, call fire department</td>
+                            <td>Type II</td>
+                        </tr>
+                        <tr>
+                            <td>R-717 (Ammonia)</td>
+                            <td>B2L (Moderate toxicity, flammable)</td>
+                            <td>SCBA, chemical suit, gas monitor</td>
+                            <td>Evacuate immediately, call HAZMAT team</td>
+                            <td>Type II</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+            <h3 style="color: var(--Blue Ember-secondary); margin: 25px 0 15px;">Water Damage Emergency Response</h3>
+            <div class="step-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Immediate Water Shutoff</h4>
+                        <p>Locate and close the nearest water supply valve to the affected appliance. If unable to
+                            locate, shut off the main water supply to the building. Document valve locations in the
+                            equipment log for future emergencies.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Water Extraction Protocol</h4>
+                        <p>Remove standing water immediately using wet/dry vacuum. Extract water from carpets and
+                            padding. Use air movers and dehumidifiers to prevent secondary damage. Document affected
+                            areas with photographs before cleanup begins.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Electrical Safety Verification</h4>
+                        <p>Before restoring power to any wet equipment, verify all electrical components are completely
+                            dry. Test insulation resistance (minimum 1 MΩ). Check for corrosion on terminals and
+                            connections. Replace any components that show signs of water damage.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Insurance Documentation</h4>
+                        <p>Document all damage with date-stamped photographs. Create inventory of damaged items. Record
+                            time of incident, response actions taken, and estimated damage costs. Provide this
+                            documentation to both customer and insurance provider within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">Water Damage Liability Notice</div>
+                <div class="warning-content">
+                    <p>Failure to respond to water leaks within 2 hours may result in secondary damage (mold growth,
+                        structural damage) that voids insurance coverage. All Blue Ember technicians must carry
+                        emergency water extraction equipment in their service vehicles. Document response time and
+                        actions taken to mitigate damage.</p>
+                </div>
+            </div>
+
+            <h3 style="color: var(--Blue Ember-secondary); margin: 25px 0 15px;">Emergency Contact Protocol</h3>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-911"></i>
+                    </div>
+                    <div class="contact-title">Life-Threatening Emergencies</div>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i> 911 (US) / 112 (International)
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-info-circle"></i> For electrical shock, serious injury, fire, or gas leaks
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="contact-title">Blue Ember Emergency Support</div>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i> 1-800-Blue Ember-911 (386-729-11)
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-clock"></i> 24/7 Technical Emergency Line
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-mobile-alt"></i> SMS Alerts: Text "ALERT" to 38672
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="contact-title">EPA Refrigerant Hotline</div>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i> 1-800-296-1996
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-globe"></i> epa.gov/section608
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-exclamation-triangle"></i> Report refrigerant releases over 25 lbs
+                    </div>
+                </div>
+            </div>
+
+            <button class="support-btn">
+                <i class="fas fa-bell"></i> EMERGENCY RESPONSE CHECKLIST
+            </button>
+
+            <div class="badges">
+                <div class="badge">
+                    <span class="badge-icon">✓</span> OSHA 30-Hour Certified
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✓</span> HAZWOPER Trained
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✓</span> First Aid/CPR Certified
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✓</span> EPA Section 608 Universal
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✓</span> NFPA 70E Electrical Safety
+                </div>
+            </div>
+        </div>
+
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const chatbotToggle = document.getElementById('chatbot-toggle');
+                const chatbotClose = document.getElementById('chatbot-close');
+                const chatbotWindow = document.getElementById('chatbot-window');
+                const chatbotInput = document.getElementById('chatbot-input');
+                const chatbotSend = document.getElementById('chatbot-send');
+                const chatbotMessages = document.getElementById('chatbot-messages');
+                const suggestionBtns = document.querySelectorAll('.suggestion-btn');
+
+                // Toggle chat window
+                chatbotToggle.addEventListener('click', function () {
+                    chatbotWindow.classList.toggle('active');
+
+                    if (chatbotWindow.classList.contains('active')) {
+                        chatbotInput.focus();
+                    }
+                });
+
+                // Close chat window
+                chatbotClose.addEventListener('click', function () {
+                    chatbotWindow.classList.remove('active');
+                });
+
+                // Send message on button click
+                chatbotSend.addEventListener('click', sendMessage);
+
+                // Send message on Enter key
+                chatbotInput.addEventListener('keypress', function (e) {
+                    if (e.key === 'Enter') {
+                        sendMessage();
+                    }
+                });
+
+                // Handle suggestion button clicks
+                suggestionBtns.forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        chatbotInput.value = this.textContent;
+                        sendMessage();
+                    });
+                });
+
+                function sendMessage() {
+                    const message = chatbotInput.value.trim();
+                    if (message === '') return;
+
+                    // Add user message
+                    addMessage(message, 'user');
+
+                    // Clear input
+                    chatbotInput.value = '';
+
+                    // Disable input while bot is "thinking"
+                    chatbotInput.disabled = true;
+                    chatbotSend.disabled = true;
+
+                    // Simulate bot response after delay
+                    setTimeout(() => {
+                        const response = getBotResponse(message);
+                        addMessage(response, 'bot');
+
+                        // Re-enable input
+                        chatbotInput.disabled = false;
+                        chatbotSend.disabled = false;
+                        chatbotInput.focus();
+                    }, 800);
+                }
+
+                function addMessage(text, sender) {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.className = `chatbot-message ${sender}`;
+
+                    const now = new Date();
+                    const timeString = now.getHours().toString().padStart(2, '0') + ':' +
+                        now.getMinutes().toString().padStart(2, '0');
+
+                    messageDiv.innerHTML = `
+        <div class="message-content">${text}</div>
+        <span class="message-time">${timeString}</span>
+      `;
+
+                    chatbotMessages.appendChild(messageDiv);
+
+                    // Auto-scroll to bottom
+                    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                }
+
+                function getBotResponse(message) {
+                    const lowerMsg = message.toLowerCase();
+
+                    // Simple rule-based responses related to maintenance guide content
+                    if (lowerMsg.includes('preventive') || lowerMsg.includes('maintenance schedule')) {
+                        return "Preventive maintenance increases equipment lifespan by 40-60% and reduces energy consumption. I can help you set up a customized maintenance schedule for your equipment. Would you like me to outline the monthly, quarterly, or annual maintenance tasks?";
+                    }
+
+                    if (lowerMsg.includes('diagnostic') || lowerMsg.includes('troubleshooting')) {
+                        return "Our diagnostic procedures follow a systematic approach: symptom verification, electrical system evaluation, control system diagnostics, mechanical inspection, and thermodynamic analysis. What specific equipment issue are you experiencing?";
+                    }
+
+                    if (lowerMsg.includes('compressor')) {
+                        return "Compressor maintenance is critical! We assess health by measuring amp draw, checking terminals, analyzing vibration, and testing oil/refrigerant. Proper maintenance can extend compressor life by 7-10 years. Would you like details on any specific aspect of compressor maintenance?";
+                    }
+
+                    if (lowerMsg.includes('safety') || lowerMsg.includes('emergency')) {
+                        return "Safety first! In emergency situations, follow this sequence: 1) Ensure personal safety, 2) Secure the area, 3) Shut off utilities, 4) Contact emergency services if needed, 5) Document and notify your supervisor. What safety protocol would you like to know more about?";
+                    }
+
+                    if (lowerMsg.includes('water damage')) {
+                        return "Water damage accounts for 67% of appliance-related insurance claims. Our protocol includes immediate shutoff, water extraction, electrical safety verification, and thorough documentation. Remember to install leak detection sensors on all water-connected appliances and replace supply lines every 5 years.";
+                    }
+
+                    if (lowerMsg.includes('warranty')) {
+                        return "To maintain warranty coverage, document all maintenance activities using the Blue Ember Maintenance Log (EV-ML-2023). Failure to perform scheduled preventive maintenance voids extended warranty coverage on compressors, motors, and control boards. Always take before/after photos of filter replacements and coil cleaning.";
+                    }
+
+                    if (lowerMsg.includes('thank') || lowerMsg.includes('help')) {
+                        return "You're welcome! I'm here 24/7 to help with maintenance procedures, troubleshooting guidance, and safety protocols. Feel free to ask anything about equipment maintenance!";
+                    }
+
+                    // Default response
+                    return "I'd be happy to help with your maintenance question! For specific guidance, try asking about preventive maintenance schedules, troubleshooting procedures, component-specific maintenance, safety protocols, or warranty requirements.";
+                }
+
+                // Auto-open chatbot on first visit (optional)
+                if (!localStorage.getItem('Blue EmberChatbotVisited')) {
+                    setTimeout(() => {
+                        chatbotWindow.classList.add('active');
+                        localStorage.setItem('Blue EmberChatbotVisited', 'true');
+                    }, 3000);
+                }
+            });
+
+
+
+            // Mobile Navigation Toggle
+            document.querySelector('.mobile-nav-toggle').addEventListener('click', function () {
+                document.querySelector('.nav-menu').classList.toggle('active');
+            });
+
+            // Section Indicators Navigation
+            document.addEventListener('DOMContentLoaded', function () {
+                const sectionIndicators = document.querySelectorAll('.section-indicator');
+                const sections = document.querySelectorAll('.guide-section');
+                const navLinks = document.querySelectorAll('.nav-link');
+
+                // Smooth scrolling for navigation links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+
+                        const targetSection = document.querySelector(targetId);
+                        if (targetSection) {
+                            window.scrollTo({
+                                top: targetSection.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+
+                // Update active section indicator on scroll
+                window.addEventListener('scroll', function () {
+                    let currentSection = '';
+
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.clientHeight;
+                        if (pageYOffset >= (sectionTop - 100)) {
+                            currentSection = section.getAttribute('id');
+                        }
+                    });
+
+                    // Update indicators
+                    sectionIndicators.forEach((indicator, index) => {
+                        indicator.classList.toggle('active', currentSection === sections[index].getAttribute('id'));
+                    });
+
+                    // Update navigation links
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').substring(1) === currentSection) {
+                            link.classList.add('active');
+                        }
+                    });
+                });
+
+                // FAQ Toggle Functionality
+                document.querySelectorAll('.faq-question').forEach(question => {
+                    question.addEventListener('click', function () {
+                        const faqItem = this.parentElement;
+                        faqItem.classList.toggle('active');
+                    });
+                });
+
+                // Diagram Button Functionality
+                document.querySelectorAll('.diagram-btn').forEach(button => {
+                    button.addEventListener('click', function () {
+                        document.querySelectorAll('.diagram-btn').forEach(btn => {
+                            btn.classList.remove('active');
+                        });
+                        this.classList.add('active');
+
+                        // In a real implementation, this would change the diagram content
+                        const diagramContent = this.parentElement.previousElementSibling;
+                        diagramContent.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                        <circle cx="100" cy="100" r="60" fill="none" stroke="#00B4D8" stroke-width="2"/>
+                        <text x="100" y="100" text-anchor="middle" font-size="12" fill="#00B4D8">${this.textContent}</text>
+                    </svg>`;
+                    });
+                });
+
+                // Support Button Functionality
+                document.querySelector('.support-btn').addEventListener('click', function () {
+                    alert('Connecting to Blue Ember Technical Support...\n\nIn a live system, this would open a support ticket or connect to a live technician.');
+                });
+
+                // Add subtle animation to sections
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                sections.forEach((section, index) => {
+                    section.style.opacity = '0';
+                    section.style.transform = 'translateY(20px)';
+                    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    observer.observe(section);
+                });
+
+                // Add interactive elements for maintenance schedule cards
+                const scheduleCards = document.querySelectorAll('.schedule-card');
+                scheduleCards.forEach(card => {
+                    card.addEventListener('click', function () {
+                        this.style.borderColor = '#00B4D8';
+                        this.style.boxShadow = '0 0 10px rgba(0, 180, 216, 0.3)';
+                        setTimeout(() => {
+                            this.style.borderColor = '#e0e0e0';
+                            this.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)';
+                        }, 500);
+                    });
+                });
+            });
+        </script>
+</body>
+
+</html>

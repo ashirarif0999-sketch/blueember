@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="universal.css">
+    <link href="darkmode.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/cookie-consent.css">
+     <!-- Preload Boxicons CSS for faster loading - more effective than preloading font alone -->
+  <link rel="preload" href='https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css' as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link href='https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  </noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="footer.css">
+
+    <script src="js/finisher-header.es5.min.js"></script>
+    <script src="js/darkmode.js" defer></script>
+    <script src="js/cookie-manager.js" defer></script>
+    <title>About Blue Store - Smart Living, Simplified</title>
+    <style>
+        /* Reset and Base Styles */
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Header Styles */
+        .header {
+            /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+            color: white;
+            padding: 4rem 0 3rem;
+            text-align: center;
+            /* box-shadow: 0 2px 10px rgba(0,0,0,0.1); */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M0 50 L100 50 M50 0 L50 100" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></svg>');
+            opacity: 0.5;
+            background-size: 100px 100px;
+        }
+
+        .header h1 {
+            font-family: 'momo trust display', sans-serif;
+            font-size: 33px;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+        }
+
+        .header h2 {
+            font-family: 'rubik', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .header .tagline {
+            font-family: 'work sans', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            border-radius: 20px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .section h2 {
+            color: #00c1cd;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 120px;
+            height: 7px;
+            background: linear-gradient(270deg, #13f0d0, #0094ff);
+            border-radius: 14px;
+        }
+
+        .section p {
+            font-family: 'rubik', sans-serif;
+            margin-bottom: 1.5rem;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .section ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section li {
+            margin-bottom: 0.8rem;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .section li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Hero Image Section */
+        .hero-image {
+            display: flex;
+            align-items: center;
+            margin: 3rem 0;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-image img {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 133px;
+            box-shadow: 0 0px 20px rgb(0 0 0 / 5%);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image img:hover {
+            transform: translateY(-10px);
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            font-family: 'rubik', sans-serif;
+        }
+
+        .hero-text p {
+            font-family: 'rubik', sans-serif;
+            font-size: 15px;
+        }
+
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .value-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(270deg, #13f0d0, #0094ff);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            line-height: 1;
+        }
+
+        .value-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .value-card p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Mission Vision Section */
+        .mission-vision {
+            display: flex;
+            gap: 3rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .mission-card,
+        .vision-card {
+            flex: 1;
+            min-width: 300px;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .mission-card {
+            background-color: #e8f4fd;
+            border-left: 5px solid #00c1cd;
+        }
+
+        .vision-card {
+            background-color: #f0f7ff;
+            border-left: 5px solid #00c1cd;
+        }
+
+        .mission-card h3,
+        .vision-card h3 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .mission-card p,
+        .vision-card p {
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .mission-card::before,
+        .vision-card::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"><path d="M20 20 L60 20 L60 60 L20 60 Z" fill="none" stroke="rgba(102,126,234,0.1)" stroke-width="2"/><path d="M25 35 L35 45 L55 25" fill="none" stroke="rgba(102,126,234,0.1)" stroke-width="2"/></svg>');
+            opacity: 0.3;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .mission-card::before {
+            top: 25px;
+            right: 25px;
+        }
+
+        .vision-card::before {
+            top: 25px;
+            right: 25px;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(270deg, #13f0d0, #0094ff);
+            z-index: 1;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 1rem;
+            z-index: 2;
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: #00c1cd;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #00c1cd;
+        }
+
+        .timeline-content h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .team-member {
+            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .team-info {
+            padding: 1.5rem;
+            background-color: white;
+        }
+
+        .team-info h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .team-info p {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        .team-role {
+            color: #0090ff;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Testimonial Section */
+        .testimonials {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 100%);
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            color: #333;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+        }
+
+        .testimonial-quote {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #333;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+
+        .testimonial-quote::before {
+            content: '"';
+            font-size: 5rem;
+            color: #667eea;
+            opacity: 0.2;
+            position: absolute;
+            top: -40px;
+            left: -20px;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .testimonial-position {
+            color: #00c1cd;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Sustainability Section */
+        .sustainability {
+            background-color: #e8f4fd;
+            margin: 4rem 0;
+            padding: 4rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .sustainability h2 {
+            color: #333;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+        }
+
+        .sustainability-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .sustainability-item {
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .sustainability-icon {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 1.5rem;
+        }
+
+        .sustainability-item h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .sustainability-item p {
+            color: #555;
+            font-size: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: 4rem 0;
+            border-radius: 10px;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: #667eea;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+
+
+        .magic-back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: white;
+            color: #2cd1ff;
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 1000;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            gap: 8px;
+        }
+
+        .magic-back-btn i {
+            position: absolute;
+            font-size: 1.1rem;
+            transition: all 0.7s ease;
+        }
+
+        .idle-icon {
+            opacity: 1;
+            transition: all 0.1s ease !important;
+            transform: translateX(0);
+        }
+
+        .active-icon {
+            opacity: 0;
+            transition: all 0.1s ease !important;
+            transform: translateX(-8px);
+        }
+
+        .magic-back-btn span {
+            white-space: nowrap;
+            opacity: 0;
+            margin-left: 15px;
+            color: #000000;
+            margin-bottom: 4px;
+            transform: translateX(-8px);
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        }
+
+        .magic-back-btn:hover,
+        .magic-back-btn:focus {
+            width: 160px;
+            border-radius: 30px;
+            padding: 0 20px;
+        }
+
+        .magic-back-btn:hover .idle-icon,
+        .magic-back-btn:focus .idle-icon {
+            opacity: 0;
+            transform: translateX(8px);
+        }
+
+        .magic-back-btn:hover .active-icon,
+        .magic-back-btn:focus .active-icon {
+            opacity: 1;
+            transform: translateX(-60px);
+        }
+
+        .magic-back-btn:hover span,
+        .magic-back-btn:focus span {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            background-color: #333;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        .footer p {
+            margin-bottom: 1rem;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        /* Responsive Design */
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-family: 'momo trust display', sans-serif;
+                font-size: 33px;
+                margin-top: 3rem !important;
+                margin-bottom: -0.5rem !important;
+                font-weight: 400;
+                letter-spacing: -0.5px;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-family: 'momo trust display', sans-serif;
+                font-size: 33px;
+                margin-top: 1rem;
+                margin-bottom: -0.5rem;
+                font-weight: 400;
+                letter-spacing: -0.5px;
+            }
+
+            .header h2 {
+                font-size: 1.5rem;
+                margin-top: 30px;
+            }
+
+            .header .tagline {
+                font-size: 1.1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .section h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero-image {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-image img {
+                max-width: 100%;
+                margin-bottom: 2rem;
+            }
+
+            .mission-vision {
+                flex-direction: column;
+            }
+
+            .timeline::before {
+                left: 1rem;
+            }
+
+            .timeline-item {
+                margin-bottom: 2rem;
+            }
+
+            .testimonials h2,
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .testimonial-quote {
+                font-size: 1.2rem;
+            }
+
+            .btn {
+                padding: 0.8rem 2rem;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 0.5rem;
+            }
+
+            .HEADER H1 {
+
+                font-family: 'momo trust display', sans-serif;
+                font-size: 3rem;
+                margin-top: 30px;
+                line-height: 41.5px;
+                margin-bottom: -1.5rem;
+                font-weight: 400;
+                letter-spacing: -0.5px;
+            }
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #2651e5, #00ff42);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 17px 22px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .scroll-to-top:hover {
+            background: linear-gradient(45deg, #00c2fc, #022ad6);
+            transform: translateY(-2px);
+        }
+
+        /* Dark Mode Overrides */
+        body.dark-mode {
+            background-color: #121212 !important;
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-mode .header {
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-mode .section {
+            background-color: #1e1e1e !important;
+            border-color: #404040 !important;
+        }
+
+        body.dark-mode .section h2 {
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-mode .section p,
+        body.dark-mode .section li {
+            color: #b0b0b0 !important;
+        }
+
+        body.dark-mode .value-card {
+            background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%) !important;
+            border-color: #404040 !important;
+        }
+
+        body.dark-mode .value-card h3,
+        body.dark-mode .value-card p {
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-mode .mission-card,
+        body.dark-mode .vision-card {
+            background-color: #2d2d2d !important;
+            border-color: #404040 !important;
+        }
+
+        body.dark-mode .mission-card h3,
+        body.dark-mode .vision-card h3,
+        body.dark-mode .mission-card p,
+        body.dark-mode .vision-card p {
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-mode .timeline-content {
+            background-color: #1e1e1e !important;
+        }
+
+        body.dark-mode .timeline-content h3 {
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-mode .team-member {
+            background-color: #1e1e1e !important;
+        }
+
+        body.dark-mode .team-info h3,
+        body.dark-mode .team-info p {
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-mode .testimonials {
+            background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%) !important;
+        }
+
+        body.dark-mode .testimonials h2,
+        body.dark-mode .testimonial-quote,
+        body.dark-mode .testimonial-author {
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-mode .sustainability {
+            background-color: #1e1e1e !important;
+        }
+
+        body.dark-mode .sustainability h2,
+        body.dark-mode .sustainability-item h3,
+        body.dark-mode .sustainability-item p {
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-mode .sustainability-item {
+            background-color: #2d2d2d !important;
+        }
+
+        body.dark-mode .cta-section {
+            background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%) !important;
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-mode .cta-section h2,
+        body.dark-mode .cta-section p {
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-mode .btn {
+            background-color: #e0e0e0 !important;
+            color: #121212 !important;
+        }
+
+        body.dark-mode .btn:hover {
+            background-color: #b0b0b0 !important;
+        }
+
+        body.dark-mode .footer {
+            background-color: #1e1e1e !important;
+            color: #b0b0b0 !important;
+        }
+
+        body.dark-mode .footer a {
+            color: #0099ff !important;
+        }
+
+        body.dark-mode .footer a:hover {
+            color: #66ccff !important;
+        }
+
+        /* Dark Mode Toggle Icons */
+        #moon-icon {
+            display: block;
+        }
+
+        body.dark-mode #moon-icon {
+            display: none;
+        }
+
+        body.dark-mode #sun-icon {
+            display: block;
+        }
+
+        #sun-icon {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" class="magic-back-btn" aria-label="Back to Home">
+        <i class="idle-icon fa-solid fa-chevron-left"></i>
+        <i class="active-icon fa-solid fa-chevron-left"></i>
+        <span>Back to Home</span>
+    </a>
+    <button id="dark-mode-toggle"
+        style="position: fixed; top: 20px; right: 20px; z-index: 1000; background: none; border: none; font-size: 24px; cursor: pointer;">
+        <i class='bx bx-moon' id="moon-icon"></i>
+        <i class='bx bx-sun' id="sun-icon" style="display: none;"></i>
+    </button>
+    <div class="header finisher-header" style="width: 100%; height: 300px;">
+        <a href="index.html">
+            <h1 style="position: relative; z-index: 1000;">Blue Ember Store</h1>
+        </a>
+        <h2 id="hero-text">Where Innovation Meets Everyday Living</h2>
+        <p class="tagline">Designing smarter, more sustainable Store for the modern household</p>
+    </div>
+
+
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <div class="section">
+            <h2>Our Story</h2>
+            <p>Founded in 2018, Blue Ember Store began with a simple yet powerful vision: to transform the mundane into
+                the magnificent. What started as a small team of engineers and designers in San Francisco has grown into
+                a global leader in smart home technology, dedicated to creating appliances that don't just function—but
+                elevate your daily life.</p>
+            <p>Our journey began when our founders noticed how traditional Store often added complexity rather than
+                convenience. They asked: "What if appliances could anticipate your needs, adapt to your lifestyle, and
+                reduce your environmental footprint?" This question became our mission.</p>
+            <p>Today, Blue Ember combines cutting-edge technology with timeless design to create appliances that are as
+                beautiful as they are intelligent. From our award-winning smart refrigerators to our energy-efficient
+                washing systems, every product is engineered with one goal: to make your home smarter, simpler, and more
+                beautiful.</p>
+        </div>
+
+        <div class="hero-image">
+            <img src="assets/ajhjksjjwedf-removebg-preview.png" alt="Blue Ember Smart Store">
+            <div class="hero-text">
+                <p>At Blue Ember, we believe that great design should be intuitive, not complicated. Our appliances are
+                    engineered to seamlessly integrate into your life—learning your habits, anticipating your needs, and
+                    simplifying your routine. We don't just build appliances; we create intelligent companions for your
+                    home.</p>
+                <p>Every Blue Ember product undergoes rigorous testing in real-world conditions to ensure durability,
+                    efficiency, and performance. Our commitment to quality means you can trust your Blue Ember appliance
+                    to serve you reliably for years to come.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Our Values</h2>
+            <p>These principles guide everything we do—from product development to customer service:</p>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Innovation</h3>
+                    <p>We relentlessly pursue new technologies and smarter solutions that transform everyday tasks into
+                        effortless experiences.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌱</div>
+                    <h3>Sustainability</h3>
+                    <p>Every product is designed with environmental responsibility in mind—from energy efficiency to
+                        recyclable materials.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">✨</div>
+                    <h3>Design Excellence</h3>
+                    <p>We believe beautiful design enhances daily life. Our appliances are as visually stunning as they
+                        are functionally superior.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Customer First</h3>
+                    <p>Your satisfaction is our ultimate measure of success. We listen, adapt, and go above and beyond
+                        for every customer.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Our Mission &amp; Vision</h2>
+            <div class="mission-vision">
+                <div class="mission-card">
+                    <h3>Our Mission</h3>
+                    <p>To empower households worldwide with intelligent, sustainable, and beautifully designed
+                        appliances that simplify daily routines, reduce environmental impact, and enhance the quality of
+                        everyday life.</p>
+                </div>
+                <div class="vision-card">
+                    <h3>Our Vision</h3>
+                    <p>A world where every home is a sanctuary of effortless living—where technology anticipates needs,
+                        sustainability is seamless, and design elevates the human experience.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2018</div>
+                    <div class="timeline-content">
+                        <h3>Founding</h3>
+                        <p>Blue Ember Store was founded by a team of engineers and designers passionate about creating
+                            smarter home solutions. Our first prototype, the Blue Ember Smart Refrigerator, was
+                            developed in our San Francisco garage.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2020</div>
+                    <div class="timeline-content">
+                        <h3>Product Launch</h3>
+                        <p>We launched our first commercial products: the Blue Ember Smart Refrigerator and Blue Ember
+                            Energy-Smart Washer. Both received industry awards for innovation and design.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021</div>
+                    <div class="timeline-content">
+                        <h3>Global Expansion</h3>
+                        <p>Blue Ember expanded to Canada and Europe, establishing our first international distribution
+                            centers and beginning partnerships with major retailers.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022</div>
+                    <div class="timeline-content">
+                        <h3>Smart Ecosystem</h3>
+                        <p>We launched the Blue Ember Home App, creating a unified ecosystem that connects all our
+                            appliances for seamless control and intelligent automation.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-content">
+                        <h3>Carbon Neutral Operations</h3>
+                        <p>Blue Ember became a certified carbon-neutral company, offsetting 100% of our operational
+                            emissions and implementing sustainable manufacturing practices across all facilities.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-content">
+                        <h3>1 Million Homes</h3>
+                        <p>Over 1 million households worldwide now trust Blue Ember appliances to make their daily lives
+                            smarter, simpler, and more beautiful.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Brand Section -->
+            <div class="footer-section">
+                <div class="footer-logo"><a href="index.html">
+                        <div class="navbar-logo"><img src="assets/BlueEmber-ezgif.com-gif-maker.gif"
+                                style="width: 30px;">
+                            <SPAN>
+                                <h6 style="color: #0099ff; font-size: large; margin: 0px 0px -6px 0px;">BLUE</h6>
+                                <H6 style="color: #000000; font-size: large; margin: 0px 0px -6px 0px;">EMBER</H6>
+                            </SPAN>
+                        </div>
+                    </a></div>
+                <p class="footer-tagline">Premium Store from trusted global brands. Serving customers since 2005.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="terms and services.html">Terms & Services</a></li>
+                    <li><a href="privacy policy.html">Privacy Policy</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="Refund and Exchange.html">Refund & Exchange</a></li>
+                    <li><a href="About us .html">About Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Categories -->
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="product2.html">Toys</a></li>
+                    <li><a href="product2.html">Supplyments</a></li>
+                    <li><a href="product2.html">Beauty</a></li>
+                    <li><a href="product2.html">HomeGoods</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>
+                        <a>
+                            <address>
+                                <p><a href="https://maps.app.goo.gl/BGBAUvaKPHLhTqvh6">Hasbrouck Heights NJ 07604
+                                        USA</a>
+                                </p>
+                                <i class="fa-solid fa-phone-volume" style="color:rgb(0, 89, 255)"></i> +1 (800)
+                                123-4567<br>
+                                <i class="fa-solid fa-envelope" style="color:rgb(0, 89, 255)"></i> <a
+                                    href="mailto:support@blue-ember.us">support@blue-ember.us</a>
+                            </address>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Blue Ember Store. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="privacy policy.html">Privacy Policy</a> •
+                <a href="terms and services.html">Terms of Service</a> •
+            </div>
+            <!-- Footer Brand Watermark -->
+        <div class="footer-trending">
+            <span class="footer-trending-text">BLUE </span>
+            <span class="footer-trending-text">EMBER</span>
+        </div>
+        </div>
+
+        
+    </footer>
+
+
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollTopBtn" title="Go to top">↑</button>
+
+
+
+    <script type="text/javascript">
+        new FinisherHeader({
+            "count": 12,
+            "size": {
+                "min": 1300,
+                "max": 1500,
+                "pulse": 1.6
+            },
+            "speed": {
+                "x": {
+                    "min": 1.4,
+                    "max": 5
+                },
+                "y": {
+                    "min": 1.4,
+                    "max": 5
+                }
+            },
+            "colors": {
+                "background": "#373333",
+                "particles": [
+                    "#14a394",
+                    "#10a2da"
+                ]
+            },
+            "blending": "none",
+            "opacity": {
+                "center": 0.6,
+                "edge": 0
+            },
+            "skew": 0,
+            "shapes": [
+                "c"
+            ]
+        });
+
+        // Scroll to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Add event listener for scroll to top button
+        document.addEventListener('DOMContentLoaded', function () {
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            if (scrollTopBtn) {
+                scrollTopBtn.addEventListener('click', scrollToTop);
+            }
+        });
+    </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const splitButtons = document.querySelectorAll('.split-button');
+
+    splitButtons.forEach(button => {
+      // Check if this is a single-toggle action button
+      if (button.classList.contains('single-toggle-action')) {
+        button.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const parentItem = button.parentElement; // The list item wrapping the button
+          const dropdown = parentItem.querySelector('.mobile-dropdown');
+          const isExpanded = parentItem.classList.contains('active');
+
+          // Optional: Close other open dropdowns on desktop
+          if (window.innerWidth > 992) {
+            document.querySelectorAll('.mobile-dropdown-item.active').forEach(item => {
+              if (item !== parentItem) {
+                item.classList.remove('active');
+                const btn = item.querySelector('.split-button');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+                const otherDropdown = item.querySelector('.mobile-dropdown');
+                if (otherDropdown) otherDropdown.style.maxHeight = '0';
+              }
+            });
+          }
+
+          // Toggle current state
+          parentItem.classList.toggle('active');
+          button.setAttribute('aria-expanded', !isExpanded);
+
+          // Handle dropdown animation (if using max-height transition)
+          if (dropdown) {
+            if (!isExpanded) {
+              dropdown.style.maxHeight = dropdown.scrollHeight + 'px';
+            } else {
+              dropdown.style.maxHeight = '0';
+            }
+          }
+        });
+      }
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.mobile-dropdown-item')) {
+        document.querySelectorAll('.mobile-dropdown-item.active').forEach(item => {
+          item.classList.remove('active');
+          const btn = item.querySelector('.split-button');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+          const dropdown = item.querySelector('.mobile-dropdown');
+          if (dropdown) dropdown.style.maxHeight = '0';
+        });
+      }
+    });
+  });
+</script>
+ <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <!-- Scroll Reveal & Lenis Init -->
+  <script src="js/scroll-reveal.js"></script>
+</body>
+
+</html>

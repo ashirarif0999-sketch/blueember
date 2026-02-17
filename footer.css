@@ -1,0 +1,85 @@
+/* =============================================
+   FOOTER TRENDING TEXT STYLES
+   Supports both Light Mode and Dark Mode (body.dark-mode)
+   ============================================= */
+
+/* --- Trending Text Wrapper --- */
+.footer-trending {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 30px 0 10px;
+    margin-top: 10px;
+    user-select: none;
+    text-align: center;
+}
+
+/* --- Brand Text --- */
+.footer-trending-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(80px, 14vw, 160px);
+    font-weight: 900;
+    letter-spacing: -3px;
+    line-height: 0.85;
+    text-transform: uppercase;
+    display: inline-block;
+    /* Essential for text gradient */
+
+    /* Premium Blue Gradient */
+    background: linear-gradient(180deg, #000000 0%, #000, #0059ff00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    opacity: 0.12;
+    /* Subtle watermark aesthetic */
+}
+
+body.dark-mode .footer-trending-text {
+    background: linear-gradient(180deg, #ffffff 0%, #fff, #0059ff00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* =============================================
+   LIGHT MODE (Default)
+   ============================================= */
+
+.footer-trending-text {
+    -webkit-text-stroke: 2px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =============================================
+   DARK MODE (body.dark-mode)
+   ============================================= */
+
+body.dark-mode .footer-trending-text {
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.06);
+}
+
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 768px) {
+    .footer-trending-text {
+        font-size: clamp(60px, 16vw, 100px);
+        -webkit-text-stroke-width: 1.5px;
+        letter-spacing: -2px;
+    }
+
+    .footer-trending {
+        padding: 20px 0 65px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-trending-text {
+        font-size: clamp(48px, 18vw, 75px);
+        letter-spacing: -1px;
+        -webkit-text-stroke-width: 1px;
+    }
+}

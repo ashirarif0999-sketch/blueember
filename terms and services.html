@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Services - Blue Ember Store</title>
+    <link rel="stylesheet" href="universal.css">
+    <link href="darkmode.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/cookie-consent.css">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <script src="js/finisher-header.es5.min.js"></script>
+    <script src="js/darkmode.js" defer></script>
+    <script src="js/cookie-manager.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="footer.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: transparent;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Header Styles */
+        .header {
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 31%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M0 50 L100 50 M50 0 L50 100" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></svg>');
+            opacity: 0.5;
+            background-size: 100px 100px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-family: 'UBUNTU', sans-serif;
+            font-weight: 600;
+        }
+
+        .header .last-updated {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 30px;
+            position: relative;
+            z-index: 111;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border: 1px solid #00c1cd;
+            border-left: 5px solid #00c1cd;
+            background-color: #fafafa;
+            border-radius: 25px;
+        }
+
+        .section h2 {
+            color: #19b5c0;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .section h3 {
+            color: #555;
+            margin: 1rem 0 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section li {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .section ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section ol li {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        /* Important Notice Box */
+        .important-notice {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 14px;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 4px solid #ffc107;
+        }
+
+        .important-notice strong {
+            color: #856404;
+        }
+
+        /* Contact Info Box */
+        .contact-info {
+            background-color: #e8f4fd;
+            border: 1px solid #74c0fc;
+            border-radius: 18px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid #339af0;
+        }
+
+        .contact-info h3 {
+            color: #339af0;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info ul {
+            margin-left: 0;
+        }
+
+        .contact-info li {
+            list-style: none;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info li strong {
+            width: 120px;
+            color: #333;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #333;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+
+        .magic-back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: white;
+            color: #2cd1ff;
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 1000;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            gap: 8px;
+        }
+
+        .magic-back-btn i {
+            position: absolute;
+            font-size: 1.1rem;
+            transition: all 0.7s ease;
+        }
+
+        .idle-icon {
+            opacity: 1;
+            transition: all 0.1s ease !important;
+            transform: translateX(0);
+        }
+
+        .active-icon {
+            opacity: 0;
+            transition: all 0.1s ease !important;
+            transform: translateX(-8px);
+        }
+
+        .magic-back-btn span {
+            white-space: nowrap;
+            opacity: 0;
+            margin-left: 15px;
+            color: #000000;
+            margin-bottom: 4px;
+            transform: translateX(-8px);
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        }
+
+        .magic-back-btn:hover,
+        .magic-back-btn:focus {
+            width: 160px;
+            border-radius: 30px;
+            padding: 0 20px;
+        }
+
+        .magic-back-btn:hover .idle-icon,
+        .magic-back-btn:focus .idle-icon {
+            opacity: 0;
+            transform: translateX(8px);
+        }
+
+        .magic-back-btn:hover .active-icon,
+        .magic-back-btn:focus .active-icon {
+            opacity: 1;
+            transform: translateX(-60px);
+        }
+
+        .magic-back-btn:hover span,
+        .magic-back-btn:focus span {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+                POSITION: RELATIVE;
+                TOP: -70PX;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 1rem;
+            }
+
+            .contact-info li strong {
+                display: block;
+                width: auto;
+                margin-bottom: 0.25rem;
+            }
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #2651e5, #00ff42);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 14px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .scroll-to-top:hover {
+            background: linear-gradient(45deg, #00c2fc, #022ad6);
+            transform: translateY(-2px);
+        }
+
+        /* Anchor links for navigation */
+        .section a[name] {
+            position: relative;
+            top: -100px;
+        }
+
+        /* Dark Mode Overrides */
+        body.dark-mode {
+            background: #121212 !important;
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-mode .header {
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-mode .header h1 {
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-mode .container {
+            background-color: #1e1e1e !important;
+        }
+
+        body.dark-mode .section {
+            background-color: #2d2d2d !important;
+            border-color: #404040 !important;
+        }
+
+        body.dark-mode .section h2,
+        body.dark-mode .section h3 {
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-mode .section p,
+        body.dark-mode .section li {
+            color: #b0b0b0 !important;
+        }
+
+        body.dark-mode .important-notice {
+            background-color: #404040 !important;
+            border-color: #606060 !important;
+        }
+
+        body.dark-mode .important-notice strong {
+            color: #ffcc00 !important;
+        }
+
+        body.dark-mode .contact-info {
+            background-color: #2d2d2d !important;
+            border-color: #404040 !important;
+        }
+
+        body.dark-mode .contact-info h3 {
+            color: #0099ff !important;
+        }
+
+        body.dark-mode .contact-info li strong {
+            color: #e0e0e0 !important;
+        }
+
+        body.dark-mode .footer {
+            background-color: #1e1e1e !important;
+            color: #b0b0b0 !important;
+        }
+
+        body.dark-mode .footer a {
+            color: #0099ff !important;
+        }
+
+        body.dark-mode .footer a:hover {
+            color: #66ccff !important;
+        }
+
+        /* Dark Mode Toggle Icons */
+        #moon-icon {
+            display: block;
+        }
+
+        body.dark-mode #moon-icon {
+            display: none;
+        }
+
+        body.dark-mode #sun-icon {
+            display: block;
+        }
+
+        #sun-icon {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" class="magic-back-btn" aria-label="Back to Home">
+        <i class="idle-icon fa-solid fa-chevron-left"></i>
+        <i class="active-icon fa-solid fa-chevron-left"></i>
+        <span>Back to Home</span>
+    </a>
+    <button id="dark-mode-toggle"
+        style="position: fixed; top: 20px; right: 20px; z-index: 1000; background: none; border: none; font-size: 24px; cursor: pointer;">
+        <i class='bx bx-moon' id="moon-icon"></i>
+        <i class='bx bx-sun' id="sun-icon" style="display: none;"></i>
+    </button>
+    <div class="header finisher-header" style="width: 100%; height: 300px;">
+        <header class="header">
+            <h1>Blue Ember Store</h1>
+            <h2>Terms and Services</h2>
+        </header>
+    </div>
+    <!-- Main Content -->
+    <main class="container">
+        <div class="section">
+            <p>Welcome to <strong>Blue Ember Store</strong> ("Blue Ember," "we," "us," or "our"). We're dedicated to
+                bringing smart, sustainable, and beautifully designed Store into your everyday life. By accessing or
+                using our website (www.Blue Ember.com), placing an order, or purchasing any of our products, you agree
+                to comply with and be bound by the following Terms and Services. Please read them carefully.</p>
+        </div>
+
+        <div class="section">
+            <h2>1. Acceptance of Terms</h2>
+            <p>By using our website, creating an account, or purchasing any Blue Ember product, you confirm that you are
+                at least 18 years of age, have the legal capacity to enter into a binding contract, and agree to be
+                bound by these Terms and Services, our <a href="#privacy-policy">Privacy Policy</a>, and all applicable
+                laws and regulations. If you do not agree with these terms, please do not use our website or purchase
+                our products.</p>
+        </div>
+
+        <div class="section">
+            <h2>2. Product Information and Availability</h2>
+            <p>We strive to ensure that all product descriptions, images, pricing, and specifications on our website are
+                accurate. However, we do not warrant that such information is complete, reliable, or free of
+                typographical errors. Product availability is subject to change without notice. In the rare event an
+                item is mispriced or unavailable, we reserve the right to cancel your order and issue a full refund.</p>
+        </div>
+
+        <div class="section">
+            <h2>3. Ordering and Payment</h2>
+            <ul>
+                <li>All orders are subject to acceptance by Blue Ember. We reserve the right to refuse or cancel any
+                    order for any reason, including but not limited to errors in pricing, product description, or
+                    inventory.</li>
+                <li>Payment must be made in full at the time of order using a valid credit/debit card, PayPal, or other
+                    approved payment methods.</li>
+                <li>All prices are listed in USD and include applicable taxes where required by law. Shipping and
+                    handling fees are calculated at checkout based on your delivery location.</li>
+                <li>We reserve the right to adjust prices at any time without notice.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4. Shipping and Delivery</h2>
+            <ul>
+                <li>We ship to addresses within the United States and Canada. International shipping may be available
+                    upon request and subject to additional fees and customs regulations.</li>
+                <li>Estimated delivery times are provided at checkout and are not guaranteed. Delivery may be delayed
+                    due to weather, carrier issues, or high order volume.</li>
+                <li>Title and risk of loss for products pass to you upon delivery to the carrier. We are not responsible
+                    for damage caused by third-party carriers unless the product arrives visibly damaged, in which case
+                    please contact us within 48 hours.</li>
+                <li>You are responsible for providing an accurate delivery address. We are not liable for delays or
+                    failed deliveries due to incorrect or incomplete information provided by you.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>5. Returns, Refunds, and Exchanges</h2>
+
+            <h3>Return Policy:</h3>
+            <ul>
+                <li>You may return most new, unopened products within <strong>30 days of delivery</strong> for a full
+                    refund. Items must be in original packaging with all accessories and manuals.</li>
+                <li>Opened or used products may be eligible for exchange or store credit at our discretion, subject to
+                    inspection.</li>
+                <li>Return shipping costs are the responsibility of the customer unless the return is due to our error
+                    (e.g., wrong item shipped, defective product).</li>
+            </ul>
+
+            <h3>Refunds:</h3>
+            <p>Refunds will be processed within 5–10 business days after we receive and inspect your return. The refund
+                will be issued to the original payment method. Shipping fees are non-refundable unless the return is due
+                to our mistake.</p>
+
+            <h3>Defective or Damaged Products:</h3>
+            <p>If your Blue Ember product arrives damaged or is defective, please contact our Customer Care team within
+                <strong>7 days of delivery</strong> at support@blue-ember.us. We will arrange for a replacement or
+                refund at no cost to you.</p>
+        </div>
+
+        <div class="section">
+            <h2>6. Warranty</h2>
+            <p>All Blue Ember Store come with a <strong>limited 2-year manufacturer's warranty</strong> covering defects
+                in materials and workmanship under normal home use. This warranty does not cover:</p>
+            <ul>
+                <li>Damage caused by misuse, neglect, improper installation, or unauthorized modifications.</li>
+                <li>Normal wear and tear.</li>
+                <li>Consumable parts (e.g., filters, seals, batteries).</li>
+                <li>Damage caused by power surges, water damage, or use with non-Blue Ember accessories.</li>
+            </ul>
+            <p>To make a warranty claim, please register your product online at <a
+                    href="https://www.Blue Ember.com/register">www.Blue Ember.com/register</a> and contact support@Blue
+                Ember.com with proof of purchase.</p>
+            <div class="important-notice">
+                <strong>This warranty gives you specific legal rights, and you may also have other rights that vary by
+                    state or province.</strong>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>7. Intellectual Property</h2>
+            <p>All content on this website—including text, graphics, logos, product images, software, and trademarks—is
+                the property of Blue Ember Store or its licensors and is protected by U.S. and international copyright,
+                trademark, and other intellectual property laws. You may not reproduce, distribute, modify, or create
+                derivative works from any content without our prior written consent.</p>
+        </div>
+
+        <div class="section">
+            <h2>8. User Accounts</h2>
+            <p>To place orders or access certain features, you may be required to create an account. You are responsible
+                for maintaining the confidentiality of your account credentials and for all activities that occur under
+                your account. Notify us immediately of any unauthorized use.</p>
+        </div>
+
+        <div class="section">
+            <h2>9. Prohibited Uses</h2>
+            <p>You agree not to:</p>
+            <ul>
+                <li>Use our website for any illegal or unauthorized purpose.</li>
+                <li>Attempt to gain unauthorized access to our systems or data.</li>
+                <li>Interfere with the proper functioning of our website.</li>
+                <li>Use automated scripts, bots, or scraping tools without our express permission.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>10. Limitation of Liability</h2>
+            <p>To the fullest extent permitted by law, Blue Ember shall not be liable for any indirect, incidental,
+                special, consequential, or punitive damages arising out of your use of our website, products, or
+                services—including but not limited to lost profits, data loss, or business interruption—even if advised
+                of the possibility of such damages.</p>
+            <p>Our total liability to you for any claim related to our products or services shall not exceed the amount
+                you paid for the specific product giving rise to the claim.</p>
+        </div>
+
+        <div class="section">
+            <h2>11. Governing Law and Dispute Resolution</h2>
+            <p>These Terms and Services shall be governed by and construed in accordance with the laws of the State of
+                California, USA, without regard to its conflict of law principles. Any dispute arising out of or
+                relating to these Terms or your use of our products or website shall be resolved exclusively in the
+                state or federal courts located in San Francisco, California.</p>
+        </div>
+
+        <div class="section">
+            <h2>12. Changes to These Terms</h2>
+            <p>We reserve the right to update or modify these Terms and Services at any time. Changes will be effective
+                immediately upon posting the revised version on this page. We encourage you to review this page
+                periodically. Continued use of our website after changes constitutes your acceptance of the revised
+                terms.</p>
+        </div>
+
+        <div class="section">
+            <h2>13. Contact Us</h2>
+            <p>If you have questions about these Terms and Services, our products, or need assistance, please contact
+                our Customer Care team:</p>
+
+            <div class="contact-info">
+                <h3>Blue Ember Store</h3>
+                <address>
+                    <ul>
+                        <li>
+                            <strong>Data Protection Officer:</strong>
+                            <a href="mailto:support@blue-ember.us">support@blue-ember.us</a>
+                        </li>
+                        <li>
+                            <strong>Customer Support:</strong>
+                            <a href="mailto:support@blue-ember.us">support@blue-ember.us</a>
+                        </li>
+                        <li>
+                            <strong>Phone:</strong>
+                            <a href="tel:+18003867227" aria-label="Call Blue Ember Store at 1-800-386-7227">1-800-Blue
+                                Ember-AP (1-800-386-7227)</a>
+                        </li>
+                        <li>
+                            <strong>Mailing Address:</strong> Blue Ember Store Inc, 123 Innovation Drive, San Francisco,
+                            CA 94105, United States.
+                        </li>
+                    </ul>
+                </address>
+            </div>
+        </div>
+
+        <div class="section" style="display: none;">
+            <p><strong>Thank you for choosing Blue Ember.</strong> We're here to make your home smarter, simpler, and
+                more beautiful—one appliance at a time.</p>
+            <p>© 2025 Blue Ember Store, Inc. All rights reserved.</p>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Brand Section -->
+            <div class="footer-section">
+                <div class="footer-logo"><a href="index.html">
+                        <div class="navbar-logo"><img src="assets/BlueEmber-ezgif.com-gif-maker.gif"
+                                style="width: 30px;">
+                            <SPAN>
+                                <h6 style="color: #0099ff; font-size: large; margin: 0px 0px -6px 0px;">BLUE</h6>
+                                <H6 style="color: #000000; font-size: large; margin: 0px 0px -6px 0px;">EMBER</H6>
+                            </SPAN>
+                        </div>
+                    </a></div>
+                <p class="footer-tagline">Premium Store from trusted global brands. Serving customers since 2005.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="terms and services.html">Terms & Services</a></li>
+                    <li><a href="privacy policy.html">Privacy Policy</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="Refund and Exchange.html">Refund & Exchange</a></li>
+                    <li><a href="About us .html">About Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Categories -->
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="product2.html">Toys</a></li>
+                    <li><a href="product2.html">Supplyments</a></li>
+                    <li><a href="product2.html">Beauty</a></li>
+                    <li><a href="product2.html">HomeGoods</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>
+                        <a>
+                            <address>
+                                <p><a href="https://maps.app.goo.gl/BGBAUvaKPHLhTqvh6">Hasbrouck Heights NJ 07604
+                                        USA</a>
+                                </p>
+                                <i class="fa-solid fa-phone-volume" style="color:rgb(0, 89, 255)"></i> +1 (800)
+                                123-4567<br>
+                                <i class="fa-solid fa-envelope" style="color:rgb(0, 89, 255)"></i> <a
+                                    href="mailto:support@blue-ember.us">support@blue-ember.us</a>
+                            </address>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Blue Ember Store. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="privacy policy.html">Privacy Policy</a> •
+                <a href="terms and services.html">Terms of Service</a> •
+            </div>
+            <!-- Footer Brand Watermark -->
+            <div class="footer-trending">
+                <span class="footer-trending-text">BLUE </span>
+                <span class="footer-trending-text">EMBER</span>
+            </div>
+        </div>
+
+        
+    </footer>
+
+
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollTopBtn" title="Go to top">↑</button>
+
+    <script>
+        // Scroll to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Add event listener for scroll to top button
+        document.addEventListener('DOMContentLoaded', function () {
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            if (scrollTopBtn) {
+                scrollTopBtn.addEventListener('click', scrollToTop);
+            }
+        });
+
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+
+        new FinisherHeader({
+            "count": 12,
+            "size": {
+                "min": 1300,
+                "max": 1500,
+                "pulse": 1.6
+            },
+            "speed": {
+                "x": {
+                    "min": 1.4,
+                    "max": 5
+                },
+                "y": {
+                    "min": 1.4,
+                    "max": 5
+                }
+            },
+            "colors": {
+                "background": "#373333",
+                "particles": [
+                    "#14a394",
+                    "#10a2da"
+                ]
+            },
+            "blending": "none",
+            "opacity": {
+                "center": 0.6,
+                "edge": 0
+            },
+            "skew": 0,
+            "shapes": [
+                "c"
+            ]
+        });
+
+    </script>
+</body>
+<!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <!-- Scroll Reveal & Lenis Init -->
+  <script src="js/scroll-reveal.js"></script>
+</html>

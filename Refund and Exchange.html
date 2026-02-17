@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refund & Exchange Policy - Blue Ember Store</title>
+  <link rel="stylesheet" href="universal.css">
+  <link href="darkmode.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/cookie-consent.css">
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+  <script src="js/finisher-header.es5.min.js"></script>
+  <script src="js/darkmode.js" defer></script>
+  <script src="js/cookie-manager.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="footer.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f8f9fa;
+    }
+
+    /* Header Styles */
+    .header {
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M0 50 L100 50 M50 0 L50 100" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></svg>');
+      opacity: 0.5;
+      background-size: 100px 100px;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      font-family: 'ubuntu', sans-serif;
+      font-weight: 600;
+    }
+
+    .header .last-updated {
+      font-size: 1rem;
+      opacity: 0.9;
+      font-style: italic;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: white;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Section Styles */
+    .section {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      border: 1px solid #00c1cd;
+      border-left: 4px solid #00c1cd;
+      background-color: #fafafa;
+      border-radius: 20px;
+    }
+
+    .section h2 {
+      color: #00c1cd;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .section h3 {
+      color: #555;
+      margin: 1rem 0 0.5rem 0;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .section p {
+      margin-bottom: 1rem;
+      color: #555;
+    }
+
+    .section ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section li {
+      margin-bottom: 0.5rem;
+      color: #555;
+    }
+
+    .section ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section ol li {
+      margin-bottom: 0.5rem;
+      color: #555;
+    }
+
+
+
+
+    /* Highlight Box */
+    .highlight-box {
+      background-color: #e8f4fd;
+      border: 1px solid #74c0fc;
+      border-radius: 20px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 4px solid #339af0;
+    }
+
+    .highlight-box h3 {
+      color: #339af0;
+      margin-bottom: 1rem;
+    }
+
+    /* Step-by-Step Process */
+    .process-steps {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+      gap: 1.5rem;
+    }
+
+    .step {
+      flex: 1;
+      min-width: 250px;
+      background-color: #f8f9fa;
+      border-radius: 20px;
+      padding: 1.5rem;
+      text-align: center;
+      border: 1px solid #e9ecef;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: #00c1cd;
+      color: white;
+      border-radius: 50%;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .step h3 {
+      color: #333;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    /* Product Condition Icons */
+    .condition-icons {
+      display: flex;
+      justify-content: space-around;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .condition-item {
+      text-align: center;
+      max-width: 200px;
+    }
+
+    .condition-icon {
+      width: 80px;
+      height: 80px;
+      background-color: #f0f7ff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 2rem;
+      color: #667eea;
+      border: 2px solid #e0e7ff;
+    }
+
+    .condition-item h3 {
+      color: #333;
+      margin-top: 0.5rem;
+    }
+
+    /* FAQ Accordion */
+    .faq-section {
+      margin: 2rem 0;
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      background-color: #f8f9fa;
+      padding: 1.25rem;
+      font-weight: 600;
+      color: #333;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background-color: #e9ecef;
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: #667eea;
+    }
+
+    .faq-answer {
+      padding: 0 1.25rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, padding 0.3s ease;
+      background-color: white;
+      color: #555;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 1.25rem;
+      max-height: 200px;
+    }
+
+    .faq-item.active .faq-question::after {
+      content: '−';
+    }
+
+    /* Contact Info Box */
+    .contact-info {
+      background-color: #e8f4fd;
+      border: 1px solid #74c0fc;
+      border-radius: 5px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-left: 4px solid #339af0;
+    }
+
+    .contact-info h3 {
+      color: #339af0;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info ul {
+      margin-left: 0;
+    }
+
+    .contact-info li {
+      list-style: none;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-info li strong {
+      display: inline-block;
+      width: 140px;
+      color: #333;
+    }
+
+    /* Warning Box */
+    .warning-box {
+      background-color: #fff3cd;
+      border: 1px solid #ffeaa7;
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-left: 4px solid #ffc107;
+    }
+
+    .warning-box strong {
+      color: #856404;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #333;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    .footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+
+    .magic-back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: white;
+      color: #2cd1ff;
+      text-decoration: none;
+      font-weight: 600;
+      z-index: 1000;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      gap: 8px;
+    }
+
+    .magic-back-btn i {
+      position: absolute;
+      font-size: 1.1rem;
+      transition: all 0.7s ease;
+    }
+
+    .idle-icon {
+      opacity: 1;
+      transition: all 0.1s ease !important;
+      transform: translateX(0);
+    }
+
+    .active-icon {
+      opacity: 0;
+      transition: all 0.1s ease !important;
+      transform: translateX(-8px);
+    }
+
+    .magic-back-btn span {
+      white-space: nowrap;
+      opacity: 0;
+      margin-left: 15px;
+      color: #000000;
+      margin-bottom: 4px;
+      transform: translateX(-8px);
+      transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    }
+
+    .magic-back-btn:hover,
+    .magic-back-btn:focus {
+      width: 160px;
+      border-radius: 30px;
+      padding: 0 20px;
+    }
+
+    .magic-back-btn:hover .idle-icon,
+    .magic-back-btn:focus .idle-icon {
+      opacity: 0;
+      transform: translateX(8px);
+    }
+
+    .magic-back-btn:hover .active-icon,
+    .magic-back-btn:focus .active-icon {
+      opacity: 1;
+      transform: translateX(-60px);
+    }
+
+    .magic-back-btn:hover span,
+    .magic-back-btn:focus span {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+        POSITION: RELATIVE;
+        TOP: -70PX;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      .section {
+        padding: 1rem;
+      }
+
+      .process-steps {
+        flex-direction: column;
+      }
+
+      .step {
+        margin-bottom: 1rem;
+      }
+
+      .condition-icons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .condition-item {
+        margin-bottom: 1rem;
+      }
+
+      .contact-info li strong {
+        display: block;
+        width: auto;
+        margin-bottom: 0.25rem;
+      }
+
+      .faq-answer {
+        padding: 1rem;
+      }
+    }
+
+    /* Scroll to Top Button */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(45deg, #2651e5, #00ff42);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 9px 19px;
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    .scroll-to-top:hover {
+      background: linear-gradient(45deg, #00c2fc, #022ad6);
+      transform: translateY(-2px);
+    }
+
+    /* Dark Mode Overrides */
+    body.dark-mode {
+      background-color: #121212 !important;
+      color: #e0e0e0 !important;
+    }
+
+    body.dark-mode .header {
+      color: #e0e0e0 !important;
+    }
+
+    body.dark-mode .header h1,
+    body.dark-mode .header h2 {
+      color: #e0e0e0 !important;
+    }
+
+    body.dark-mode .container {
+      background-color: #1e1e1e !important;
+    }
+
+    body.dark-mode .section {
+      background-color: #2d2d2d !important;
+      border-color: #404040 !important;
+    }
+
+    body.dark-mode .section h2,
+    body.dark-mode .section h3 {
+      color: #e0e0e0 !important;
+    }
+
+    body.dark-mode .section p,
+    body.dark-mode .section li {
+      color: #b0b0b0 !important;
+    }
+
+    body.dark-mode .highlight-box {
+      background-color: #2d2d2d !important;
+      border-color: #404040 !important;
+    }
+
+    body.dark-mode .highlight-box h3 {
+      color: #0099ff !important;
+    }
+
+    body.dark-mode .step {
+      background-color: #1e1e1e !important;
+      border-color: #404040 !important;
+    }
+
+    body.dark-mode .step h3 {
+      color: #e0e0e0 !important;
+    }
+
+    body.dark-mode .condition-item h3 {
+      color: #e0e0e0 !important;
+    }
+
+    body.dark-mode .faq-question {
+      background-color: #2d2d2d !important;
+    }
+
+    body.dark-mode .faq-question::after {
+      color: #0099ff !important;
+    }
+
+    body.dark-mode .faq-answer {
+      background-color: #1e1e1e !important;
+      color: #b0b0b0 !important;
+    }
+
+    body.dark-mode .contact-info {
+      background-color: #2d2d2d !important;
+      border-color: #404040 !important;
+    }
+
+    body.dark-mode .contact-info h3 {
+      color: #0099ff !important;
+    }
+
+    body.dark-mode .contact-info li strong {
+      color: #e0e0e0 !important;
+    }
+
+    body.dark-mode .warning-box {
+      background-color: #404040 !important;
+      border-color: #606060 !important;
+    }
+
+    body.dark-mode .warning-box strong {
+      color: #ffcc00 !important;
+    }
+
+    body.dark-mode .footer {
+      background-color: #1e1e1e !important;
+      color: #b0b0b0 !important;
+    }
+
+    body.dark-mode .footer a {
+      color: #0099ff !important;
+    }
+
+    body.dark-mode .footer a:hover {
+      color: #66ccff !important;
+    }
+
+    /* Dark Mode Toggle Icons */
+    #moon-icon {
+      display: block;
+    }
+
+    body.dark-mode #moon-icon {
+      display: none;
+    }
+
+    body.dark-mode #sun-icon {
+      display: block;
+    }
+
+    #sun-icon {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="index.html" class="magic-back-btn" aria-label="Back to Home">
+    <i class="idle-icon fa-solid fa-chevron-left"></i>
+    <i class="active-icon fa-solid fa-chevron-left"></i>
+    <span>Back to Home</span>
+  </a>
+  <button id="dark-mode-toggle"
+    style="position: fixed; top: 20px; right: 20px; z-index: 1000; background: none; border: none; font-size: 24px; cursor: pointer;">
+    <i class='bx bx-moon' id="moon-icon"></i>
+    <i class='bx bx-sun' id="sun-icon" style="display: none;"></i>
+  </button>
+  <div class="header finisher-header" style="width: 100%; height: 300px;">
+    <header class="header">
+      <h1>Blue Ember Store</h1>
+      <h2>Refund & Exchange Policy</h2>
+    </header>
+  </div>
+  <!-- Main Content -->
+  <main class="container">
+    <div class="section">
+      <p>At Blue Ember Store, we want you to be completely satisfied with your purchase. If for any reason you're not
+        happy with your product, we offer a straightforward refund and exchange process. This policy outlines the
+        conditions, timelines, and procedures for returns, exchanges, and refunds on all Blue Ember products.</p>
+    </div>
+
+    <div class="highlight-box">
+      <h3>Our Promise to You</h3>
+      <p>We stand behind the quality of every Blue Ember appliance. If your product doesn't meet your expectations,
+        we'll make it right with a full refund, exchange, or replacement—no questions asked within our return window.
+        Your satisfaction is our top priority.</p>
+    </div>
+
+    <div class="section">
+      <h2>1. Return Eligibility</h2>
+      <p>Most new, unopened products purchased from Blue Ember.com are eligible for return within the following
+        timeframes:</p>
+
+      <h3>Standard Returns</h3>
+      <ul>
+        <li><strong>30 days from delivery date:</strong> Full refund for new, unopened items in original packaging with
+          all accessories, manuals, and tags.</li>
+        <li><strong>Opened or used items:</strong> May be eligible for exchange or store credit at our discretion,
+          subject to inspection.</li>
+        <li><strong>Final sale items:</strong> Certain clearance, promotional, or customized items may be marked as
+          "final sale" and are not eligible for return or exchange.</li>
+      </ul>
+
+      <h3>Defective or Damaged Products</h3>
+      <p>If your Blue Ember appliance arrives damaged or is defective:</p>
+      <ul>
+        <li>Contact us within <strong>7 days of delivery</strong> at support@blue-ember.us</li>
+        <li>Provide photos of the damage and your order number</li>
+        <li>We will arrange a free replacement or full refund</li>
+        <li>Return shipping costs are covered by Blue Ember for defective/damaged items</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>2. How to Initiate a Return or Exchange</h2>
+      <p>Our simple 4-step process ensures a smooth return experience:</p>
+
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Contact Us</h3>
+          <p>Email us at support@blue-ember.us with your order number and reason for return. Include photos if the
+            product is damaged.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Receive Instructions</h3>
+          <p>Within 24-48 hours, we'll email you a prepaid return label (if applicable) and detailed return
+            instructions.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Ship Your Item</h3>
+          <p>Package the item securely in its original packaging with all accessories. Attach the return label and drop
+            off at your local carrier.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Get Refunded or Exchanged</h3>
+          <p>Once we receive and inspect your return (typically 3-5 business days), we'll process your refund or send
+            your replacement.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>3. What We Accept for Return</h2>
+      <p>For a full refund, items must meet these conditions:</p>
+
+      <div class="condition-icons">
+        <div class="condition-item">
+          <div class="condition-icon">📦</div>
+          <h3>Original Packaging</h3>
+          <p>Product must be in original box with all packaging materials.</p>
+        </div>
+        <div class="condition-item">
+          <div class="condition-icon">✅</div>
+          <h3>Unopened & Unused</h3>
+          <p>No signs of use, installation, or damage beyond normal inspection.</p>
+        </div>
+        <div class="condition-item">
+          <div class="condition-icon">📋</div>
+          <h3>All Accessories</h3>
+          <p>Include manuals, power cords, filters, and all original components.</p>
+        </div>
+        <div class="condition-item">
+          <div class="condition-icon">📅</div>
+          <h3>Within 30 Days</h3>
+          <p>Return must be initiated within 30 days of delivery date.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>4. What We Cannot Accept</h2>
+      <p>Unfortunately, we cannot accept returns for the following items:</p>
+      <ul>
+        <li>Items returned after 30 days from delivery date</li>
+        <li>Products that have been installed, assembled, or modified</li>
+        <li>Items missing original packaging, accessories, or manuals</li>
+        <li>Products with signs of misuse, abuse, or improper maintenance</li>
+        <li>Consumable parts (filters, water lines, batteries, etc.) unless defective</li>
+        <li>Customized or personalized products (unless defective)</li>
+        <li>Clearance items marked as "Final Sale" at time of purchase</li>
+      </ul>
+
+      <div class="warning-box">
+        <strong>Note:</strong> Products returned in unsuitable condition may be refused or subject to a restocking fee
+        of up to 15% of the purchase price.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>5. Refunds & Exchanges</h2>
+
+      <h3>Refund Process</h3>
+      <ul>
+        <li>Refunds are issued to the original payment method used for purchase</li>
+        <li>Processing time: 5-10 business days after we receive and inspect your return</li>
+        <li>Original shipping charges are non-refundable unless the return is due to our error</li>
+        <li>Return shipping costs are free for defective or damaged items</li>
+        <li>For credit card payments, refunds may appear as a separate transaction</li>
+      </ul>
+
+      <h3>Exchange Process</h3>
+      <ul>
+        <li>Exchange for the same product: We'll ship your replacement immediately upon receiving your return</li>
+        <li>Exchange for a different product: We'll process your return and issue a refund, then you can place a new
+          order</li>
+        <li>Price difference: If exchanging for a higher-priced item, you'll pay the difference. If exchanging for a
+          lower-priced item, you'll receive a refund for the difference</li>
+        <li>Exchanges are subject to product availability</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>6. Return Shipping</h2>
+      <p>We provide free return shipping for eligible returns:</p>
+      <ul>
+        <li><strong>Free return shipping:</strong> For defective, damaged, or wrong items shipped by Blue Ember</li>
+        <li><strong>Customer-paid shipping:</strong> For change-of-mind returns (except where required by law)</li>
+        <li><strong>International returns:</strong> Customers are responsible for return shipping costs and any customs
+          fees</li>
+      </ul>
+      <p>When returning an item, please use a trackable shipping service and retain your tracking number. We're not
+        responsible for lost return shipments.</p>
+    </div>
+
+    <div class="section">
+      <h2>7. Frequently Asked Questions</h2>
+
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              <strong> 1. Can I return a product that I've installed or assembled? </strong>
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Unfortunately, no. For hygiene, safety, and resale reasons, we cannot accept returns on products that have
+              been installed, assembled, or modified in any way. Only unopened and unused items in their original
+              condition are eligible for a full refund.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <strong> 2. How long does it take to receive my refund? </strong>
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Once we receive and inspect your returned item (which typically takes 3–5 business days), we’ll process
+              your refund. The refund will be issued to your original payment method and may take an additional 5–10
+              business days to appear in your account, depending on your bank or card issuer.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <strong> 3. What if I received the wrong item? </strong>
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              We’re sorry for the mix-up! If you received an incorrect product, please contact us at support@Blue
+              Ember.com within 7 days of delivery with your order number and a photo of the item you received. We’ll
+              arrange a free return and ship the correct item to you right away—at no extra cost.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              <strong> 4. Do I need to return the original packaging?</strong>
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Yes. To be eligible for a full refund, your product must be returned in its original box with all
+              packaging materials, including manuals, accessories, power cords, and tags. Returns missing original
+              packaging may be refused or subject to a restocking fee.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              <strong>5. Can I exchange a product for a different color or model?</strong>
+            </button>
+          </h2>
+          <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Yes! If you’d like to exchange your item for a different color or model:
+              <ul>
+                <li>We’ll first process your return and issue a refund (once the original item is received and
+                  inspected).</li>
+                <li>You can then place a new order for your preferred product.
+                  If the new item costs more, you’ll pay the difference. If it costs less, we’ll refund the difference.
+                  Please note that exchanges are subject to product availability.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+              <strong> 6. How do I track my return shipment?</strong>
+            </button>
+          </h2>
+          <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              In most cases, no restocking fee applies for eligible returns within 30 days with original packaging and
+              unused condition. However, if an item is returned in unsuitable condition (e.g., missing parts, signs of
+              use, or incomplete packaging), we may apply a restocking fee of up to 15% of the purchase price—or refuse
+              the return altogether.
+            </div>
+          </div>
+        </div>
+  </main>
+
+  <!-- Footer -->
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- Brand Section -->
+      <div class="footer-section">
+        <div class="footer-logo"><a href="index.html">
+            <div class="navbar-logo"><img src="assets/BlueEmber-ezgif.com-gif-maker.gif" style="width: 30px;">
+              <SPAN>
+                <h6 style="color: #0099ff; font-size: large; margin: 0px 0px -6px 0px;">BLUE</h6>
+                <H6 style="color: #000000; font-size: large; margin: 0px 0px -6px 0px;">EMBER</H6>
+              </SPAN>
+            </div>
+          </a></div>
+        <p class="footer-tagline">Premium Store from trusted global brands. Serving customers since 2005.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="terms and services.html">Terms & Services</a></li>
+          <li><a href="privacy policy.html">Privacy Policy</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <li><a href="Refund and Exchange.html">Refund & Exchange</a></li>
+          <li><a href="About us .html">About Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Categories -->
+      <div class="footer-section">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="product2.html">Toys</a></li>
+          <li><a href="product2.html">Supplyments</a></li>
+          <li><a href="product2.html">Beauty</a></li>
+          <li><a href="product2.html">HomeGoods</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <ul>
+          <li>
+            <a>
+              <address>
+                <p><a href="https://maps.app.goo.gl/BGBAUvaKPHLhTqvh6">Hasbrouck Heights NJ 07604 USA</a>
+                </p>
+                <i class="fa-solid fa-phone-volume" style="color:rgb(0, 89, 255)"></i> +1 (800) 123-4567<br>
+                <i class="fa-solid fa-envelope" style="color:rgb(0, 89, 255)"></i> <a
+                  href="mailto:support@blue-ember.us">support@blue-ember.us</a>
+              </address>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Blue Ember Store. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="privacy policy.html">Privacy Policy</a> •
+        <a href="terms and services.html">Terms of Service</a> •
+      </div>
+      <!-- Footer Brand Watermark -->
+      <div class="footer-trending">
+        <span class="footer-trending-text">BLUE </span>
+        <span class="footer-trending-text">EMBER</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scrollTopBtn" title="Go to top">↑</button>
+
+
+
+
+  <script type="text/javascript">
+    new FinisherHeader({
+      "count": 12,
+      "size": {
+        "min": 1300,
+        "max": 1500,
+        "pulse": 1.6
+      },
+      "speed": {
+        "x": {
+          "min": 1.4,
+          "max": 5
+        },
+        "y": {
+          "min": 1.4,
+          "max": 5
+        }
+      },
+      "colors": {
+        "background": "#373333",
+        "particles": [
+          "#14a394",
+          "#10a2da"
+        ]
+      },
+      "blending": "none",
+      "opacity": {
+        "center": 0.6,
+        "edge": 0
+      },
+      "skew": 0,
+      "shapes": [
+        "c"
+      ]
+    });
+
+    // Scroll to top functionality
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // Add event listener for scroll to top button
+    document.addEventListener('DOMContentLoaded', function () {
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+      if (scrollTopBtn) {
+        scrollTopBtn.addEventListener('click', scrollToTop);
+      }
+    });
+  </script>
+</body>
+<!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <!-- Scroll Reveal & Lenis Init -->
+  <script src="js/scroll-reveal.js"></script>
+</html>

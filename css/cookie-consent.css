@@ -1,0 +1,137 @@
+/* Blue Ember Cookie Consent Styles */
+
+.be-cookie-banner {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Rubik', sans-serif;
+    color: #1e293b;
+}
+
+.be-cookie-banner.hide {
+    opacity: 0;
+    transform: translateX(-50%) translateY(50px);
+}
+
+.be-cookie-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.be-cookie-content h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #0099ff;
+}
+
+.be-cookie-content p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #64748b;
+}
+
+.be-cookie-actions {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.be-btn {
+    padding: 10px 20px;
+    border-radius: 40px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.be-btn.primary {
+    background: #0099ff;
+    color: white;
+}
+
+.be-btn.primary:hover {
+    background: #007acc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 153, 255, 0.3);
+}
+
+.be-btn.secondary {
+    background: rgba(0, 0, 0, 0.05);
+    color: #1e293b;
+}
+
+.be-btn.tertiary {
+    background: transparent;
+    color: #94a3b8;
+    text-decoration: underline;
+}
+
+.be-cookie-footer-link {
+    font-size: 12px;
+    color: #94a3b8;
+    text-align: center;
+}
+
+.be-cookie-footer-link a {
+    color: #0099ff;
+    text-decoration: none;
+}
+
+/* Dark Mode Support */
+body.dark-mode .be-cookie-banner {
+    background: rgba(30, 41, 59, 0.85);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #f8fafc;
+}
+
+body.dark-mode .be-cookie-content p {
+    color: #94a3b8;
+}
+
+body.dark-mode .be-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f8fafc;
+}
+
+@media (max-width: 768px) {
+    .be-cookie-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .be-cookie-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .be-btn {
+        flex: 1;
+        padding: 12px 8px;
+        font-size: 13px;
+    }
+}
